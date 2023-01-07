@@ -9,6 +9,7 @@ public class pl_interact : MonoBehaviour
     [SerializeField] LayerMask intLayerMask;
     [SerializeField] Transform camHolderTrans;
     [SerializeField] TextMeshPro uiTextElement;
+    [SerializeField] pl_wep_manager weaponManager;
     nv_int_base hoverInteractable;
     
     private void Update()
@@ -42,6 +43,10 @@ public class pl_interact : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.E))
         {
+            if(hoverInteractable.weaponID != "")
+            {
+                weaponManager.PickupWeapon(hoverInteractable.weaponID);
+            }
             hoverInteractable.HandleInteract();
         }
     }
