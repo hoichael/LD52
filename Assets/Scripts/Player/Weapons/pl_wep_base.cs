@@ -8,16 +8,29 @@ public abstract class pl_wep_base : MonoBehaviour
     [SerializeField] protected Transform camHolderTrans;
     [SerializeField] GameObject dropPrefab;
     [SerializeField] float fireRate;
+
+    [SerializeField] Vector3 recoilTargetPos;
+    [SerializeField] float recoilAnimSpeed;
+    [SerializeField] AnimationCurve recoilAnimCurve;
+    float currentRecoilAnimFactor = 1;
+
     public string ID;
     bool canShoot;
+    Vector3 defaultPos;
+    //bool recoilActive;
 
     private void Update()
     {
-        if (!canShoot) return;
-        if(Input.GetKey(KeyCode.Mouse0))
+        if(currentRecoilAnimFactor != 1)
+        {
+            HandleRecoiAnim();
+        }
+
+        if(canShoot && Input.GetKey(KeyCode.Mouse0))
         {
             Shoot();
-            HandleFirerate();
+            currentRecoilAnimFactor = 0;
+            StartCoroutine(HandleFirerate());
         }
     }
 
@@ -25,6 +38,8 @@ public abstract class pl_wep_base : MonoBehaviour
     {
         this.gameObject.SetActive(true);
         canShoot = true;
+        defaultPos = transform.localPosition;
+        currentRecoilAnimFactor = 1;
     }
 
     public void Drop()
@@ -37,7 +52,18 @@ public abstract class pl_wep_base : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
-    protected virtual void Shoot() { }
+    protected virtual void Shoot() {}
+
+    protected virtual void HandleRecoiAnim()
+    {
+        currentRecoilAnimFactor = Mathf.MoveTowards(currentRecoilAnimFactor, 1, recoilAnimSpeed * Time.deltaTime);
+
+        transform.localPosition = Vector3.Lerp(
+            defaultPos,
+            recoilTargetPos,
+            recoilAnimCurve.Evaluate(currentRecoilAnimFactor)
+            );
+    }
 
     private IEnumerator HandleFirerate()
     {
