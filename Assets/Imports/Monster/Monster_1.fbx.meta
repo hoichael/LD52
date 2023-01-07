@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4eaceb4bc86b2464bafb3dae461cb95e
+guid: de67f9aad290f6e49b33bfbb40bf4a75
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable:
@@ -18,7 +18,22 @@ ModelImporter:
   - first:
       74: 8349542763059015795
     second: Armature|Walk
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EyeBlack
+    second: {fileID: 2100000, guid: 6ba6373d7e5126941b852cfdb4f414f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EyeWhite
+    second: {fileID: 2100000, guid: 98d35569f0997b749b303a68e72e79bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TextureMat
+    second: {fileID: 2100000, guid: e3a42353ffc8a554b9291264ad220e0b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
