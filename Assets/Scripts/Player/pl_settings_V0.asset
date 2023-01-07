@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c905001d4a3ec8448a26c6d57377876, type: 3}
+  m_Name: pl_settings_V0
+  m_EditorClassIdentifier: 
+  <solidLayerMask>k__BackingField:
+    serializedVersion: 2
+    m_Bits: 64
+  <groundCheckRadius>k__BackingField: 0.3
+  <mouseSens>k__BackingField: 1
+  <moveForceGround>k__BackingField: 22
+  <jumpForceBase>k__BackingField: 32
+  <gravityForceMax>k__BackingField: 36
+  <gravityForceBase>k__BackingField: 4
+  <gravityGrowSpeed>k__BackingField: 2

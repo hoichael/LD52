@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class pl_jump : MonoBehaviour
 {
-    [SerializeField] pl_state playerState;
-    [SerializeField] Rigidbody playerRB;
-    [SerializeField] float jumpForce;
+    [SerializeField] pl_refs refs;
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && playerState.grounded)
+        if(Input.GetKeyDown(KeyCode.Space) && refs.state.grounded)
         {
             ApplyJump();
         }    
@@ -18,8 +16,8 @@ public class pl_jump : MonoBehaviour
 
     private void ApplyJump()
     {
-        playerRB.velocity = new Vector3(playerRB.velocity.x, 0, playerRB.velocity.z);
+        refs.playerRB.velocity = new Vector3(refs.playerRB.velocity.x, 0, refs.playerRB.velocity.z);
 
-        playerRB.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        refs.playerRB.AddForce(Vector3.up * refs.settings.jumpForceBase, ForceMode.Impulse);
     }
 }

@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class pl_move : MonoBehaviour
 {
-    [SerializeField] Rigidbody rb;
-    [SerializeField] float moveForce;
+    [SerializeField] pl_refs refs;
     [SerializeField] Transform orientation;
 
     private void FixedUpdate()
@@ -22,6 +21,6 @@ public class pl_move : MonoBehaviour
 
     private void ApplyForce(Vector3 moveDir)
     {
-        rb.AddForce(moveDir * moveForce, ForceMode.Acceleration);
+        refs.playerRB.AddForce(moveDir * refs.settings.moveForceGround, ForceMode.Acceleration);
     }
 }

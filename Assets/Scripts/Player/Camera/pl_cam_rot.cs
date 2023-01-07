@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class pl_cam_rot : MonoBehaviour
 {
-    [SerializeField] float sens;
+    [SerializeField] pl_refs refs;
     [SerializeField] Transform camHolder;
     [SerializeField] Transform orientation;
 
@@ -23,8 +23,8 @@ public class pl_cam_rot : MonoBehaviour
 
     private void HandleInput()
     {
-        rotY += Input.GetAxisRaw("Mouse X") * sens;
-        rotX -= Input.GetAxisRaw("Mouse Y") * sens;
+        rotY += Input.GetAxisRaw("Mouse X") * refs.settings.mouseSens;
+        rotX -= Input.GetAxisRaw("Mouse Y") * refs.settings.mouseSens;
 
         rotX = Mathf.Clamp(rotX, -89.5f, 89.5f);       
     }

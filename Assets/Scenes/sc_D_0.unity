@@ -222,8 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48a7d67c845d0dd4abdc91a0586522e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 6773398}
-  moveForce: 44
+  refs: {fileID: 978510480}
   orientation: {fileID: 1578379536}
 --- !u!114 &64272506
 MonoBehaviour:
@@ -237,12 +236,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29e3869e191997a4c8dd187c750fe79a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: {fileID: 978510479}
+  refs: {fileID: 978510480}
   groundCheckTrans: {fileID: 1305918637}
-  solidLayerMask:
-    serializedVersion: 2
-    m_Bits: 64
   checkRadius: 0.3
+  gravManager: {fileID: 64272508}
 --- !u!114 &64272507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,9 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 503c034832d7a494f8ffaad7a46214ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerState: {fileID: 978510479}
-  playerRB: {fileID: 6773398}
-  jumpForce: 22
+  refs: {fileID: 978510480}
 --- !u!114 &64272508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,9 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602333ffe820aaa4b862636dabd06192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerState: {fileID: 978510479}
-  playerRB: {fileID: 6773398}
-  gravForce: 34
+  refs: {fileID: 978510480}
 --- !u!1 &114027155
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,7 +438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98513e959bc342c469e4fd3a746f73aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sens: 2
+  refs: {fileID: 978510480}
   camHolder: {fileID: 1466185155}
   orientation: {fileID: 1578379536}
 --- !u!1 &330585543
@@ -1431,6 +1424,7 @@ GameObject:
   m_Component:
   - component: {fileID: 978510478}
   - component: {fileID: 978510479}
+  - component: {fileID: 978510480}
   m_Layer: 0
   m_Name: Data
   m_TagString: Untagged
@@ -1466,6 +1460,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grounded: 0
+--- !u!114 &978510480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978510477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd3128c97fa173949bfbe6168e4b801b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settings: {fileID: 11400000, guid: 73ed2eff0d4def049a5c69578dc8a7a8, type: 2}
+  state: {fileID: 978510479}
+  playerRB: {fileID: 6773398}
 --- !u!1 &1092280241
 GameObject:
   m_ObjectHideFlags: 0

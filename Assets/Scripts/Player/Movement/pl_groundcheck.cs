@@ -2,21 +2,22 @@ using UnityEngine;
 
 public class pl_groundcheck : MonoBehaviour
 {
-    [SerializeField] pl_state state;
+    [SerializeField] pl_refs refs;
     [SerializeField] GameObject groundCheckTrans;
-    [SerializeField] LayerMask solidLayerMask;
     [SerializeField] float checkRadius;
+    [SerializeField] pl_gravity gravManager;
 
     private void Update()
     {
         CheckForGround();
+        gravManager.enabled = refs.state.grounded ? false : true;
     }
 
     private void CheckForGround()
     {
-        state.grounded = Physics.CheckSphere(
+        refs.state.grounded = Physics.CheckSphere(
             groundCheckTrans.transform.position,
             checkRadius,
-            solidLayerMask);
+            refs.settings.solidLayerMask);
     }
 }
