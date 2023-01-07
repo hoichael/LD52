@@ -9,6 +9,9 @@ public class pl_settings : ScriptableObject
     [field: SerializeField, Header("Camera")] public float mouseSens { get; private set; }
 
     [field: SerializeField, Header("Move")] public float moveForceGround { get; private set; }
+    [field: SerializeField] public float dragGround { get; private set; }
+    [field: SerializeField] public float moveForceAir { get; private set; }
+    [field: SerializeField] public float dragAir { get; private set; }
 
     [field: SerializeField, Header("Jump")] public float jumpForceBase { get; private set; }
 

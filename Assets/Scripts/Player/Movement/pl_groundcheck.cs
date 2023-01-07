@@ -10,7 +10,10 @@ public class pl_groundcheck : MonoBehaviour
     private void Update()
     {
         CheckForGround();
+
+        // both of these dont really belong here. wthv.
         gravManager.enabled = refs.state.grounded ? false : true;
+        refs.playerRB.drag = refs.state.grounded ? refs.settings.dragGround : refs.settings.dragAir;
     }
 
     private void CheckForGround()

@@ -21,6 +21,6 @@ public class pl_move : MonoBehaviour
 
     private void ApplyForce(Vector3 moveDir)
     {
-        refs.playerRB.AddForce(moveDir * refs.settings.moveForceGround, ForceMode.Acceleration);
+        refs.playerRB.AddForce(moveDir * (refs.state.grounded ? refs.settings.moveForceGround : refs.settings.moveForceAir), ForceMode.Acceleration);
     }
 }

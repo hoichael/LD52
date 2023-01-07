@@ -17,8 +17,11 @@ MonoBehaviour:
     m_Bits: 64
   <groundCheckRadius>k__BackingField: 0.3
   <mouseSens>k__BackingField: 1
-  <moveForceGround>k__BackingField: 22
-  <jumpForceBase>k__BackingField: 32
-  <gravityForceMax>k__BackingField: 36
-  <gravityForceBase>k__BackingField: 4
-  <gravityGrowSpeed>k__BackingField: 2
+  <moveForceGround>k__BackingField: 45
+  <dragGround>k__BackingField: 5
+  <moveForceAir>k__BackingField: 15
+  <dragAir>k__BackingField: 1.9
+  <jumpForceBase>k__BackingField: 16
+  <gravityForceMax>k__BackingField: 48
+  <gravityForceBase>k__BackingField: 6
+  <gravityGrowSpeed>k__BackingField: 1.1
