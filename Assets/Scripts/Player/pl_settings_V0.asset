@@ -17,6 +17,7 @@ MonoBehaviour:
     m_Bits: 64
   <groundCheckRadius>k__BackingField: 0.3
   <maxHP>k__BackingField: 25
+  <interactRange>k__BackingField: 3
   <mouseSens>k__BackingField: 1
   <moveForceGround>k__BackingField: 45
   <dragGround>k__BackingField: 5

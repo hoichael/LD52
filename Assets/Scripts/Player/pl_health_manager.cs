@@ -21,4 +21,9 @@ public class pl_health_manager : MonoBehaviour
             devManager.Reload();
         }
     }
+
+    public void HandleHeal(int healAmount)
+    {
+        refs.state.hp = Mathf.Clamp(refs.state.hp + healAmount, 1, refs.settings.maxHP);
+    }
 }
