@@ -5,6 +5,7 @@ public class pl_settings : ScriptableObject
 {
     [field: SerializeField, Header("General")] public LayerMask solidLayerMask { get; private set; }
     [field: SerializeField] public float groundCheckRadius { get; private set; }
+    [field: SerializeField] public int maxHP { get; private set; }
 
     [field: SerializeField, Header("Camera")] public float mouseSens { get; private set; }
 
