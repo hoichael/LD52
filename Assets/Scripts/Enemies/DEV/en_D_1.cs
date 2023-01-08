@@ -13,6 +13,8 @@ public class en_D_1 : MonoBehaviour, I_Damagable
     [SerializeField] float moveSpeed;
     [SerializeField] float stoppingDistance;
 
+    [SerializeField] float rotSlerpDamp;
+
     int hp = 3;
 
     private void Start()
@@ -29,7 +31,11 @@ public class en_D_1 : MonoBehaviour, I_Damagable
 
     private void LookAtPlayer()
     {
-        transform.LookAt(new Vector3(g_refs.Instance.plTrans.position.x, 0, g_refs.Instance.plTrans.position.z));
+        Vector3 targetVec = g_refs.Instance.plTrans.position - transform.position;
+        targetVec.y = 0;
+        Quaternion targetRot = Quaternion.LookRotation(targetVec);
+
+        transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRot, rotSlerpDamp);
     }
 
     private void ChasePlayer()
