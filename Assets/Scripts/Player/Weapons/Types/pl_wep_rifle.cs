@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class wep_DEV : pl_wep_base
+public class pl_wep_rifle : pl_wep_base
 {
-    [SerializeField] int dmgAmount;
     [SerializeField] GameObject bloodVFX;
     protected override void Shoot()
     {

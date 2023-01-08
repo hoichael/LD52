@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class pl_wep_base : MonoBehaviour
 {
+    [SerializeField] protected dmg_info dmgInfo;
     [SerializeField] protected LayerMask enemyLayerMask;
     [SerializeField] protected Transform camHolderTrans;
     [SerializeField] GameObject dropPrefab;
@@ -13,6 +14,8 @@ public abstract class pl_wep_base : MonoBehaviour
     [SerializeField] float recoilAnimSpeed;
     [SerializeField] AnimationCurve recoilAnimCurve;
     float currentRecoilAnimFactor = 1;
+
+    public Transform ikTargetHolderLeft, ikTargetHolderRight;
 
     public string ID;
     bool canShoot;
@@ -45,9 +48,9 @@ public abstract class pl_wep_base : MonoBehaviour
 
     public void Drop()
     {
-        //Rigidbody rb = Instantiate(dropPrefab, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-        //rb.AddForce(camHolderTrans.forward.normalized * 5, ForceMode.Impulse);
-        //rb.AddTorque(camHolderTrans.forward, ForceMode.Impulse);
+        Rigidbody rb = Instantiate(dropPrefab, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+        rb.AddForce((Vector3.up + camHolderTrans.forward.normalized) * 2.5f, ForceMode.Impulse);
+        rb.AddTorque(camHolderTrans.forward, ForceMode.Impulse);
 
         StopAllCoroutines();
         this.gameObject.SetActive(false);

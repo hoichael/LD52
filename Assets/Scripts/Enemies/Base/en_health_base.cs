@@ -18,8 +18,6 @@ public class en_health_base : MonoBehaviour
 
     public virtual void HandleDamage(dmg_info dmgInfo)
     {
-        if (dmgInfo.dmgAmount <= 1) return;
-
         if (hitVFX != null)
         {
             Instantiate(hitVFX, dmgInfo.hitPos, Quaternion.identity).transform.localScale = Vector3.one * dmgInfo.force;

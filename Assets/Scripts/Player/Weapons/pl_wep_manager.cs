@@ -8,6 +8,9 @@ public class pl_wep_manager : MonoBehaviour
     [SerializeField] List<pl_wep_base> weaponList;
     pl_wep_base activeWeapon;
 
+    [SerializeField] pl_ik_target_pos ikPosHandlerLeft, ikPosHandlerRight;
+    [SerializeField] Transform ikTargetHolderDefLeft, ikTargetHolderDefRight;
+    //[SerializeField] Transform ikTargetLeft, ikTargetRight;
 
     public void PickupWeapon(string ID)
     {
@@ -30,6 +33,20 @@ public class pl_wep_manager : MonoBehaviour
         DropWeapon();
         activeWeapon = newWeapon;
         activeWeapon.Equip();
+
+        ParentIKTargets();
+    }
+
+    private void ParentIKTargets()
+    {
+        //ikTargetLeft.SetParent(activeWeapon.ikTargetHolderLeft);
+        //ikTargetLeft.localPosition = Vector3.zero;
+
+        //ikTargetRight.SetParent(activeWeapon.ikTargetHolderRight);
+        //ikTargetRight.localPosition = Vector3.zero;
+
+        ikPosHandlerLeft.currentTargetTrans = activeWeapon.ikTargetHolderLeft;
+        ikPosHandlerRight.currentTargetTrans = activeWeapon.ikTargetHolderRight;
     }
 
     private void DropWeapon()
@@ -37,5 +54,8 @@ public class pl_wep_manager : MonoBehaviour
         if (activeWeapon == null) return;
         activeWeapon.Drop();
         activeWeapon = null;
+
+        ikPosHandlerLeft.currentTargetTrans = ikTargetHolderDefLeft;
+        ikPosHandlerRight.currentTargetTrans = ikTargetHolderDefRight;
     }
 }
