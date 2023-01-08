@@ -49,7 +49,7 @@ public class en_D_1 : MonoBehaviour, I_Damagable
         if (Vector3.Distance(transform.position, g_refs.Instance.plTrans.position) > maxAttackDistance) return;
         if(CheckForPlayer())
         {
-            g_refs.Instance.plHealth.HandleDamage(attackDamageAmount);
+            //g_refs.Instance.plHealth.HandleDamage(attackDamageAmount);
         }
 
         StartCoroutine(HandleAttackInterval());

@@ -12,10 +12,10 @@ public class pl_health_manager : MonoBehaviour
         refs.state.hp = refs.settings.maxHP;
     }
 
-    public void HandleDamage(int dmgAmount)
+    public void HandleDamage(dmg_info dmgInfo)
     {
-        print("Damage Taken! (" + dmgAmount + ")");
-        refs.state.hp -= dmgAmount;
+        print("Damage Taken! (" + dmgInfo.dmgAmount + ")");
+        refs.state.hp -= dmgInfo.dmgAmount;
         if(refs.state.hp <= 0)
         {
             devManager.Reload();

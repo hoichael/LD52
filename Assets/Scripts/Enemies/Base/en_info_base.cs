@@ -4,6 +4,7 @@ public class en_info_base : MonoBehaviour
 {
     [Header("Local Refs")]
 
+    public en_brain brain;
     public Transform trans;
     public Rigidbody rb;
     public Animator anim;

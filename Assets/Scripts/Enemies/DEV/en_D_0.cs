@@ -21,7 +21,7 @@ public class en_D_0 : MonoBehaviour, I_Damagable
     {
         if(CheckForPlayer())
         {
-            g_refs.Instance.plHealth.HandleDamage(attackDamageAmount);
+            //g_refs.Instance.plHealth.HandleDamage(attackDamageAmount);
         }
 
         StartCoroutine(HandleAttackInterval());
