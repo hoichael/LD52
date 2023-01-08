@@ -23,8 +23,6 @@ public class en_D_1 : MonoBehaviour, I_Damagable
 
     private void FixedUpdate()
     {
-        print(Vector3.Distance(transform.position, g_refs.Instance.plTrans.position));
-
         LookAtPlayer();
         ChasePlayer();
     }

@@ -30,6 +30,7 @@ public abstract class pl_wep_base : MonoBehaviour
         {
             Shoot();
             currentRecoilAnimFactor = 0;
+            transform.localPosition = recoilTargetPos;
             StartCoroutine(HandleFirerate());
         }
     }
@@ -59,8 +60,8 @@ public abstract class pl_wep_base : MonoBehaviour
         currentRecoilAnimFactor = Mathf.MoveTowards(currentRecoilAnimFactor, 1, recoilAnimSpeed * Time.deltaTime);
 
         transform.localPosition = Vector3.Lerp(
-            defaultPos,
             recoilTargetPos,
+            defaultPos,
             recoilAnimCurve.Evaluate(currentRecoilAnimFactor)
             );
     }
