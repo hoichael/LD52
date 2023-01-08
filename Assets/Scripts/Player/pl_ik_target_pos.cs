@@ -8,7 +8,7 @@ public class pl_ik_target_pos : MonoBehaviour
     [SerializeField] float moveSpeed;
     private void Update()
     {
-        //transform.position = currentTargetTrans.position;
-        transform.localPosition = Vector3.MoveTowards(transform.localPosition, currentTargetTrans.position, moveSpeed * Time.deltaTime);
+        //transform.localPosition = currentTargetTrans.position;
+        //transform.localPosition = Vector3.MoveTowards(transform.localPosition, currentTargetTrans.position, moveSpeed * Time.deltaTime);
     }
 }

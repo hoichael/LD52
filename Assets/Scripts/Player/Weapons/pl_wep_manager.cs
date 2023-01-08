@@ -10,7 +10,12 @@ public class pl_wep_manager : MonoBehaviour
 
     [SerializeField] pl_ik_target_pos ikPosHandlerLeft, ikPosHandlerRight;
     [SerializeField] Transform ikTargetHolderDefLeft, ikTargetHolderDefRight;
-    //[SerializeField] Transform ikTargetLeft, ikTargetRight;
+    [SerializeField] Transform ikTargetLeft, ikTargetRight;
+
+    private void Start()
+    {
+        SetIKPosToDefault();
+    }
 
     public void PickupWeapon(string ID)
     {
@@ -39,14 +44,14 @@ public class pl_wep_manager : MonoBehaviour
 
     private void ParentIKTargets()
     {
-        //ikTargetLeft.SetParent(activeWeapon.ikTargetHolderLeft);
-        //ikTargetLeft.localPosition = Vector3.zero;
+        ikTargetLeft.SetParent(activeWeapon.ikTargetHolderLeft);
+        ikTargetLeft.localPosition = Vector3.zero;
 
-        //ikTargetRight.SetParent(activeWeapon.ikTargetHolderRight);
-        //ikTargetRight.localPosition = Vector3.zero;
+        ikTargetRight.SetParent(activeWeapon.ikTargetHolderRight);
+        ikTargetRight.localPosition = Vector3.zero;
 
-        ikPosHandlerLeft.currentTargetTrans = activeWeapon.ikTargetHolderLeft;
-        ikPosHandlerRight.currentTargetTrans = activeWeapon.ikTargetHolderRight;
+        //ikPosHandlerLeft.currentTargetTrans = activeWeapon.ikTargetHolderLeft;
+        //ikPosHandlerRight.currentTargetTrans = activeWeapon.ikTargetHolderRight;
     }
 
     private void DropWeapon()
@@ -55,7 +60,18 @@ public class pl_wep_manager : MonoBehaviour
         activeWeapon.Drop();
         activeWeapon = null;
 
-        ikPosHandlerLeft.currentTargetTrans = ikTargetHolderDefLeft;
-        ikPosHandlerRight.currentTargetTrans = ikTargetHolderDefRight;
+        SetIKPosToDefault();
+    }
+
+    private void SetIKPosToDefault()
+    {
+        ikTargetLeft.SetParent(ikTargetHolderDefLeft);
+        ikTargetLeft.localPosition = Vector3.zero;
+
+        ikTargetRight.SetParent(ikTargetHolderDefRight);
+        ikTargetRight.localPosition = Vector3.zero;
+
+        //ikPosHandlerLeft.currentTargetTrans = ikTargetHolderDefLeft;
+        //ikPosHandlerRight.currentTargetTrans = ikTargetHolderDefRight;
     }
 }
