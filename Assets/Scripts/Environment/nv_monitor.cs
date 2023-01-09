@@ -8,6 +8,8 @@ public class nv_monitor : MonoBehaviour
     [SerializeField] TextMeshPro promptTextEl;
     [SerializeField] GameManager gameManager;
 
+    [SerializeField] AudioSource audioSource;
+
     public int currentPromptIDX = -1;
     bool harvestTime;
 
@@ -22,9 +24,14 @@ public class nv_monitor : MonoBehaviour
 
         currentPromptIDX++;
 
-        if(currentPromptIDX == 1)
+        if (currentPromptIDX == 1)
         {
             gameManager.InitHarvestTimer();
+        }
+
+        if(currentPromptIDX != 0)
+        {
+            audioSource.Play();
         }
 
         if(currentPromptIDX == promptsList.Count)

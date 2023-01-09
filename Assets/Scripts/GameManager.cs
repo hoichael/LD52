@@ -6,6 +6,7 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] pl_settings settings;
     [SerializeField] float harvestTimerTime;
     [SerializeField] ui_Manager uiManager;
     [SerializeField] nv_monitor monitorManager;
@@ -28,9 +29,35 @@ public class GameManager : MonoBehaviour
     [SerializeField] pl_wep_manager weaponManager;
     [SerializeField] nv_spawner enemySpawner;
 
+    [SerializeField] GameObject humanArm;
+    [SerializeField] GameObject cornArmsHolder;
+    [SerializeField] SkinnedMeshRenderer rendererCornRight, rendererCornLeft;
+
+    [SerializeField] AudioSource mouseSensAudio;
+
     private void Start()
     {
         UpdateScore(0);
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.KeypadPlus) || Input.GetKeyDown(KeyCode.PageUp))
+        {
+            IncrementSens(1);
+        }
+
+        if(Input.GetKeyDown(KeyCode.KeypadMinus) || Input.GetKeyDown(KeyCode.PageDown))
+        {
+            IncrementSens(-1);
+        }
+    }
+
+    private void IncrementSens(int mult)
+    {
+        mouseSensAudio.Play();
+        settings.mouseSens += 0.1f * mult;
+        settings.mouseSens = Mathf.Clamp(settings.mouseSens, 0.1f, 3);
     }
 
     public void InitHarvestTimer()
@@ -46,6 +73,12 @@ public class GameManager : MonoBehaviour
         uiManager.HandleHarvestTime();
         officeCollapser.HandleHarvestTime();
 
+        enemySpawner.enabled = true;
+
+        humanArm.SetActive(false);
+        //cornArmsHolder.SetActive(true);
+        rendererCornLeft.enabled = true;
+        rendererCornRight.enabled = true;
     }
 
     public void UpdateScore(int scoreToAdd)

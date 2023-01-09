@@ -8,7 +8,7 @@ public class pl_settings : ScriptableObject
     [SerializeField] public int maxHP; // public set because upgrade system
     [field: SerializeField] public float interactRange { get; private set; }
 
-    [field: SerializeField, Header("Camera")] public float mouseSens { get; private set; }
+    [SerializeField, Header("Camera")] public float mouseSens; // public set because upgrade system
 
     [SerializeField, Header("Move")] public float moveForceBase; // public set because upgrade system
     [field: SerializeField] public float dragGround { get; private set; }

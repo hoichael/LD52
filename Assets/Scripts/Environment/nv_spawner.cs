@@ -9,11 +9,12 @@ public class nv_spawner : MonoBehaviour
     [SerializeField] Vector2 baseRangeSpawnAmountPerPoint;
 
     [SerializeField] GameObject walkerPrefab;
-    [SerializeField] List<GameManager> specialEntitiesPrefabs;
+    //[SerializeField] List<GameObject> specialEntitiesPrefabs;
+    [SerializeField] GameObject giantPrefab;
 
     [SerializeField] int maxEnemiesAmount;
 
-    int currentEnemiesAmount;
+    public int currentEnemiesAmount;
 
     int currentSpawnIteraion;
 
@@ -51,14 +52,13 @@ public class nv_spawner : MonoBehaviour
                 currentEnemiesAmount++;
             }
 
-            // handle special entities
-            //float randomNum = Random.Range(0, 1f);
-            //if(randomNum < 0.1f)
-            //{
-            //    int randomIDX = Random.Range(0, specialEntitiesPrefabs.Count);
+            float randomNum = Random.Range(0, 1f);
+            if (randomNum < 0.065f)
+            {
+                //int randomIDX = Random.Range(0, specialEntitiesPrefabs.Count);
 
-            //    Instantiate(specialEntitiesPrefabs[randomIDX], spawnPoint.position, Quaternion.identity);
-            //}
+                Instantiate(giantPrefab, spawnPoint.position + Vector3.up * 8, Quaternion.identity);
+            }
         }
     }
     
@@ -66,5 +66,6 @@ public class nv_spawner : MonoBehaviour
     {
         yield return new WaitForSeconds(spawnInterval);
         SpawnEnemies();
+        StartCoroutine(SpawnIntervalRoutine());
     }
 }

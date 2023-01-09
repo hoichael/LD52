@@ -9,6 +9,7 @@ public class pl_health_manager : MonoBehaviour
     [SerializeField] GameManager gameManager;
     [SerializeField] TextMeshPro hpTextElement;
 
+    [SerializeField] AudioSource hurtAudio;
     bool dead;
 
     private void Start()
@@ -29,6 +30,8 @@ public class pl_health_manager : MonoBehaviour
             dead = true;
         }
         UpdateUI();
+
+        hurtAudio.Play();
     }
 
     public void HandleHeal(int healAmount)

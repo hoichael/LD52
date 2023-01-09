@@ -5,9 +5,14 @@ using UnityEngine;
 public class pl_wep_rifle : pl_wep_base
 {
     [SerializeField] GameObject bloodVFX;
+    [SerializeField] AudioSource audioSource;
+
     protected override void Shoot()
     {
         base.Shoot();
+
+        audioSource.Play();
+
         RaycastHit hit;
         if (Physics.Raycast(camHolderTrans.position, camHolderTrans.forward, out hit, 100, enemyLayerMask))
         {
