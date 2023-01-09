@@ -252,7 +252,7 @@ MonoBehaviour:
   stateID: chase
   info: {fileID: 3297844883612648194}
   rotSlerpDamp: 0.08
-  moveSpeed: 6
+  moveSpeed: 9
   attackDistance: 3.5
 --- !u!114 &153234953211492484
 MonoBehaviour:

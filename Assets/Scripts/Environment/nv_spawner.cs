@@ -24,7 +24,7 @@ public class nv_spawner : MonoBehaviour
 
     private void OnEnable() // enabled by GameManager on harvest time
     {
-        currentEnemiesAmount = 25; // roughly amount of enemies in initial spawn container after harvest time
+        currentEnemiesAmount = 30; // roughly amount of enemies in initial spawn container after harvest time
 
         StartCoroutine(SpawnIntervalRoutine());
     }
@@ -48,16 +48,17 @@ public class nv_spawner : MonoBehaviour
             for(int i = 0; i < spawnAmount; i++)
             {
                 Instantiate(walkerPrefab, spawnPoint.position, Quaternion.identity);
+                currentEnemiesAmount++;
             }
 
             // handle special entities
-            float randomNum = Random.Range(0, 1f);
-            if(randomNum < 0.1f)
-            {
-                int randomIDX = Random.Range(0, specialEntitiesPrefabs.Count);
+            //float randomNum = Random.Range(0, 1f);
+            //if(randomNum < 0.1f)
+            //{
+            //    int randomIDX = Random.Range(0, specialEntitiesPrefabs.Count);
 
-                Instantiate(specialEntitiesPrefabs[randomIDX], spawnPoint.position, Quaternion.identity);
-            }
+            //    Instantiate(specialEntitiesPrefabs[randomIDX], spawnPoint.position, Quaternion.identity);
+            //}
         }
     }
     

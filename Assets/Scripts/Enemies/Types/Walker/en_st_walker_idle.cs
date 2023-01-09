@@ -28,7 +28,8 @@ public class en_st_walker_idle : en_state_base
         {
             ChangeState("attack");
         }
-        else if(distance < maxChaseDistance)
+        //else if(distance < maxChaseDistance)
+        else
         {
             ChangeState("chase");
         }
