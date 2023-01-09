@@ -3,7 +3,17 @@ guid: 933ac46a15ebbb64b8fdc64801c630b3
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shirt
+    second: {fileID: 2100000, guid: 3d7ec9787a8164543a873096efeebaa2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skin
+    second: {fileID: 2100000, guid: 41320f59448bc4640985335a714b5ce9, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
