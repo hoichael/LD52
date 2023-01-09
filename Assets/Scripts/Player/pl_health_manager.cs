@@ -6,8 +6,10 @@ using TMPro;
 public class pl_health_manager : MonoBehaviour
 {
     [SerializeField] pl_refs refs;
-    [SerializeField] DevManager devManager;
+    [SerializeField] GameManager gameManager;
     [SerializeField] TextMeshPro hpTextElement;
+
+    bool dead;
 
     private void Start()
     {
@@ -17,11 +19,14 @@ public class pl_health_manager : MonoBehaviour
 
     public void HandleDamage(dmg_info dmgInfo)
     {
+        if (dead) return;
+
         print("Damage Taken! (" + dmgInfo.dmgAmount + ")");
         refs.state.hp -= dmgInfo.dmgAmount;
         if(refs.state.hp <= 0)
         {
-            devManager.Reload();
+            gameManager.HandleDeath();
+            dead = true;
         }
         UpdateUI();
     }

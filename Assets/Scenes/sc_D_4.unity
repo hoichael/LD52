@@ -5082,7 +5082,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Money: 333'
+  m_text: 'CASH: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6352,6 +6352,7 @@ MonoBehaviour:
     cost: 250
   - value: 56
     cost: 1400
+  moneyTextEl: {fileID: 414053466}
 --- !u!4 &501309508 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2139819342385097334, guid: d69aa0f9cf164a04c8f1eb14ff736755,
@@ -6854,7 +6855,11 @@ MonoBehaviour:
   enemiesContainer: {fileID: 714183961}
   weaponsContainer: {fileID: 621169846}
   scoreText: {fileID: 851412455}
+  upperPromptText: {fileID: 1985271751}
   musicSource: {fileID: 425781842}
+  plRB: {fileID: 6773398}
+  camRot: {fileID: 308359053}
+  weaponManager: {fileID: 2006918369}
 --- !u!1 &545461820
 GameObject:
   m_ObjectHideFlags: 0
@@ -12183,7 +12188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grounded: 0
   hp: 0
-  money: 9999999
+  money: 0
 --- !u!114 &978510480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16525,7 +16530,7 @@ PrefabInstance:
     - target: {fileID: 3366505252209290550, guid: c5e7bf86112b15045859ee49b91135a3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.329
+      value: -3.61
       objectReference: {fileID: 0}
     - target: {fileID: 3366505252209290550, guid: c5e7bf86112b15045859ee49b91135a3,
         type: 3}
@@ -16535,7 +16540,7 @@ PrefabInstance:
     - target: {fileID: 3366505252209290550, guid: c5e7bf86112b15045859ee49b91135a3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.284
+      value: 0.532
       objectReference: {fileID: 0}
     - target: {fileID: 3366505252209290550, guid: c5e7bf86112b15045859ee49b91135a3,
         type: 3}
@@ -20172,7 +20177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   refs: {fileID: 978510480}
-  devManager: {fileID: 439486654}
+  gameManager: {fileID: 530299658}
   hpTextElement: {fileID: 398293662}
 --- !u!1 &1779586498
 GameObject:
@@ -24309,7 +24314,7 @@ PrefabInstance:
     - target: {fileID: 1507438268262631207, guid: 9e6648224fca2e24d8016a0285cc2cf1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.499
+      value: 0.802
       objectReference: {fileID: 0}
     - target: {fileID: 1507438268262631207, guid: 9e6648224fca2e24d8016a0285cc2cf1,
         type: 3}
@@ -24319,7 +24324,7 @@ PrefabInstance:
     - target: {fileID: 1507438268262631207, guid: 9e6648224fca2e24d8016a0285cc2cf1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.554
+      value: -2.311
       objectReference: {fileID: 0}
     - target: {fileID: 1507438268262631207, guid: 9e6648224fca2e24d8016a0285cc2cf1,
         type: 3}
@@ -24674,17 +24679,17 @@ PrefabInstance:
     - target: {fileID: 6253465776632920206, guid: d1fd048a12b637e4b87dcb679668d203,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.13
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 6253465776632920206, guid: d1fd048a12b637e4b87dcb679668d203,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.2199998
+      value: 1.219
       objectReference: {fileID: 0}
     - target: {fileID: 6253465776632920206, guid: d1fd048a12b637e4b87dcb679668d203,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.9230003
+      value: -2.705
       objectReference: {fileID: 0}
     - target: {fileID: 6253465776632920206, guid: d1fd048a12b637e4b87dcb679668d203,
         type: 3}

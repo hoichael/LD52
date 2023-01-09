@@ -54,7 +54,7 @@ public class pl_wep_manager : MonoBehaviour
         //ikPosHandlerRight.currentTargetTrans = activeWeapon.ikTargetHolderRight;
     }
 
-    private void DropWeapon()
+    public void DropWeapon()
     {
         if (activeWeapon == null) return;
         activeWeapon.Drop();

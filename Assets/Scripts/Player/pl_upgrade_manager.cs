@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class pl_upgrade_manager : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class pl_upgrade_manager : MonoBehaviour
     [SerializeField] List<pl_upgrade> healthUpgrades;
     [SerializeField] List<pl_upgrade> moveUpdgrades;
     [SerializeField] List<pl_upgrade> jumpUpgrades;
+
+    [SerializeField] TextMeshPro moneyTextEl;
 
     Dictionary<string, pl_upgrade_info> upgradeInfoDict;
 
@@ -28,11 +31,12 @@ public class pl_upgrade_manager : MonoBehaviour
 
         if(state.money < info.upgradeList[info.currentUpgradeStep + 1].cost)
         {
-            return new pl_upgrade_message(false, "Insufficent Funds (" + info.upgradeList[info.currentUpgradeStep + 1].cost + " needed");
+            return new pl_upgrade_message(false, "Insufficent Funds (" + info.upgradeList[info.currentUpgradeStep + 1].cost + " needed)");
         }
 
         info.currentUpgradeStep++;
         state.money -= info.upgradeList[info.currentUpgradeStep].cost;
+        moneyTextEl.text = "CASH: " + state.money;
 
         ApplyUpgrades();
 
