@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Rigidbody plRB;
     [SerializeField] pl_cam_rot camRot;
     [SerializeField] pl_wep_manager weaponManager;
+    [SerializeField] nv_spawner enemySpawner;
 
     private void Start()
     {
@@ -51,6 +52,7 @@ public class GameManager : MonoBehaviour
     {
         score += scoreToAdd;
         scoreText.text = "SCORE: " + score;
+        enemySpawner.OnEnemyDeath();
     }
 
     public void HandleDeath()
