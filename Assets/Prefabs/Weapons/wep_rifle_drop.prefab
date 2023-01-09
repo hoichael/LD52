@@ -123,8 +123,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dd6fa3951cf03b44b72339589756766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverText: rifle
+  hoverText: '"E" TO PICKUP'
   weaponID: rifle
+  upgradeKey: 
+  isMonitorButton: 0
 --- !u!1 &9090698853694841661
 GameObject:
   m_ObjectHideFlags: 0

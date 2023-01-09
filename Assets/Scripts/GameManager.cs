@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshPro scoreText;
     int score;
 
+    [SerializeField] AudioSource musicSource;
+
     private void Start()
     {
         UpdateScore(0);
@@ -26,6 +28,7 @@ public class GameManager : MonoBehaviour
     public void InitHarvestTimer()
     {
         StartCoroutine(HandleHarvestTimer());
+        musicSource.Play();
     }
 
     private void HarvestTime()
