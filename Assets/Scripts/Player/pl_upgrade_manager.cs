@@ -28,7 +28,7 @@ public class pl_upgrade_manager : MonoBehaviour
 
         if(state.money < info.upgradeList[info.currentUpgradeStep + 1].cost)
         {
-            return new pl_upgrade_message(false, "Insufficent Funds");
+            return new pl_upgrade_message(false, "Insufficent Funds (" + info.upgradeList[info.currentUpgradeStep + 1].cost + " needed");
         }
 
         info.currentUpgradeStep++;
@@ -60,8 +60,8 @@ public class pl_upgrade_manager : MonoBehaviour
 
         upgradeInfoDict = new Dictionary<string, pl_upgrade_info>();
         upgradeInfoDict.Add("Health", infoHealth);
-        upgradeInfoDict.Add("Hove", infoMove);
-        upgradeInfoDict.Add("Hump", infoJump);
+        upgradeInfoDict.Add("Move", infoMove);
+        upgradeInfoDict.Add("Jump", infoJump);
     }
 
 }

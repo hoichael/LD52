@@ -8,8 +8,10 @@ public class pl_interact : MonoBehaviour
     [SerializeField] pl_refs refs;
     [SerializeField] LayerMask intLayerMask;
     [SerializeField] Transform camHolderTrans;
-    [SerializeField] TextMeshPro uiTextElement;
+    [SerializeField] TextMeshPro uiTextElHover;
+    [SerializeField] TextMeshPro uiTextElUpper;
     [SerializeField] pl_wep_manager weaponManager;
+    [SerializeField] pl_upgrade_manager upgradeManager;
     nv_int_base hoverInteractable;
     
     private void Update()
@@ -32,14 +34,14 @@ public class pl_interact : MonoBehaviour
         else
         {
             hoverInteractable = null;
-            uiTextElement.text = "";
+            uiTextElHover.text = "";
         }
     }
 
     private void HandleHover()
     {
         //print(hoverInteractable.hoverText);
-        uiTextElement.text = hoverInteractable.hoverText;
+        uiTextElHover.text = hoverInteractable.hoverText;
 
         if(Input.GetKeyDown(KeyCode.E))
         {
@@ -47,7 +49,22 @@ public class pl_interact : MonoBehaviour
             {
                 weaponManager.PickupWeapon(hoverInteractable.weaponID);
             }
+            else if (hoverInteractable.upgradeKey != "")
+            {
+                pl_upgrade_message msg = upgradeManager.TryUpgrade(hoverInteractable.upgradeKey);
+                
+                uiTextElUpper.text = msg.message;
+                StopAllCoroutines();
+                StartCoroutine(HandleUpperTextDuration());
+
+            }
             hoverInteractable.HandleInteract();
         }
+    }
+
+    private IEnumerator HandleUpperTextDuration()
+    {
+        yield return new WaitForSeconds(2);
+        uiTextElUpper.text = "";
     }
 }
