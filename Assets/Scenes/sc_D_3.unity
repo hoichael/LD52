@@ -3125,6 +3125,7 @@ Transform:
   - {fileID: 1778627424}
   - {fileID: 759502526}
   - {fileID: 2006918368}
+  - {fileID: 495337694}
   m_Father: {fileID: 1936889188}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3783,6 +3784,81 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de67f9aad290f6e49b33bfbb40bf4a75, type: 3}
+--- !u!1 &495337693
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 495337694}
+  - component: {fileID: 495337695}
+  m_Layer: 0
+  m_Name: Upgrade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &495337694
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495337693}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 419749077}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &495337695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495337693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0963d1ce3d54e6e459425e1cf0a085f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: {fileID: 978510479}
+  refs: {fileID: 978510480}
+  healthUpgrades:
+  - value: 1337
+    cost: 25
+  - value: 300
+    cost: 50
+  - value: 800
+    cost: 100
+  moveUpdgrades:
+  - value: 1337
+    cost: 42
+  - value: 150
+    cost: 52
+  - value: 300
+    cost: 68
+  - value: 1200
+    cost: 92
+  - value: 3333
+    cost: 110
+  jumpUpgrades:
+  - value: 1337
+    cost: 4
+  - value: 6
+    cost: 100
+  - value: 9
+    cost: 250
+  - value: 18
+    cost: 700
+  - value: 24
+    cost: 1400
 --- !u!4 &501309508 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2139819342385097334, guid: d69aa0f9cf164a04c8f1eb14ff736755,
@@ -6947,6 +7023,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grounded: 0
   hp: 0
+  money: 0
 --- !u!114 &978510480
 MonoBehaviour:
   m_ObjectHideFlags: 0
