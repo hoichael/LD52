@@ -37,6 +37,7 @@ public class nv_monitor : MonoBehaviour
 
     public void HandleHarvestTime()
     {
+        harvestTime = true;
         promptTextEl.text = "HARVEST TIME";
         promptTextEl.color = Color.red;
     }
