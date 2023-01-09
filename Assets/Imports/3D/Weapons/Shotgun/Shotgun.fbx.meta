@@ -3,7 +3,17 @@ guid: 946bb7b30169a9d4790d30612377dcd5
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ShotgunBarrelTexMat
+    second: {fileID: 2100000, guid: 2e599e123001a3d4ea8b9b874d2f38d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ShotgunTexMat
+    second: {fileID: 2100000, guid: 4f50ba5d0414fb449882e6eb72da8a8b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
