@@ -29,16 +29,17 @@ public class en_health_base : MonoBehaviour
     {
         print("ded lel");
         HandleDrop();
+        g_refs.Instance.gameManager.UpdateScore(100);
     }
 
     private void HandleDrop()
     {
         float randomNum = Random.Range(0, 1f);
-        if(randomNum < 0.2f)
+        if(randomNum < 0.13f)
         {
             InstantiatePickup(hpPickupPrefab);
         }
-        else if(randomNum < 0.45f)
+        else if(randomNum < 0.38f)
         {
             InstantiatePickup(moneyPickupPrefab);
         }
@@ -47,7 +48,7 @@ public class en_health_base : MonoBehaviour
     private void InstantiatePickup(Rigidbody pickupToInstantiate)
     {
         Rigidbody instantiatedRB = Instantiate(pickupToInstantiate, info.trans.position + Vector3.up, Quaternion.identity);
-        instantiatedRB.AddForce(Vector3.up * 3f, ForceMode.Impulse);
-        instantiatedRB.AddTorque((Vector3.up + Vector3.right) * 1.5f, ForceMode.Impulse);
+        instantiatedRB.AddForce(Vector3.up * 8f, ForceMode.Impulse);
+        instantiatedRB.AddTorque((Vector3.up + Vector3.right) * 0.4f, ForceMode.Impulse);
     }
 }

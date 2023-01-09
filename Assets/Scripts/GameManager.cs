@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +15,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject enemiesContainer;
     [SerializeField] GameObject weaponsContainer;
 
+    [SerializeField] TextMeshPro scoreText;
+    int score;
+
+    private void Start()
+    {
+        UpdateScore(0);
+    }
+
     public void InitHarvestTimer()
     {
         StartCoroutine(HandleHarvestTimer());
@@ -26,6 +35,12 @@ public class GameManager : MonoBehaviour
         uiManager.HandleHarvestTime();
         officeCollapser.HandleHarvestTime();
 
+    }
+
+    public void UpdateScore(int scoreToAdd)
+    {
+        score += scoreToAdd;
+        scoreText.text = "SCORE: " + score;
     }
 
     private IEnumerator HandleHarvestTimer()

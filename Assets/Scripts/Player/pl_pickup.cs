@@ -18,7 +18,7 @@ public class pl_pickup : MonoBehaviour
             print("moneeee");
             Destroy(other.gameObject);
             state.money += pickupAmounttMoney;
-            moneyTextEl.text = "Money: " + state.money;
+            moneyTextEl.text = "CASH: " + state.money;
 
         }
         else if(other.CompareTag("Health"))
