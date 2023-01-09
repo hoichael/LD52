@@ -1,9 +1,39 @@
 fileFormatVersion: 2
-guid: c9fc661815f4e9d4bafc1a6c77c1d235
+guid: 499949c44a6632443b629c61aedb0588
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Black part
+    second: {fileID: 2100000, guid: 4dec9c45555dd294c9a517a99fec1d78, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Button Mat
+    second: {fileID: 2100000, guid: 6825737030e8a6d4d91dc47be92cfdbb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Button Mat.001
+    second: {fileID: 2100000, guid: 595e02f2365ed514eb6b6474743883ba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Button Mat.002
+    second: {fileID: 2100000, guid: a73336f396eb4a34f998fce8235454e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ButtonGreen
+    second: {fileID: 2100000, guid: 388ad164ca78d0845829a1de23f69a2a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Colored part
+    second: {fileID: 2100000, guid: 8ef4284ad8a012140b9484d4b34f4c1a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
