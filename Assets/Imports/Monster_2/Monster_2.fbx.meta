@@ -30,7 +30,17 @@ ModelImporter:
   - first:
       74: 1079665108409675491
     second: Armature|Jump
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ArmGunTex
+    second: {fileID: 2100000, guid: ee7e2a9bef4f1d34bba2505ed26c8050, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TextureMat
+    second: {fileID: 2100000, guid: 95103995100eb9e409d8d1e1937acdcc, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

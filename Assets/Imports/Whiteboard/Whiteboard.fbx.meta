@@ -3,7 +3,17 @@ guid: e0621fed1f2ad27448fdf14baa7ca29c
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FrameMat
+    second: {fileID: 2100000, guid: b1d8d3ec2d088a944a658d7177818bdf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WhiteboardTexMat
+    second: {fileID: 2100000, guid: ef9f558cf56f23e409fb7a75c1bbf37f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
