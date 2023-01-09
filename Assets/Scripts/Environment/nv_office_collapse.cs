@@ -17,6 +17,7 @@ public class nv_office_collapse : MonoBehaviour
     {
         currentCollapseFactor = 0;
         ceilingStartPos = ceiling.localPosition;
+        ceiling.GetComponent<BoxCollider>().enabled = false;
     }
 
     private void Update()
