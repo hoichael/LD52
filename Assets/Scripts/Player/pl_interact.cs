@@ -12,6 +12,7 @@ public class pl_interact : MonoBehaviour
     [SerializeField] TextMeshPro uiTextElUpper;
     [SerializeField] pl_wep_manager weaponManager;
     [SerializeField] pl_upgrade_manager upgradeManager;
+    [SerializeField] nv_monitor monitorManager;
     nv_int_base hoverInteractable;
     
     private void Update()
@@ -57,6 +58,10 @@ public class pl_interact : MonoBehaviour
                 StopAllCoroutines();
                 StartCoroutine(HandleUpperTextDuration());
 
+            }
+            else if(hoverInteractable.isMonitorButton)
+            {
+                monitorManager.HandleButtonPress();
             }
             hoverInteractable.HandleInteract();
         }

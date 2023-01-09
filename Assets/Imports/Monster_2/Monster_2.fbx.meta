@@ -21,6 +21,15 @@ ModelImporter:
   - first:
       74: 8349542763059015795
     second: Armature|Walk
+  - first:
+      74: -4424181212379913186
+    second: Armature|Crawl
+  - first:
+      74: -9095252725904231453
+    second: Armature|Crawl.Attack
+  - first:
+      74: 1079665108409675491
+    second: Armature|Jump
   externalObjects: {}
   materials:
     materialImportMode: 2

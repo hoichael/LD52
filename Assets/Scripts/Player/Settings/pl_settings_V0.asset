@@ -16,14 +16,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   <groundCheckRadius>k__BackingField: 0.3
-  <maxHP>k__BackingField: 25
-  <interactRange>k__BackingField: 3
+  maxHP: 25
+  <interactRange>k__BackingField: 3.5
   <mouseSens>k__BackingField: 1
-  moveForceBase: 40
+  moveForceBase: 42
   <dragGround>k__BackingField: 5
   <moveForceAirMult>k__BackingField: 0.33
   <dragAir>k__BackingField: 1.9
-  <jumpForceBase>k__BackingField: 16
+  jumpForceBase: 12
   <gravityForceMax>k__BackingField: 48
   <gravityForceBase>k__BackingField: 6
   <gravityGrowSpeed>k__BackingField: 1.1
