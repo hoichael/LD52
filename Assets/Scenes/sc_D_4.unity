@@ -1034,10 +1034,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93a3ac795077de4d873fa42f883e284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  info: {fileID: 324150295}
   hpMax: 12
   hpCurrent: 0
-  hitVFX: {fileID: 0}
-  info: {fileID: 324150295}
+  hpPickupPrefab: {fileID: 7272605533279926371, guid: 562429ecab5284d4a99f60dc9b7a4bd0,
+    type: 3}
+  moneyPickupPrefab: {fileID: 2905069486923240943, guid: 8f327a1221159574bab354d9fd098fd6,
+    type: 3}
 --- !u!54 &92524244
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1723,10 +1726,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93a3ac795077de4d873fa42f883e284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  info: {fileID: 46881861}
   hpMax: 12
   hpCurrent: 0
-  hitVFX: {fileID: 0}
-  info: {fileID: 46881861}
+  hpPickupPrefab: {fileID: 7272605533279926371, guid: 562429ecab5284d4a99f60dc9b7a4bd0,
+    type: 3}
+  moneyPickupPrefab: {fileID: 2905069486923240943, guid: 8f327a1221159574bab354d9fd098fd6,
+    type: 3}
 --- !u!1 &178115812
 GameObject:
   m_ObjectHideFlags: 0
@@ -2642,10 +2648,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93a3ac795077de4d873fa42f883e284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  info: {fileID: 1386439518}
   hpMax: 12
   hpCurrent: 0
-  hitVFX: {fileID: 0}
-  info: {fileID: 1386439518}
+  hpPickupPrefab: {fileID: 7272605533279926371, guid: 562429ecab5284d4a99f60dc9b7a4bd0,
+    type: 3}
+  moneyPickupPrefab: {fileID: 2905069486923240943, guid: 8f327a1221159574bab354d9fd098fd6,
+    type: 3}
 --- !u!1001 &266693226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4925,10 +4934,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93a3ac795077de4d873fa42f883e284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  info: {fileID: 1020721817}
   hpMax: 12
   hpCurrent: 0
-  hitVFX: {fileID: 0}
-  info: {fileID: 1020721817}
+  hpPickupPrefab: {fileID: 7272605533279926371, guid: 562429ecab5284d4a99f60dc9b7a4bd0,
+    type: 3}
+  moneyPickupPrefab: {fileID: 2905069486923240943, guid: 8f327a1221159574bab354d9fd098fd6,
+    type: 3}
 --- !u!1 &414053464
 GameObject:
   m_ObjectHideFlags: 0
@@ -6200,10 +6212,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93a3ac795077de4d873fa42f883e284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  info: {fileID: 1888413490}
   hpMax: 12
   hpCurrent: 0
-  hitVFX: {fileID: 0}
-  info: {fileID: 1888413490}
+  hpPickupPrefab: {fileID: 7272605533279926371, guid: 562429ecab5284d4a99f60dc9b7a4bd0,
+    type: 3}
+  moneyPickupPrefab: {fileID: 2905069486923240943, guid: 8f327a1221159574bab354d9fd098fd6,
+    type: 3}
 --- !u!1 &504501343
 GameObject:
   m_ObjectHideFlags: 0
@@ -6234,10 +6249,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93a3ac795077de4d873fa42f883e284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  info: {fileID: 1859566134}
   hpMax: 12
   hpCurrent: 0
-  hitVFX: {fileID: 0}
-  info: {fileID: 1859566134}
+  hpPickupPrefab: {fileID: 7272605533279926371, guid: 562429ecab5284d4a99f60dc9b7a4bd0,
+    type: 3}
+  moneyPickupPrefab: {fileID: 2905069486923240943, guid: 8f327a1221159574bab354d9fd098fd6,
+    type: 3}
 --- !u!54 &504501345
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6503,7 +6521,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 518240689}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalPosition: {x: 0, y: 4.5, z: 0}
   m_LocalScale: {x: 10, y: 0.25, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8501,10 +8519,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93a3ac795077de4d873fa42f883e284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  info: {fileID: 1691906100}
   hpMax: 12
   hpCurrent: 0
-  hitVFX: {fileID: 0}
-  info: {fileID: 1691906100}
+  hpPickupPrefab: {fileID: 7272605533279926371, guid: 562429ecab5284d4a99f60dc9b7a4bd0,
+    type: 3}
+  moneyPickupPrefab: {fileID: 2905069486923240943, guid: 8f327a1221159574bab354d9fd098fd6,
+    type: 3}
 --- !u!1 &718002987
 GameObject:
   m_ObjectHideFlags: 0
@@ -10082,10 +10103,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93a3ac795077de4d873fa42f883e284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  info: {fileID: 988938568}
   hpMax: 12
   hpCurrent: 0
-  hitVFX: {fileID: 0}
-  info: {fileID: 988938568}
+  hpPickupPrefab: {fileID: 7272605533279926371, guid: 562429ecab5284d4a99f60dc9b7a4bd0,
+    type: 3}
+  moneyPickupPrefab: {fileID: 2905069486923240943, guid: 8f327a1221159574bab354d9fd098fd6,
+    type: 3}
 --- !u!1 &902300153
 GameObject:
   m_ObjectHideFlags: 0
@@ -10349,10 +10373,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93a3ac795077de4d873fa42f883e284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  info: {fileID: 1093347634}
   hpMax: 12
   hpCurrent: 0
-  hitVFX: {fileID: 0}
-  info: {fileID: 1093347634}
+  hpPickupPrefab: {fileID: 7272605533279926371, guid: 562429ecab5284d4a99f60dc9b7a4bd0,
+    type: 3}
+  moneyPickupPrefab: {fileID: 2905069486923240943, guid: 8f327a1221159574bab354d9fd098fd6,
+    type: 3}
 --- !u!1 &909200764
 GameObject:
   m_ObjectHideFlags: 0
@@ -10418,10 +10445,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93a3ac795077de4d873fa42f883e284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  info: {fileID: 779502513}
   hpMax: 12
   hpCurrent: 0
-  hitVFX: {fileID: 0}
-  info: {fileID: 779502513}
+  hpPickupPrefab: {fileID: 7272605533279926371, guid: 562429ecab5284d4a99f60dc9b7a4bd0,
+    type: 3}
+  moneyPickupPrefab: {fileID: 2905069486923240943, guid: 8f327a1221159574bab354d9fd098fd6,
+    type: 3}
 --- !u!1 &912394388
 GameObject:
   m_ObjectHideFlags: 0
@@ -11472,10 +11502,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93a3ac795077de4d873fa42f883e284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  info: {fileID: 795524352}
   hpMax: 12
   hpCurrent: 0
-  hitVFX: {fileID: 0}
-  info: {fileID: 795524352}
+  hpPickupPrefab: {fileID: 7272605533279926371, guid: 562429ecab5284d4a99f60dc9b7a4bd0,
+    type: 3}
+  moneyPickupPrefab: {fileID: 2905069486923240943, guid: 8f327a1221159574bab354d9fd098fd6,
+    type: 3}
 --- !u!1 &978510477
 GameObject:
   m_ObjectHideFlags: 0
@@ -15247,10 +15280,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93a3ac795077de4d873fa42f883e284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  info: {fileID: 843067553}
   hpMax: 12
   hpCurrent: 0
-  hitVFX: {fileID: 0}
-  info: {fileID: 843067553}
+  hpPickupPrefab: {fileID: 7272605533279926371, guid: 562429ecab5284d4a99f60dc9b7a4bd0,
+    type: 3}
+  moneyPickupPrefab: {fileID: 2905069486923240943, guid: 8f327a1221159574bab354d9fd098fd6,
+    type: 3}
 --- !u!1 &1349754139 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: de67f9aad290f6e49b33bfbb40bf4a75,
@@ -16449,10 +16485,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93a3ac795077de4d873fa42f883e284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  info: {fileID: 1812748646}
   hpMax: 12
   hpCurrent: 0
-  hitVFX: {fileID: 0}
-  info: {fileID: 1812748646}
+  hpPickupPrefab: {fileID: 7272605533279926371, guid: 562429ecab5284d4a99f60dc9b7a4bd0,
+    type: 3}
+  moneyPickupPrefab: {fileID: 2905069486923240943, guid: 8f327a1221159574bab354d9fd098fd6,
+    type: 3}
 --- !u!1 &1466185154
 GameObject:
   m_ObjectHideFlags: 0
@@ -17488,10 +17527,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93a3ac795077de4d873fa42f883e284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  info: {fileID: 1784237262}
   hpMax: 12
   hpCurrent: 0
-  hitVFX: {fileID: 0}
-  info: {fileID: 1784237262}
+  hpPickupPrefab: {fileID: 7272605533279926371, guid: 562429ecab5284d4a99f60dc9b7a4bd0,
+    type: 3}
+  moneyPickupPrefab: {fileID: 2905069486923240943, guid: 8f327a1221159574bab354d9fd098fd6,
+    type: 3}
 --- !u!54 &1574088743
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18099,10 +18141,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93a3ac795077de4d873fa42f883e284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  info: {fileID: 150110685}
   hpMax: 12
   hpCurrent: 0
-  hitVFX: {fileID: 0}
-  info: {fileID: 150110685}
+  hpPickupPrefab: {fileID: 7272605533279926371, guid: 562429ecab5284d4a99f60dc9b7a4bd0,
+    type: 3}
+  moneyPickupPrefab: {fileID: 2905069486923240943, guid: 8f327a1221159574bab354d9fd098fd6,
+    type: 3}
 --- !u!54 &1637502650
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18304,10 +18349,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93a3ac795077de4d873fa42f883e284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  info: {fileID: 698174368}
   hpMax: 12
   hpCurrent: 0
-  hitVFX: {fileID: 0}
-  info: {fileID: 698174368}
+  hpPickupPrefab: {fileID: 7272605533279926371, guid: 562429ecab5284d4a99f60dc9b7a4bd0,
+    type: 3}
+  moneyPickupPrefab: {fileID: 2905069486923240943, guid: 8f327a1221159574bab354d9fd098fd6,
+    type: 3}
 --- !u!54 &1668951976
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18806,10 +18854,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93a3ac795077de4d873fa42f883e284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  info: {fileID: 1263683805}
   hpMax: 12
   hpCurrent: 0
-  hitVFX: {fileID: 0}
-  info: {fileID: 1263683805}
+  hpPickupPrefab: {fileID: 7272605533279926371, guid: 562429ecab5284d4a99f60dc9b7a4bd0,
+    type: 3}
+  moneyPickupPrefab: {fileID: 2905069486923240943, guid: 8f327a1221159574bab354d9fd098fd6,
+    type: 3}
 --- !u!54 &1701525262
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19733,10 +19784,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93a3ac795077de4d873fa42f883e284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  info: {fileID: 237710396}
   hpMax: 12
   hpCurrent: 0
-  hitVFX: {fileID: 0}
-  info: {fileID: 237710396}
+  hpPickupPrefab: {fileID: 7272605533279926371, guid: 562429ecab5284d4a99f60dc9b7a4bd0,
+    type: 3}
+  moneyPickupPrefab: {fileID: 2905069486923240943, guid: 8f327a1221159574bab354d9fd098fd6,
+    type: 3}
 --- !u!54 &1804909617
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20226,10 +20280,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93a3ac795077de4d873fa42f883e284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  info: {fileID: 864035616}
   hpMax: 12
   hpCurrent: 0
-  hitVFX: {fileID: 0}
-  info: {fileID: 864035616}
+  hpPickupPrefab: {fileID: 7272605533279926371, guid: 562429ecab5284d4a99f60dc9b7a4bd0,
+    type: 3}
+  moneyPickupPrefab: {fileID: 2905069486923240943, guid: 8f327a1221159574bab354d9fd098fd6,
+    type: 3}
 --- !u!54 &1863553450
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20751,10 +20808,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93a3ac795077de4d873fa42f883e284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  info: {fileID: 123775990}
   hpMax: 12
   hpCurrent: 0
-  hitVFX: {fileID: 0}
-  info: {fileID: 123775990}
+  hpPickupPrefab: {fileID: 7272605533279926371, guid: 562429ecab5284d4a99f60dc9b7a4bd0,
+    type: 3}
+  moneyPickupPrefab: {fileID: 2905069486923240943, guid: 8f327a1221159574bab354d9fd098fd6,
+    type: 3}
 --- !u!1 &1934645571
 GameObject:
   m_ObjectHideFlags: 0
@@ -20785,10 +20845,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93a3ac795077de4d873fa42f883e284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  info: {fileID: 717080525}
   hpMax: 12
   hpCurrent: 0
-  hitVFX: {fileID: 0}
-  info: {fileID: 717080525}
+  hpPickupPrefab: {fileID: 7272605533279926371, guid: 562429ecab5284d4a99f60dc9b7a4bd0,
+    type: 3}
+  moneyPickupPrefab: {fileID: 2905069486923240943, guid: 8f327a1221159574bab354d9fd098fd6,
+    type: 3}
 --- !u!54 &1934645573
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22319,10 +22382,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93a3ac795077de4d873fa42f883e284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  info: {fileID: 1201568611}
   hpMax: 12
   hpCurrent: 0
-  hitVFX: {fileID: 0}
-  info: {fileID: 1201568611}
+  hpPickupPrefab: {fileID: 7272605533279926371, guid: 562429ecab5284d4a99f60dc9b7a4bd0,
+    type: 3}
+  moneyPickupPrefab: {fileID: 2905069486923240943, guid: 8f327a1221159574bab354d9fd098fd6,
+    type: 3}
 --- !u!1 &2037408613
 GameObject:
   m_ObjectHideFlags: 0
@@ -22679,10 +22745,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93a3ac795077de4d873fa42f883e284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  info: {fileID: 1070186697}
   hpMax: 12
   hpCurrent: 0
-  hitVFX: {fileID: 0}
-  info: {fileID: 1070186697}
+  hpPickupPrefab: {fileID: 7272605533279926371, guid: 562429ecab5284d4a99f60dc9b7a4bd0,
+    type: 3}
+  moneyPickupPrefab: {fileID: 2905069486923240943, guid: 8f327a1221159574bab354d9fd098fd6,
+    type: 3}
 --- !u!54 &2056465964
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23404,7 +23473,7 @@ PrefabInstance:
     - target: {fileID: 395373245657923869, guid: 2182b8acdec56ed4190f42c5843ebfba,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.002
+      value: 1.2189999
       objectReference: {fileID: 0}
     - target: {fileID: 395373245657923869, guid: 2182b8acdec56ed4190f42c5843ebfba,
         type: 3}
@@ -23503,7 +23572,7 @@ PrefabInstance:
     - target: {fileID: 1507438268262631207, guid: 9e6648224fca2e24d8016a0285cc2cf1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.96700007
+      value: 1.184
       objectReference: {fileID: 0}
     - target: {fileID: 1507438268262631207, guid: 9e6648224fca2e24d8016a0285cc2cf1,
         type: 3}
@@ -23661,7 +23730,7 @@ PrefabInstance:
     - target: {fileID: 2139819342385097334, guid: d69aa0f9cf164a04c8f1eb14ff736755,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.019
+      value: 1.2360001
       objectReference: {fileID: 0}
     - target: {fileID: 2139819342385097334, guid: d69aa0f9cf164a04c8f1eb14ff736755,
         type: 3}
@@ -23804,7 +23873,7 @@ PrefabInstance:
     - target: {fileID: 3366505252209290550, guid: c5e7bf86112b15045859ee49b91135a3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.233
+      value: -0.016000047
       objectReference: {fileID: 0}
     - target: {fileID: 3366505252209290550, guid: c5e7bf86112b15045859ee49b91135a3,
         type: 3}
@@ -23868,7 +23937,7 @@ PrefabInstance:
     - target: {fileID: 6253465776632920206, guid: d1fd048a12b637e4b87dcb679668d203,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.0029999
+      value: 1.2199998
       objectReference: {fileID: 0}
     - target: {fileID: 6253465776632920206, guid: d1fd048a12b637e4b87dcb679668d203,
         type: 3}
