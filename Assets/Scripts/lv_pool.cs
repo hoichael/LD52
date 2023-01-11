@@ -83,6 +83,7 @@ public enum PoolType
     en_walker,
     en_giant,
     vfx_blood,
+    vfx_muzzleflash
 }
 
 [System.Serializable]
