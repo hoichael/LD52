@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class nv_spawner : MonoBehaviour
 {
+    [SerializeField] lv_pool pool;
     [SerializeField] List<Transform> spawnPoints;
     [SerializeField] float spawnInterval;
     [SerializeField] Vector2 baseRangeSpawnAmountPerPoint;
@@ -48,7 +49,9 @@ public class nv_spawner : MonoBehaviour
 
             for(int i = 0; i < spawnAmount; i++)
             {
-                Instantiate(walkerPrefab, spawnPoint.position, Quaternion.identity);
+                //Instantiate(walkerPrefab, spawnPoint.position, Quaternion.identity);
+
+                pool.Dispatch(PoolType.en_walker, spawnPoint.position);
                 currentEnemiesAmount++;
             }
 
@@ -57,7 +60,8 @@ public class nv_spawner : MonoBehaviour
             {
                 //int randomIDX = Random.Range(0, specialEntitiesPrefabs.Count);
 
-                Instantiate(giantPrefab, spawnPoint.position + Vector3.up * 8, Quaternion.identity);
+                //Instantiate(giantPrefab, spawnPoint.position + Vector3.up * 8, Quaternion.identity);
+                pool.Dispatch(PoolType.en_giant, spawnPoint.position + Vector3.up * 8);
             }
         }
     }

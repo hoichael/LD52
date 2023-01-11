@@ -248,6 +248,7 @@ MonoBehaviour:
   moneyPickupPrefab: {fileID: 2905069486923240943, guid: 8f327a1221159574bab354d9fd098fd6,
     type: 3}
   dontApplyHitStun: 1
+  isGiant: 1
 --- !u!1 &3449602196130080069
 GameObject:
   m_ObjectHideFlags: 0

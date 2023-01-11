@@ -12,7 +12,12 @@ public class en_brain : MonoBehaviour
     [SerializeField]
     private en_state_base initialState;
 
-    protected virtual void Start()
+    protected virtual void OnEnable()
+    {
+        Init();
+    }
+
+    protected virtual void Init()
     {
         currentState = initialState;
         currentStateID = initialState.stateID;

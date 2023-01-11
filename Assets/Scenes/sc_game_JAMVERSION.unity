@@ -2415,67 +2415,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 286356799}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &306989385
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 306989386}
-  - component: {fileID: 306989387}
-  m_Layer: 0
-  m_Name: Pool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &306989386
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 306989385}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 748281468}
-  m_Father: {fileID: 1529696307}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &306989387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 306989385}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55ae27fa74ae362439482f8c509ae1d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolInfoList:
-  - key: 0
-    prefab: {fileID: 3319311974592477194, guid: 0cd5e1a1eabbe8d4e8b5c0f7d6256367,
-      type: 3}
-    amount: 250
-    name: en_walker
-  - key: 1
-    prefab: {fileID: 3319311974592477194, guid: e87fc4618d78e4a49a9f1b9513e6870e,
-      type: 3}
-    amount: 50
-    name: en_giant
-  - key: 2
-    prefab: {fileID: 640062925990513703, guid: 1a76ac217d24e7548b05a13b26ef43bb, type: 3}
-    amount: 50
-    name: vfx_blood
-  outerContainer: {fileID: 748281468}
 --- !u!1 &308359051
 GameObject:
   m_ObjectHideFlags: 0
@@ -5687,7 +5626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settings: {fileID: 11400000, guid: 73ed2eff0d4def049a5c69578dc8a7a8, type: 2}
-  harvestTimerTime: 1
+  harvestTimerTime: 31.5
   uiManager: {fileID: 375088054}
   monitorManager: {fileID: 2038261766}
   officeCollapser: {fileID: 1436945171}
@@ -7708,37 +7647,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 718002987}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &748281467
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 748281468}
-  m_Layer: 0
-  m_Name: Pool Container
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &748281468
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 748281467}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 306989386}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &757362483
 GameObject:
   m_ObjectHideFlags: 0
@@ -9473,7 +9381,6 @@ MonoBehaviour:
   ID: rifle
   bloodVFX: {fileID: 640062925990513703, guid: 1a76ac217d24e7548b05a13b26ef43bb, type: 3}
   audioSource: {fileID: 46302435}
-  pool: {fileID: 306989387}
 --- !u!1001 &948396432
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12829,7 +12736,6 @@ MonoBehaviour:
   plHealth: {fileID: 1778627425}
   plTrans: {fileID: 6773397}
   gameManager: {fileID: 530299658}
-  pool: {fileID: 306989387}
 --- !u!1001 &1394003147
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14250,7 +14156,6 @@ Transform:
   - {fileID: 375088053}
   - {fileID: 1436945170}
   - {fileID: 1902954210}
-  - {fileID: 306989386}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16850,7 +16755,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ce305b4c77e1464bbfe172489be5d09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pool: {fileID: 306989387}
   spawnPoints:
   - {fileID: 1323142955}
   - {fileID: 1477121301}

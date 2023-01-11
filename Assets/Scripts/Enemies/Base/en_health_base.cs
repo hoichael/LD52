@@ -12,7 +12,12 @@ public class en_health_base : MonoBehaviour
 
     [SerializeField] Rigidbody hpPickupPrefab, moneyPickupPrefab; //rb type because still instantiates full prefab but doesnt require getcomponent call to get rb for drop impulse force
 
-    protected virtual void Start()
+    private void OnEnable()
+    {
+        Reset();
+    }
+
+    protected virtual void Reset()
     {
         hpCurrent = hpMax;
     }

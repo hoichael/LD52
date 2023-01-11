@@ -6,6 +6,7 @@ public class pl_wep_rifle : pl_wep_base
 {
     [SerializeField] GameObject bloodVFX;
     [SerializeField] AudioSource audioSource;
+    [SerializeField] lv_pool pool;
 
     protected override void Shoot()
     {
@@ -18,7 +19,8 @@ public class pl_wep_rifle : pl_wep_base
         {
             print("HIT ENEMY with weapon of ID '" + ID + "'");
             hit.transform.GetComponent<en_health_base>().HandleDamage(dmgInfo);
-            Instantiate(bloodVFX, hit.point, Quaternion.identity);
+            //Instantiate(bloodVFX, hit.point, Quaternion.identity);
+            pool.Dispatch(PoolType.vfx_blood, hit.point);
         }
     }
 }
