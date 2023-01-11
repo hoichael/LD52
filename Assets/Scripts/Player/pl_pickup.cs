@@ -11,11 +11,21 @@ public class pl_pickup : MonoBehaviour
 
     [SerializeField] TextMeshPro moneyTextEl;
 
+    // DEV STUFF
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.M))
+        {
+            state.money = 9999999;
+            moneyTextEl.text = "CASH: " + state.money;
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Money"))
         {
-            print("moneeee");
+            //print("moneeee");
             Destroy(other.gameObject);
             state.money += pickupAmounttMoney;
             moneyTextEl.text = "CASH: " + state.money;
@@ -23,7 +33,7 @@ public class pl_pickup : MonoBehaviour
         }
         else if(other.CompareTag("Health"))
         {
-            print("hppp");
+            //print("hppp");
             Destroy(other.gameObject);
             healthManager.HandleHeal(pickupAmountHealth);
         }

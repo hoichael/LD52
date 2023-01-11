@@ -241,12 +241,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   info: {fileID: 3297844883612648194}
-  hpMax: 12
+  hpMax: 8
   hpCurrent: 0
   hpPickupPrefab: {fileID: 7272605533279926371, guid: 562429ecab5284d4a99f60dc9b7a4bd0,
     type: 3}
   moneyPickupPrefab: {fileID: 2905069486923240943, guid: 8f327a1221159574bab354d9fd098fd6,
     type: 3}
+  dontApplyHitStun: 0
+  isGiant: 0
 --- !u!1 &3449602196130080069
 GameObject:
   m_ObjectHideFlags: 0

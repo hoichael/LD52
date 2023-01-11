@@ -51,6 +51,15 @@ public class GameManager : MonoBehaviour
         {
             IncrementSens(-1);
         }
+
+        // DEV STUFF
+        if(Input.GetKeyDown(KeyCode.H))
+        {
+            StopAllCoroutines();
+            HarvestTime();
+            enemiesContainer.SetActive(true);
+            weaponsContainer.SetActive(true);
+        }
     }
 
     private void IncrementSens(int mult)

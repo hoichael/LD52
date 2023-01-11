@@ -11,6 +11,8 @@ public class pl_wep_rifle : pl_wep_base
     [SerializeField] Light muzzleFlashLight;
     [SerializeField] float muzzleFlashDuration;
 
+    [SerializeField] ParticleSystem muzzleFlashParticles;
+
     [SerializeField] Transform firePoint;
 
     private void Start()
@@ -25,7 +27,8 @@ public class pl_wep_rifle : pl_wep_base
         audioSource.Play();
         StartCoroutine(HandleMuzzleLight());
 
-        pool.Dispatch(PoolType.vfx_muzzleflash, firePoint.position);
+        //pool.Dispatch(PoolType.vfx_muzzleflash, firePoint.position);
+        muzzleFlashParticles.Play();
 
         RaycastHit hit;
         if (Physics.Raycast(camHolderTrans.position, camHolderTrans.forward, out hit, 100, enemyLayerMask))

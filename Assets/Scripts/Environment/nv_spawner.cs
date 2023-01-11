@@ -42,8 +42,14 @@ public class nv_spawner : MonoBehaviour
 
         foreach (Transform spawnPoint in spawnPoints)
         {
-            int spawnAmount = Random.Range((int)baseRangeSpawnAmountPerPoint.x, (int)baseRangeSpawnAmountPerPoint.y);
-            spawnAmount = Mathf.RoundToInt(spawnAmount * (1 + (currentSpawnIteraion * 0.2f)));
+            //int spawnAmount = Random.Range((int)baseRangeSpawnAmountPerPoint.x, (int)baseRangeSpawnAmountPerPoint.y);
+            //spawnAmount = Mathf.RoundToInt(spawnAmount * (1 + (currentSpawnIteraion * 0.2f)));
+
+            int spawnAmount = Mathf.RoundToInt(Random.Range(baseRangeSpawnAmountPerPoint.x, baseRangeSpawnAmountPerPoint.y));
+            if(spawnAmount != 0)
+            {
+                spawnAmount = Mathf.FloorToInt(spawnAmount * (1 + (currentSpawnIteraion * 0.2f)));
+            }
 
             print("SPAWN AMOUNT: " + spawnAmount);
 
@@ -56,7 +62,7 @@ public class nv_spawner : MonoBehaviour
             }
 
             float randomNum = Random.Range(0, 1f);
-            if (randomNum < 0.065f)
+            if (randomNum < 0.012f)
             {
                 //int randomIDX = Random.Range(0, specialEntitiesPrefabs.Count);
 
