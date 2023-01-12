@@ -14,6 +14,7 @@ public class pl_wep_rifle : pl_wep_base
     [SerializeField] ParticleSystem muzzleFlashParticles;
 
     [SerializeField] Transform firePoint;
+    [SerializeField] pl_wep_tracers_pool tracersPool;
 
     private void Start()
     {
@@ -37,6 +38,12 @@ public class pl_wep_rifle : pl_wep_base
             hit.transform.GetComponent<en_health_base>().HandleDamage(dmgInfo);
             //Instantiate(bloodVFX, hit.point, Quaternion.identity);
             pool.Dispatch(PoolType.vfx_blood, hit.point);
+
+            tracersPool.Dispatch(firePoint.position, hit.point);
+        }
+        else
+        {
+            tracersPool.Dispatch(firePoint.position, camHolderTrans.position + camHolderTrans.forward * 65);
         }
     }
 

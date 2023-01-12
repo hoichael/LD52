@@ -59,6 +59,11 @@ public class GameManager : MonoBehaviour
             HarvestTime();
             enemiesContainer.SetActive(true);
             weaponsContainer.SetActive(true);
+
+            if(!musicSource.isPlaying)
+            {
+                musicSource.Play();
+            }
         }
     }
 
