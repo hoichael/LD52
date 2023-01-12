@@ -9,6 +9,8 @@ public class pl_wep_tracer : MonoBehaviour
 
     [SerializeField] AnimationCurve fadeCurve;
 
+    [SerializeField] float startWidth;
+
     float currentFadeFactor;
 
     [SerializeField] float fadeSpeed;
@@ -58,7 +60,7 @@ public class pl_wep_tracer : MonoBehaviour
         //    );
 
         line.startWidth = line.endWidth = Mathf.Lerp(
-            0.4f,
+            startWidth,
             0f,
             fadeCurve.Evaluate(currentFadeFactor)
             );

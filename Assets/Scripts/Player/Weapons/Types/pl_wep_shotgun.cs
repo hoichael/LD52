@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class pl_wep_rifle : pl_wep_base
+public class pl_wep_shotgun : pl_wep_base
 {
     [SerializeField] GameObject bloodVFX;
     [SerializeField] AudioSource audioSource;
     [SerializeField] lv_pool pool;
+
+    [SerializeField] int bulletAmount;
+    [SerializeField] float bulletSpreadRangeHalf;
 
     [SerializeField] Light muzzleFlashLight;
     [SerializeField] float muzzleFlashDuration;
@@ -24,13 +27,25 @@ public class pl_wep_rifle : pl_wep_base
     protected override void Shoot()
     {
         base.Shoot();
-
         audioSource.Play();
-        muzzleFlashParticles.Play();
         StartCoroutine(HandleMuzzleLight());
 
+        muzzleFlashParticles.Play();
+
+        for (int i = 0; i < bulletAmount; i++)
+        {
+            HandleRay();
+        }
+
+    }
+
+    private void HandleRay()
+    {
         RaycastHit hit;
-        if (Physics.Raycast(camHolderTrans.position, camHolderTrans.forward, out hit, 100, enemyLayerMask))
+
+        Vector3 bulletDir = GetRandomBulletDir();
+
+        if (Physics.Raycast(camHolderTrans.position, bulletDir, out hit, 100, enemyLayerMask))
         {
             //print("HIT ENEMY with weapon of ID '" + ID + "'");
 
@@ -40,8 +55,19 @@ public class pl_wep_rifle : pl_wep_base
         }
         else
         {
-            tracersPool.Dispatch(firePoint.position, camHolderTrans.position + camHolderTrans.forward * 65, pl_wep_tracertype.Rifle);
+            tracersPool.Dispatch(firePoint.position, camHolderTrans.position + bulletDir * 65, pl_wep_tracertype.Shotgun);
         }
+    }
+
+    private Vector3 GetRandomBulletDir()
+    {
+        Vector3 offset = new Vector3(
+            Random.Range(-bulletSpreadRangeHalf, bulletSpreadRangeHalf),
+            Random.Range(-bulletSpreadRangeHalf, bulletSpreadRangeHalf),
+            Random.Range(-bulletSpreadRangeHalf, bulletSpreadRangeHalf)
+            );
+
+        return camHolderTrans.forward + offset;
     }
 
     private IEnumerator HandleMuzzleLight()

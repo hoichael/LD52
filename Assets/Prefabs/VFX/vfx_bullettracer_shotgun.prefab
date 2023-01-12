@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7236337304477041352}
   - component: {fileID: 2294330190097873656}
   m_Layer: 0
-  m_Name: vfx_bullettracer
+  m_Name: vfx_bullettracer_shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,7 +105,7 @@ LineRenderer:
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 22745
+      ctime0: 18504
       ctime1: 65535
       ctime2: 0
       ctime3: 0
@@ -113,7 +113,7 @@ LineRenderer:
       ctime5: 0
       ctime6: 0
       ctime7: 0
-      atime0: 11758
+      atime0: 1542
       atime1: 65535
       atime2: 0
       atime3: 0
@@ -171,4 +171,5 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  fadeSpeed: 5.4
+  startWidth: 0.9
+  fadeSpeed: 3.5
