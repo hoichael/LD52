@@ -4136,14 +4136,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e54f06d7547ccf4c8d1e29456d9a527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  refs: {fileID: 2006918371}
   dmgInfo: {fileID: 341212184}
-  enemyLayerMask:
-    serializedVersion: 2
-    m_Bits: 8192
-  camHolderTrans: {fileID: 1466185155}
   dropPrefab: {fileID: 9090698853622565526, guid: 3d932583b17ff48428ff21bd6beda815,
     type: 3}
-  fireRate: 0.6
+  firePoint: {fileID: 1359250368}
+  audioSource: {fileID: 46302435}
   recoilTargetPos: {x: 0.36, y: -0.52, z: 0.1}
   recoilAnimSpeed: 4.7
   recoilAnimCurve:
@@ -4179,6 +4177,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  fireRate: 0.6
   ikTargetHolderLeft: {fileID: 2145499902}
   ikTargetHolderRight: {fileID: 757362484}
   ID: DEV
@@ -4713,7 +4712,7 @@ BoxCollider:
   m_GameObject: {fileID: 393394010}
   m_Material: {fileID: 13400000, guid: f53965262ca16634f9a16ce7f70386be, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -8860,14 +8859,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5391f072763a99b45a6cceaf9a73c96c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  refs: {fileID: 2006918371}
   dmgInfo: {fileID: 628840974}
-  enemyLayerMask:
-    serializedVersion: 2
-    m_Bits: 8192
-  camHolderTrans: {fileID: 1466185155}
   dropPrefab: {fileID: 9090698853622565526, guid: f10bbf4a1dbda9447a116683164917c3,
     type: 3}
-  fireRate: 0.72
+  firePoint: {fileID: 2138013335}
+  audioSource: {fileID: 46302435}
   recoilTargetPos: {x: 0.36, y: -0.52, z: 0.6}
   recoilAnimSpeed: 3.7
   recoilAnimCurve:
@@ -8903,19 +8900,15 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  fireRate: 0.72
   ikTargetHolderLeft: {fileID: 252116825}
   ikTargetHolderRight: {fileID: 186231652}
   ID: shotgun
-  bloodVFX: {fileID: 640062925990513703, guid: 1a76ac217d24e7548b05a13b26ef43bb, type: 3}
-  audioSource: {fileID: 46302435}
-  pool: {fileID: 306989387}
+  muzzleFlashParticles: {fileID: 17093217}
+  muzzleFlashLight: {fileID: 100586788}
   bulletAmount: 12
   bulletSpreadRangeHalf: 0.085
-  muzzleFlashLight: {fileID: 100586788}
   muzzleFlashDuration: 0.13
-  muzzleFlashParticles: {fileID: 17093217}
-  firePoint: {fileID: 2138013335}
-  tracersPool: {fileID: 2006918370}
 --- !u!114 &628840974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11932,14 +11925,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ce2559380632446a65c785b044306f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  refs: {fileID: 2006918371}
   dmgInfo: {fileID: 945168586}
-  enemyLayerMask:
-    serializedVersion: 2
-    m_Bits: 8192
-  camHolderTrans: {fileID: 1466185155}
   dropPrefab: {fileID: 9090698853622565526, guid: aac36f844b36dcd43a77d5af30fbc0d2,
     type: 3}
-  fireRate: 0.16
+  firePoint: {fileID: 727199346}
+  audioSource: {fileID: 46302435}
   recoilTargetPos: {x: 0.36, y: -0.52, z: -0.12}
   recoilAnimSpeed: 6.4
   recoilAnimCurve:
@@ -11975,17 +11966,13 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  fireRate: 0.16
   ikTargetHolderLeft: {fileID: 622347440}
   ikTargetHolderRight: {fileID: 1028625085}
   ID: rifle
-  bloodVFX: {fileID: 640062925990513703, guid: 1a76ac217d24e7548b05a13b26ef43bb, type: 3}
-  audioSource: {fileID: 46302435}
-  pool: {fileID: 306989387}
   muzzleFlashLight: {fileID: 1016746182}
-  muzzleFlashDuration: 0.1
   muzzleFlashParticles: {fileID: 337614226}
-  firePoint: {fileID: 727199346}
-  tracersPool: {fileID: 2006918370}
+  muzzleFlashDuration: 0.1
 --- !u!1001 &948396432
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16508,6 +16495,7 @@ MonoBehaviour:
   - {fileID: 1577716620}
   - {fileID: 1640526602}
   ceiling: {fileID: 518240690}
+  floorCol: {fileID: 393394012}
   collapseSpeed: 0.18
   ceilingTargetPos: {x: 0, y: 16, z: 0}
 --- !u!1 &1437155497
@@ -16832,7 +16820,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466185154}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.9, z: 0}
+  m_LocalPosition: {x: 0, y: 0.92, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -21583,6 +21571,7 @@ GameObject:
   - component: {fileID: 2006918368}
   - component: {fileID: 2006918369}
   - component: {fileID: 2006918370}
+  - component: {fileID: 2006918371}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -21683,6 +21672,24 @@ MonoBehaviour:
   - {fileID: 2019498101}
   - {fileID: 261540435}
   - {fileID: 1968276900}
+--- !u!114 &2006918371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006918367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b97f1bfbc8aa242469f67beb41b0ea4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyLayerMask:
+    serializedVersion: 2
+    m_Bits: 8192
+  camHolderTrans: {fileID: 1466185155}
+  generalPool: {fileID: 306989387}
+  tracerPool: {fileID: 2006918370}
 --- !u!4 &2009952784 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8780220586858543353, guid: 1ec8de62c928e3740a3b6ee939a5ddcd,

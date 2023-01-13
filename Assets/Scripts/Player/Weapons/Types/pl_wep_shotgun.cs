@@ -1,23 +1,16 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class pl_wep_shotgun : pl_wep_base
 {
-    [SerializeField] GameObject bloodVFX;
-    [SerializeField] AudioSource audioSource;
-    [SerializeField] lv_pool pool;
+    [Header("SHOTGUN --- REFS")]
+    [SerializeField] ParticleSystem muzzleFlashParticles;
+    [SerializeField] Light muzzleFlashLight;
 
+    [Header("SHOTGUN --- VALUES")]
     [SerializeField] int bulletAmount;
     [SerializeField] float bulletSpreadRangeHalf;
-
-    [SerializeField] Light muzzleFlashLight;
     [SerializeField] float muzzleFlashDuration;
-
-    [SerializeField] ParticleSystem muzzleFlashParticles;
-
-    [SerializeField] Transform firePoint;
-    [SerializeField] pl_wep_tracers_pool tracersPool;
 
     private void Start()
     {
@@ -45,17 +38,17 @@ public class pl_wep_shotgun : pl_wep_base
 
         Vector3 bulletDir = GetRandomBulletDir();
 
-        if (Physics.Raycast(camHolderTrans.position, bulletDir, out hit, 100, enemyLayerMask))
+        if (Physics.Raycast(refs.camHolderTrans.position, bulletDir, out hit, 100, refs.enemyLayerMask))
         {
             //print("HIT ENEMY with weapon of ID '" + ID + "'");
 
             hit.transform.GetComponent<en_health_base>().HandleDamage(dmgInfo);
-            pool.Dispatch(PoolType.vfx_blood, hit.point);
-            tracersPool.Dispatch(firePoint.position, hit.point, pl_wep_tracertype.Rifle);
+            refs.generalPool.Dispatch(PoolType.vfx_blood, hit.point);
+            refs.tracerPool.Dispatch(firePoint.position, hit.point, pl_wep_tracertype.Rifle);
         }
         else
         {
-            tracersPool.Dispatch(firePoint.position, camHolderTrans.position + bulletDir * 65, pl_wep_tracertype.Shotgun);
+            refs.tracerPool.Dispatch(firePoint.position, refs.camHolderTrans.position + bulletDir * 65, pl_wep_tracertype.Shotgun);
         }
     }
 
@@ -67,7 +60,7 @@ public class pl_wep_shotgun : pl_wep_base
             Random.Range(-bulletSpreadRangeHalf, bulletSpreadRangeHalf)
             );
 
-        return camHolderTrans.forward + offset;
+        return refs.camHolderTrans.forward + offset;
     }
 
     private IEnumerator HandleMuzzleLight()

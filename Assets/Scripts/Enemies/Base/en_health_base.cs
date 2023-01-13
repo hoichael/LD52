@@ -25,14 +25,14 @@ public class en_health_base : MonoBehaviour
     public virtual void HandleDamage(dmg_info dmgInfo)
     {
         hpCurrent -= dmgInfo.dmgAmount;
-        print("received damage (" + dmgInfo.dmgAmount + ") remaining hp: " + hpCurrent);
+        //print("received damage (" + dmgInfo.dmgAmount + ") remaining hp: " + hpCurrent);
 
         if (hpCurrent <= 0) HandleDeath(dmgInfo);
     }
 
     protected virtual void HandleDeath(dmg_info dmgInfo)
     {
-        print("ded lel");
+        //print("ded lel");
         HandleDrop();
         g_refs.Instance.gameManager.UpdateScore(100);
     }

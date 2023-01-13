@@ -1,20 +1,14 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class pl_wep_rifle : pl_wep_base
 {
-    [SerializeField] GameObject bloodVFX;
-    [SerializeField] AudioSource audioSource;
-    [SerializeField] lv_pool pool;
-
+    [Header("RIFLE --- REFS")]
     [SerializeField] Light muzzleFlashLight;
-    [SerializeField] float muzzleFlashDuration;
-
     [SerializeField] ParticleSystem muzzleFlashParticles;
-
-    [SerializeField] Transform firePoint;
-    [SerializeField] pl_wep_tracers_pool tracersPool;
+    
+    [Header("RIFLE --- VALUES")]
+    [SerializeField] float muzzleFlashDuration;
 
     private void Start()
     {
@@ -30,17 +24,17 @@ public class pl_wep_rifle : pl_wep_base
         StartCoroutine(HandleMuzzleLight());
 
         RaycastHit hit;
-        if (Physics.Raycast(camHolderTrans.position, camHolderTrans.forward, out hit, 100, enemyLayerMask))
+        if (Physics.Raycast(refs.camHolderTrans.position, refs.camHolderTrans.forward, out hit, 100, refs.enemyLayerMask))
         {
             //print("HIT ENEMY with weapon of ID '" + ID + "'");
 
             hit.transform.GetComponent<en_health_base>().HandleDamage(dmgInfo);
-            pool.Dispatch(PoolType.vfx_blood, hit.point);
-            tracersPool.Dispatch(firePoint.position, hit.point, pl_wep_tracertype.Rifle);
+            refs.generalPool.Dispatch(PoolType.vfx_blood, hit.point);
+            refs.tracerPool.Dispatch(firePoint.position, hit.point, pl_wep_tracertype.Rifle);
         }
         else
         {
-            tracersPool.Dispatch(firePoint.position, camHolderTrans.position + camHolderTrans.forward * 65, pl_wep_tracertype.Rifle);
+            refs.tracerPool.Dispatch(firePoint.position, refs.camHolderTrans.position + refs.camHolderTrans.forward * 65, pl_wep_tracertype.Rifle);
         }
     }
 

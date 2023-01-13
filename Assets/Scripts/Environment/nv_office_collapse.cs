@@ -6,6 +6,7 @@ public class nv_office_collapse : MonoBehaviour
 {
     [SerializeField] Transform[] wallArr = new Transform[4];
     [SerializeField] Transform ceiling;
+    [SerializeField] BoxCollider floorCol;
 
     [SerializeField] float collapseSpeed;
     float currentCollapseFactor = 1;
@@ -18,6 +19,8 @@ public class nv_office_collapse : MonoBehaviour
         currentCollapseFactor = 0;
         ceilingStartPos = ceiling.localPosition;
         ceiling.GetComponent<BoxCollider>().enabled = false;
+
+        floorCol.enabled = false;
     }
 
     private void Update()

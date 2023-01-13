@@ -10,9 +10,9 @@ public class wep_DEV : pl_wep_base
     {
         base.Shoot();
         RaycastHit hit;
-        if (Physics.Raycast(camHolderTrans.position, camHolderTrans.forward, out hit, 100, enemyLayerMask))
+        if (Physics.Raycast(refs.camHolderTrans.position, refs.camHolderTrans.forward, out hit, 100, refs.enemyLayerMask))
         {
-            print("HIT ENEMY with weapon of ID '" + ID + "'");
+            //print("HIT ENEMY with weapon of ID '" + ID + "'");
             hit.transform.GetComponent<en_health_base>().HandleDamage(dmgInfo);
             Instantiate(bloodVFX, hit.point, Quaternion.identity);
         }
