@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class pl_wep_launcher : pl_wep_base
 {
-    //[Header("SHOTGUN --- REFS")]
+    //[Header("LAUNCHER --- REFS")]
 
 
     protected override void Shoot()
@@ -16,7 +16,6 @@ public class pl_wep_launcher : pl_wep_base
         //muzzleFlashParticles.Play();
 
         refs.generalPool.Dispatch(PoolType.proj_launcher, firePoint.position, Quaternion.Euler(refs.camHolderTrans.rotation.eulerAngles));
-        //var crash = GetComponent<AudioSource>();
-        //crash.Play();
+        refs.generalPool.Dispatch(PoolType.vfx_launcher_air, firePoint.position, Quaternion.Euler(refs.camHolderTrans.rotation.eulerAngles));
     }
 }

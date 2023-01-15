@@ -85,7 +85,9 @@ public enum PoolType
     en_giant,
     vfx_blood,
     vfx_muzzleflash,
-    proj_launcher
+    proj_launcher,
+    launcher_explosion,
+    vfx_launcher_air
 }
 
 [System.Serializable]

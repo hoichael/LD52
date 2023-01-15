@@ -51,6 +51,8 @@ public class pl_proj_launcher : MonoBehaviour
 
     private void Explode()
     {
+        g_refs.Instance.pool.Dispatch(PoolType.launcher_explosion, transform.position, Quaternion.identity);
+
         StopAllCoroutines();
         rb.rotation = Quaternion.Euler(Vector3.zero);
         rb.velocity = Vector3.zero;
