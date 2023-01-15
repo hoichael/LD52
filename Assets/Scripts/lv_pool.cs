@@ -39,7 +39,7 @@ public class lv_pool : MonoBehaviour
         }
     }
 
-    public void Dispatch(PoolType key, Vector3 pos)
+    public void Dispatch(PoolType key, Vector3 pos, Quaternion rot)
     {
         lv_pool_entry poolEntry = poolDict[key];
 
@@ -50,6 +50,7 @@ public class lv_pool : MonoBehaviour
         objToDispatch.transform.SetParent(null);
 
         objToDispatch.transform.localPosition = pos;
+        objToDispatch.transform.localRotation = rot;
         objToDispatch.SetActive(true);
         IncrementIDX(poolEntry);
     }
@@ -83,7 +84,8 @@ public enum PoolType
     en_walker,
     en_giant,
     vfx_blood,
-    vfx_muzzleflash
+    vfx_muzzleflash,
+    proj_launcher
 }
 
 [System.Serializable]

@@ -29,7 +29,6 @@ public class pl_wep_shotgun : pl_wep_base
         {
             HandleRay();
         }
-
     }
 
     private void HandleRay()
@@ -43,7 +42,7 @@ public class pl_wep_shotgun : pl_wep_base
             //print("HIT ENEMY with weapon of ID '" + ID + "'");
 
             hit.transform.GetComponent<en_health_base>().HandleDamage(dmgInfo);
-            refs.generalPool.Dispatch(PoolType.vfx_blood, hit.point);
+            refs.generalPool.Dispatch(PoolType.vfx_blood, hit.point, Quaternion.identity);
             refs.tracerPool.Dispatch(firePoint.position, hit.point, pl_wep_tracertype.Rifle);
         }
         else
