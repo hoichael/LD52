@@ -14668,13 +14668,14 @@ GameObject:
   m_Component:
   - component: {fileID: 6537899309766520246}
   - component: {fileID: 6707289100294402632}
+  - component: {fileID: -8961653077944669872}
   m_Layer: 0
   m_Name: pl_launcher_explosion_C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6537899309766520246
 Transform:
   m_ObjectHideFlags: 0
@@ -14705,10 +14706,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particles: {fileID: 2811957473599172322}
   lifeTime: 3
-  colRadius: 3
+  colRadius: 6.5
   enemyMask:
     serializedVersion: 2
     m_Bits: 8192
   playerMask:
     serializedVersion: 2
     m_Bits: 512
+  dmgInfo: {fileID: -8961653077944669872}
+  maxRJCheckDist: 4
+  maxRJkForce: 26
+  minRJForce: 14
+  rjUpwardsForceBase: 0.2
+--- !u!114 &-8961653077944669872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7068975067913653247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bded433264f5284fa894720b600ae2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmgAmount: 15
+  hitPos: {x: 0, y: 0, z: 0}
+  force: 25

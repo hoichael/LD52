@@ -9,6 +9,13 @@ public class pl_proj_launcher_explosion : MonoBehaviour
     [SerializeField] float colRadius;
     [SerializeField] LayerMask enemyMask, playerMask;
 
+    [SerializeField] dmg_info dmgInfo;
+
+    [Header("Rocket Jump")]
+    [SerializeField] float maxRJCheckDist;
+    [SerializeField] float maxRJkForce, minRJForce;
+    [SerializeField] float rjUpwardsForceBase;
+
     private void OnEnable()
     {
         particles.Play();
@@ -29,17 +36,31 @@ public class pl_proj_launcher_explosion : MonoBehaviour
 
     private void HandleHitEnemies(Collider[] hitCols)
     {
-        print("HIT ENEMY AMOUNT: " + hitCols.Length);
+        //print("HIT ENEMY AMOUNT: " + hitCols.Length);
 
         foreach(Collider col in hitCols)
         {
-
+            col.transform.GetComponent<en_health_base>().HandleDamage(dmgInfo);
         }
     }
 
     private void HandleHitPlayer()
     {
-        print("HIT PLAYER");
+        Vector3 camPos = g_refs.Instance.plTrans.position + new Vector3(0, 0.3f, 0);  // kinda scuffed, approximate player cam pos
+
+        float dist = Vector3.Distance(transform.position, camPos);
+        if (dist > maxRJCheckDist) return;
+
+        Vector3 dir = camPos - transform.position;
+
+        float force = Mathf.Lerp(
+            minRJForce,
+            maxRJkForce,
+            maxRJCheckDist / dist
+            );
+
+        g_refs.Instance.plRB.AddForce(dir * force, ForceMode.Impulse);
+        g_refs.Instance.plRB.AddForce(Vector3.up * (rjUpwardsForceBase * force), ForceMode.Impulse);
     }
 
     private IEnumerator HandleLifetime()

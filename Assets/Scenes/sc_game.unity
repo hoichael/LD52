@@ -16639,6 +16639,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plHealth: {fileID: 1778627425}
   plTrans: {fileID: 6773397}
+  plRB: {fileID: 6773398}
   gameManager: {fileID: 530299658}
   pool: {fileID: 306989387}
 --- !u!1001 &1394003147

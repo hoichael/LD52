@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6527209996253167244
 Transform:
   m_ObjectHideFlags: 0
@@ -184,8 +184,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6447170391654773129}
   - component: {fileID: 2468128288045246835}
+  - component: {fileID: 6915435173797346764}
   - component: {fileID: 8321286451484271087}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: en_Giant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,6 +229,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!136 &6915435173797346764
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3319311974592477194}
+  m_Material: {fileID: 13400000, guid: f53965262ca16634f9a16ce7f70386be, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.4
+  m_Height: 3.6
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.8, z: 0}
 --- !u!114 &8321286451484271087
 MonoBehaviour:
   m_ObjectHideFlags: 0
