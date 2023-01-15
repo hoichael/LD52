@@ -29,6 +29,9 @@ public class pl_proj_launcher : MonoBehaviour
 
         gameObject.SetActive(true);
         StartCoroutine(HandleLifetime());
+
+        // hmmmmmm
+        rb.velocity = transform.forward * 9;
     }
 
     private void FixedUpdate()

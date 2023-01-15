@@ -84,6 +84,7 @@ public enum PoolType
     en_walker,
     en_giant,
     vfx_blood,
+    vfx_blood_expl,
     vfx_muzzleflash,
     proj_launcher,
     launcher_explosion,

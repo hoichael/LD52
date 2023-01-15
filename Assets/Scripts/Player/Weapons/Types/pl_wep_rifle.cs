@@ -24,7 +24,7 @@ public class pl_wep_rifle : pl_wep_base
         StartCoroutine(HandleMuzzleLight());
 
         RaycastHit hit;
-        if (Physics.Raycast(refs.camHolderTrans.position, refs.camHolderTrans.forward, out hit, 100, refs.enemyLayerMask))
+        if (Physics.Raycast(refs.camHolderTrans.position, refs.camHolderTrans.forward, out hit, 200, refs.enemyLayerMask))
         {
             //print("HIT ENEMY with weapon of ID '" + ID + "'");
 

@@ -35,6 +35,7 @@ public class en_health_base : MonoBehaviour
         //print("ded lel");
         HandleDrop();
         g_refs.Instance.gameManager.UpdateScore(100);
+        //g_refs.Instance.pool.Dispatch(PoolType.vfx_blood_expl, info.trans.position, Quaternion.identity);
     }
 
     private void HandleDrop()
