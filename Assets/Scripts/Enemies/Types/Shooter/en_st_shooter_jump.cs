@@ -63,8 +63,10 @@ public class en_st_shooter_jump : en_state_base
             groundcheckRadius,
             groundMask))
         {
+            g_refs.Instance.pool.Dispatch(PoolType.vfx_jump_big, groundcheckTrans.position, Quaternion.Euler(new Vector3(-90, 0, 0)));
             info.rb.velocity = Vector3.zero;
             info.rb.drag = groundDrag;
+            info.rb.interpolation = RigidbodyInterpolation.None;
             ChangeState("idle");
         }
     }
@@ -72,13 +74,19 @@ public class en_st_shooter_jump : en_state_base
     private IEnumerator HandleDelay()
     {
         yield return new WaitForSeconds(delayBeforeJump);
-
-        info.rb.drag = airDrag;
-        info.rb.AddForce(Vector3.up * jumpForceUp, ForceMode.Impulse);
-        info.rb.AddForce(info.trans.forward * jumpForceForward, ForceMode.Impulse);
+        ExecuteJump();
 
         yield return new WaitForSeconds(0.3f);
         conductGroundcheck = true;
+    }
+
+    private void ExecuteJump()
+    {
+        g_refs.Instance.pool.Dispatch(PoolType.vfx_jump_small, groundcheckTrans.position, Quaternion.Euler(new Vector3(-90, 0, 0)));
+        info.rb.interpolation = RigidbodyInterpolation.Interpolate; // rb interp for smoother jump. reset to none after landing for performance
+        info.rb.drag = airDrag;
+        info.rb.AddForce(Vector3.up * jumpForceUp, ForceMode.Impulse);
+        info.rb.AddForce(info.trans.forward * jumpForceForward, ForceMode.Impulse);
     }
 
     protected override void OnDisable()

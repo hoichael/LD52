@@ -16,12 +16,13 @@ public class proj_en_shooter : MonoBehaviour
     {
         transform.localScale = new Vector3(startScale, startScale, startScale);
         trail.widthMultiplier = startScale;
+        rb.isKinematic = false;
     }
 
     private void FixedUpdate()
     {
         transform.localScale = Vector3.MoveTowards(transform.localScale, new Vector3(targetScale, targetScale, targetScale), growSpeed);
-        trail.widthMultiplier = Mathf.MoveTowards(trail.widthMultiplier, targetScale, growSpeed);
+        trail.widthMultiplier = Mathf.MoveTowards(trail.widthMultiplier, targetScale, growSpeed * 0.4f);
         rb.velocity = transform.forward * moveSpeed; 
     }
 
@@ -32,6 +33,9 @@ public class proj_en_shooter : MonoBehaviour
             g_refs.Instance.plHealth.HandleDamage(dmgInfo);
         }
 
+        rb.velocity = Vector3.zero;
+        rb.rotation = Quaternion.Euler(Vector3.zero);
+        rb.isKinematic = true;
         g_refs.Instance.pool.Return(PoolType.proj_en_shooter, transform, false);
     }
 }

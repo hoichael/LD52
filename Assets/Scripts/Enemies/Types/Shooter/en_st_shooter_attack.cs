@@ -65,6 +65,7 @@ public class en_st_shooter_attack : en_state_base
     {
         firePointTrans.LookAt(g_refs.Instance.plTrans.position);
         g_refs.Instance.pool.Dispatch(PoolType.proj_en_shooter, firePointTrans.position, firePointTrans.rotation);
+        g_refs.Instance.pool.Dispatch(PoolType.vfx_mflash_en_shooter, firePointTrans.position, firePointTrans.rotation);
     }
     
 

@@ -90,7 +90,10 @@ public enum PoolType
     launcher_explosion,
     vfx_launcher_air,
     en_shooter,
-    proj_en_shooter
+    proj_en_shooter,
+    vfx_mflash_en_shooter,
+    vfx_jump_small,
+    vfx_jump_big
 }
 
 [System.Serializable]

@@ -3754,7 +3754,7 @@ MonoBehaviour:
     amount: 10
     name: launcher_explosion
   - key: 7
-    prefab: {fileID: 2898239044004834018, guid: a1ba5ae307d582f408835523f3138965,
+    prefab: {fileID: 2898239044004834018, guid: 085c088fb6924d14b897dfa70d2a11b0,
       type: 3}
     amount: 10
     name: launcher_air
@@ -3772,6 +3772,21 @@ MonoBehaviour:
       type: 3}
     amount: 32
     name: en_shooter
+  - key: 10
+    prefab: {fileID: 3289451384506961162, guid: 38f1d89dc3c35c445a0122b8f27a32c8,
+      type: 3}
+    amount: 32
+    name: vfx_mflash_en_shooter
+  - key: 12
+    prefab: {fileID: 2898239044004834018, guid: a1ba5ae307d582f408835523f3138965,
+      type: 3}
+    amount: 32
+    name: vfx_jump_big
+  - key: 11
+    prefab: {fileID: 2898239044004834018, guid: b450aff1ecb818842ac2f96064fadda7,
+      type: 3}
+    amount: 32
+    name: vfx_jump_small
   outerContainer: {fileID: 748281468}
 --- !u!1 &308359051
 GameObject:
