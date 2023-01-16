@@ -1,7 +1,8 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class en_st_walker_idle : en_state_base
+public class en_st_shooter_idle : en_state_base
 {
     [SerializeField] float maxChaseDistance, maxAttackDistance;
     Transform playerTrans;
@@ -15,6 +16,7 @@ public class en_st_walker_idle : en_state_base
     protected override void OnEnable()
     {
         base.OnEnable();
+        info.rb.velocity = Vector3.zero;
         info.anim.CrossFade("Idle", 0.3f);
         StartCoroutine(HandleCheckFlag());
     }
@@ -38,12 +40,7 @@ public class en_st_walker_idle : en_state_base
     private IEnumerator HandleCheckFlag()
     {
         conductChecks = false;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.35f);
         conductChecks = true;
     }
-
-    //protected override void OnDisable()
-    //{
-    //    ////////////////base.OnEnable();
-    //}
 }

@@ -19,6 +19,8 @@ public class nv_spawner : MonoBehaviour
 
     int currentSpawnIteraion;
 
+    [SerializeField] bool DEV_DONTSPAWN;
+
     public void OnEnemyDeath() // called from.. gamemanager.. because ... update score. .  yea. . . . .
     {
         currentEnemiesAmount--;
@@ -26,6 +28,8 @@ public class nv_spawner : MonoBehaviour
 
     private void OnEnable() // enabled by GameManager on harvest time
     {
+        if (DEV_DONTSPAWN) return;
+
         currentEnemiesAmount = 30; // roughly amount of enemies in initial spawn container after harvest time
 
         StartCoroutine(SpawnIntervalRoutine());
