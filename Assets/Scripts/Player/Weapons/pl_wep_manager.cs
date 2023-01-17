@@ -11,6 +11,7 @@ public class pl_wep_manager : MonoBehaviour
     [SerializeField] pl_ik_target_pos ikPosHandlerLeft, ikPosHandlerRight;
     [SerializeField] Transform ikTargetHolderDefLeft, ikTargetHolderDefRight;
     [SerializeField] Transform ikTargetLeft, ikTargetRight;
+    [SerializeField] pl_wep_anim wepAnimManager;
 
     private void Start()
     {
@@ -40,6 +41,8 @@ public class pl_wep_manager : MonoBehaviour
         activeWeapon.Equip();
 
         ParentIKTargets();
+
+        wepAnimManager.OnWeaponSwitch(activeWeapon.bobAmpFactor);
     }
 
     private void ParentIKTargets()

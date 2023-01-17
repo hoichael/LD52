@@ -10,6 +10,7 @@ public abstract class pl_wep_base : MonoBehaviour
     [SerializeField] GameObject dropPrefab;
     [SerializeField] protected Transform firePoint;
     [SerializeField] protected AudioSource audioSource;
+    public float bobAmpFactor;
 
     [Header("BASE --- RECOIL")]
     [SerializeField] Vector3 recoilTargetPos;
