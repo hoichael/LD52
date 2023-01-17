@@ -10,10 +10,10 @@ public abstract class pl_wep_base : MonoBehaviour
     [SerializeField] GameObject dropPrefab;
     [SerializeField] protected Transform firePoint;
     [SerializeField] protected AudioSource audioSource;
-    public float bobAmpFactor;
+    public Transform pivotTrans;
 
     [Header("BASE --- RECOIL")]
-    [SerializeField] Vector3 recoilTargetPos;
+    [SerializeField] float recoilPosZ;
     [SerializeField] float recoilAnimSpeed;
     [SerializeField] AnimationCurve recoilAnimCurve;
 
@@ -24,7 +24,9 @@ public abstract class pl_wep_base : MonoBehaviour
     public Transform ikTargetHolderLeft, ikTargetHolderRight;
     public string ID;
     bool canShoot;
-    Vector3 defaultPos;
+    public Vector3 defaultPos;
+    public Vector3 pivotTransDefaultPos;
+    public float animWeightMult; // the lower the value (0-1) the heigher the "weight"
 
     private void Update()
     {
@@ -37,16 +39,17 @@ public abstract class pl_wep_base : MonoBehaviour
         {
             Shoot();
             currentRecoilAnimFactor = 0;
-            transform.localPosition = recoilTargetPos;
+            transform.localPosition = new Vector3(0, 0, recoilPosZ);
             StartCoroutine(HandleFirerate());
         }
     }
 
     public void Equip()
     {
+        transform.localPosition = defaultPos;
         this.gameObject.SetActive(true);
         canShoot = true;
-        defaultPos = transform.localPosition;
+        //defaultPos = transform.localPosition;
         currentRecoilAnimFactor = 1;
     }
 
@@ -57,6 +60,8 @@ public abstract class pl_wep_base : MonoBehaviour
         rb.AddTorque(refs.camHolderTrans.forward, ForceMode.Impulse);
 
         StopAllCoroutines();
+
+        //transform.localPosition = defaultPos;
         this.gameObject.SetActive(false);
     }
 
@@ -67,7 +72,7 @@ public abstract class pl_wep_base : MonoBehaviour
         currentRecoilAnimFactor = Mathf.MoveTowards(currentRecoilAnimFactor, 1, recoilAnimSpeed * Time.deltaTime);
 
         transform.localPosition = Vector3.Lerp(
-            recoilTargetPos,
+            new Vector3(defaultPos.x, defaultPos.y, recoilPosZ),
             defaultPos,
             recoilAnimCurve.Evaluate(currentRecoilAnimFactor)
             );

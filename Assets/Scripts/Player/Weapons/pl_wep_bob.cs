@@ -2,21 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class pl_wep_anim : MonoBehaviour
+public class pl_wep_bob : MonoBehaviour
 {
-    [Header("GENERAL")]
-    [SerializeField] pl_refs refs;
 
-    [Header("BOB")]
+    [SerializeField] pl_refs refs;
     [SerializeField] Transform bobContainer;
     [SerializeField, Range(0, 0.1f)] float baseAmplitude;
     [SerializeField, Range(0, 30f)] float baseFrequency;
     [SerializeField] float bobPlMagThreshold;
     [SerializeField] float bobResetSpeed;
     float currentBobAmplitude;
-
-    [Header("SWAY")]
-    [SerializeField] Transform swayContainer;
 
     public void OnWeaponSwitch(float newWepBobAmpFactor)
     {
