@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] AudioSource mouseSensAudio;
 
+    bool DEV_DONTSPAWN;
+
     private void Start()
     {
         UpdateScore(0);
@@ -52,13 +54,18 @@ public class GameManager : MonoBehaviour
             IncrementSens(-1);
         }
 
+        if(Input.GetKeyDown(KeyCode.N))
+        {
+            DEV_DONTSPAWN = true;
+        }
+
         // DEV STUFF
         if(Input.GetKeyDown(KeyCode.H))
         {
             StopAllCoroutines();
             HarvestTime();
-            enemiesContainer.SetActive(true);
-            weaponsContainer.SetActive(true);
+            //enemiesContainer.SetActive(true);
+            //weaponsContainer.SetActive(true);
 
             if(!musicSource.isPlaying)
             {
@@ -87,7 +94,13 @@ public class GameManager : MonoBehaviour
         uiManager.HandleHarvestTime();
         officeCollapser.HandleHarvestTime();
 
-        enemySpawner.enabled = true;
+        weaponsContainer.SetActive(true);
+
+        if (!DEV_DONTSPAWN)
+        {
+            enemiesContainer.SetActive(true);
+            enemySpawner.enabled = true;
+        }
 
         humanArm.SetActive(false);
         //cornArmsHolder.SetActive(true);
@@ -123,8 +136,8 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(harvestTimerTime);
         HarvestTime();
 
-        yield return new WaitForSeconds(containerEnableDelay);
-        enemiesContainer.SetActive(true);
-        weaponsContainer.SetActive(true);
+        //yield return new WaitForSeconds(containerEnableDelay);
+        //enemiesContainer.SetActive(true);
+        //weaponsContainer.SetActive(true);
     }
 }

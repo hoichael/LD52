@@ -9,10 +9,6 @@ public class nv_spawner : MonoBehaviour
     [SerializeField] float spawnInterval;
     [SerializeField] Vector2 baseRangeSpawnAmountPerPoint;
 
-    [SerializeField] GameObject walkerPrefab;
-    //[SerializeField] List<GameObject> specialEntitiesPrefabs;
-    [SerializeField] GameObject giantPrefab;
-
     [SerializeField] int maxEnemiesAmount;
 
     public int currentEnemiesAmount;
@@ -61,18 +57,34 @@ public class nv_spawner : MonoBehaviour
             {
                 //Instantiate(walkerPrefab, spawnPoint.position, Quaternion.identity);
 
+                float randomNum = Random.Range(0, 1f);
+
+                if(randomNum < 0.005f)
+                {
+                    pool.Dispatch(PoolType.en_giant, spawnPoint.position + Vector3.up * 8, Quaternion.identity);
+                }
+                else if(randomNum < 0.13f)
+                {
+                    pool.Dispatch(PoolType.en_shooter, spawnPoint.position, Quaternion.identity);
+                }
+                else
+                {
+                    pool.Dispatch(PoolType.en_walker, spawnPoint.position, Quaternion.identity);
+                }
+
+
                 pool.Dispatch(PoolType.en_walker, spawnPoint.position, Quaternion.identity);
                 currentEnemiesAmount++;
             }
 
-            float randomNum = Random.Range(0, 1f);
-            if (randomNum < 0.012f)
-            {
-                //int randomIDX = Random.Range(0, specialEntitiesPrefabs.Count);
+            //float randomNum = Random.Range(0, 1f);
+            //if (randomNum < 0.012f)
+            //{
+            //    //int randomIDX = Random.Range(0, specialEntitiesPrefabs.Count);
 
-                //Instantiate(giantPrefab, spawnPoint.position + Vector3.up * 8, Quaternion.identity);
-                pool.Dispatch(PoolType.en_giant, spawnPoint.position + Vector3.up * 8, Quaternion.identity);
-            }
+            //    //Instantiate(giantPrefab, spawnPoint.position + Vector3.up * 8, Quaternion.identity);
+            //    pool.Dispatch(PoolType.en_giant, spawnPoint.position + Vector3.up * 8, Quaternion.identity);
+            //}
         }
     }
     

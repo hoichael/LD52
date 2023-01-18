@@ -10,6 +10,7 @@ public abstract class pl_wep_base : MonoBehaviour
     [SerializeField] GameObject dropPrefab;
     [SerializeField] protected Transform firePoint;
     [SerializeField] protected AudioSource audioSource;
+    [SerializeField] GameObject crosshair;
     public Transform pivotTrans;
 
     [Header("BASE --- RECOIL")]
@@ -47,6 +48,7 @@ public abstract class pl_wep_base : MonoBehaviour
     public void Equip()
     {
         transform.localPosition = defaultPos;
+        crosshair.SetActive(true);
         this.gameObject.SetActive(true);
         canShoot = true;
         //defaultPos = transform.localPosition;
@@ -62,6 +64,7 @@ public abstract class pl_wep_base : MonoBehaviour
         StopAllCoroutines();
 
         //transform.localPosition = defaultPos;
+        crosshair.SetActive(false);
         this.gameObject.SetActive(false);
     }
 
