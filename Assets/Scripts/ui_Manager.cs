@@ -19,6 +19,10 @@ public class ui_Manager : MonoBehaviour
     Vector3 chickenPosStart;
 
 
+    [SerializeField] TextMeshPro waveCounterText, enemyCounterText;
+    [SerializeField] Vector3 waveCounterPosTarget, enemyCounterPosTarget;
+    Vector3 waveCounterPosStart, enemyCounterPosStart;
+
     float currentHTimeTextFactor;
     bool harvestTimeAnim;
 
@@ -29,6 +33,10 @@ public class ui_Manager : MonoBehaviour
         moneyTextPosStart = moneyText.transform.localPosition;
         scoreTextPosStart = moneyText.transform.localPosition;
         chickenPosStart = chicken.localPosition;
+        waveCounterPosStart = waveCounterText.transform.localPosition;
+        enemyCounterPosStart = enemyCounterText.transform.localPosition;
+
+        enemyCounterText.gameObject.SetActive(true);
     }
 
     private void Update()
@@ -72,5 +80,19 @@ public class ui_Manager : MonoBehaviour
             chickenPosTarget,
             currentHTimeTextFactor
             );
+
+        waveCounterText.transform.localPosition = Vector3.Lerp(
+            waveCounterPosStart,
+            waveCounterPosTarget,
+            currentHTimeTextFactor
+            );
+
+        enemyCounterText.transform.localPosition = Vector3.Lerp(
+            enemyCounterPosStart,
+            enemyCounterPosTarget,
+            currentHTimeTextFactor
+            );
+
+        if (currentHTimeTextFactor == 1) harvestTimeAnim = false;
     }
 }

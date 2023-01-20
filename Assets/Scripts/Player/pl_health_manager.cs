@@ -14,7 +14,11 @@ public class pl_health_manager : MonoBehaviour
 
     private void Start()
     {
-        refs.state.hp = refs.settings.maxHP;
+        if(g_refs.Instance.sessionData.currentWaveLooping == -1)
+        {
+            g_refs.Instance.sessionData.playerHP = refs.settings.maxHP;
+        }
+
         UpdateUI();
     }
 
@@ -23,8 +27,10 @@ public class pl_health_manager : MonoBehaviour
         if (dead) return;
 
         print("Damage Taken! (" + dmgInfo.dmgAmount + ")");
-        refs.state.hp -= dmgInfo.dmgAmount;
-        if(refs.state.hp <= 0)
+        //refs.state.hp -= dmgInfo.dmgAmount;
+        g_refs.Instance.sessionData.playerHP -= dmgInfo.dmgAmount;
+        //if(refs.state.hp <= 0)
+        if (g_refs.Instance.sessionData.playerHP <= 0)
         {
             gameManager.HandleDeath();
             dead = true;
@@ -36,12 +42,14 @@ public class pl_health_manager : MonoBehaviour
 
     public void HandleHeal(int healAmount)
     {
-        refs.state.hp = Mathf.Clamp(refs.state.hp + healAmount, 1, refs.settings.maxHP);
+        //refs.state.hp = Mathf.Clamp(refs.state.hp + healAmount, 1, refs.settings.maxHP);
+        g_refs.Instance.sessionData.playerHP = Mathf.Clamp(g_refs.Instance.sessionData.playerHP + healAmount, 1, refs.settings.maxHP);
         UpdateUI();
     }
 
     public void UpdateUI()
     {
-        hpTextElement.text = "HEALTH: " + refs.state.hp + "/" + refs.settings.maxHP;
+        //hpTextElement.text = "HEALTH: " + refs.state.hp + "/" + refs.settings.maxHP;
+        hpTextElement.text = "HEALTH: " + g_refs.Instance.sessionData.playerHP + "/" + refs.settings.maxHP;
     }
 }

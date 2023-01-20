@@ -5,22 +5,23 @@ using TMPro;
 
 public class wv_manager : MonoBehaviour
 {
+    [SerializeField] wv_spawner spawner;
 
     [SerializeField] wv_wave_list[] regularWavesArr;
     [SerializeField] wv_wave_list[] loopingWavesArr;
 
     [SerializeField] TextMeshPro waveCounterText, enemiesCounterText;
 
-    int currentWaveIDXRegular = 0;
-    int currentWaveIDXLooping = -1;
+    // these values now reside in pd_sesion ScriptableObject instance
+    //int currentWaveIDXRegular = 0;
+    //int currentWaveIDXLooping = -1;
+    //int currentWaveCounter = 1; // represents total amount of waves that have passed - does, as opposed to ints above, NOT represent any kind of list index
 
-    int currentWaveCounter = 1; // represents total amount of waves that have passed - does, as opposed to ints above, NOT represent any kind of list index
     int remainingEnemiesCounter;
-
 
     public void InitWave()
     {
-        waveCounterText.text = "WAVE " + currentWaveCounter;
+        waveCounterText.text = "WAVE " + g_refs.Instance.sessionData.currentWaveTotal;
 
         wv_wave waveToInit = GetWaveFromList();
         remainingEnemiesCounter = waveToInit.Init(); // init func starts wave (coroutines, setup, etc...) and returns total enemy amount of wave. kinda fucky but whtv
@@ -32,28 +33,28 @@ public class wv_manager : MonoBehaviour
 
     private wv_wave GetWaveFromList()
     {
-        wv_wave[] possibleWaves = currentWaveIDXLooping < 0 ? regularWavesArr[currentWaveIDXRegular].possibleWaves : loopingWavesArr[currentWaveIDXLooping].possibleWaves;
+        wv_wave[] possibleWaves = g_refs.Instance.sessionData.currentWaveLooping < 0 ? regularWavesArr[g_refs.Instance.sessionData.currentWaveRegular].possibleWaves : loopingWavesArr[g_refs.Instance.sessionData.currentWaveLooping].possibleWaves;
         int randomIDX = Random.Range(0, possibleWaves.Length - 1);
         return possibleWaves[randomIDX];
     }
 
     private void AdvanceWaveIDX()
     {
-        if (currentWaveIDXLooping < 0)
+        if (g_refs.Instance.sessionData.currentWaveLooping < 0)
         {
-            currentWaveIDXRegular++;
-            if (currentWaveIDXRegular == regularWavesArr.Length)
+            g_refs.Instance.sessionData.currentWaveRegular++;
+            if (g_refs.Instance.sessionData.currentWaveRegular == regularWavesArr.Length)
             {
                 //currentWaveLooping = 0;
-                currentWaveIDXLooping = Random.Range(0, loopingWavesArr.Length - 1);
+                g_refs.Instance.sessionData.currentWaveLooping = Random.Range(0, loopingWavesArr.Length - 1);
             }
         }
         else
         {
-            currentWaveIDXLooping++;
-            if (currentWaveIDXLooping == loopingWavesArr.Length)
+            g_refs.Instance.sessionData.currentWaveLooping++;
+            if (g_refs.Instance.sessionData.currentWaveLooping == loopingWavesArr.Length)
             {
-                currentWaveIDXLooping = 0;
+                g_refs.Instance.sessionData.currentWaveLooping = 0;
             }
         }
     }
