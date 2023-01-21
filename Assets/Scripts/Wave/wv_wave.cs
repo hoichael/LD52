@@ -5,13 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "wv_wave_", menuName = "ScriptableObjects/Wave/Wave", order = 0)]
 public class wv_wave : ScriptableObject
 {
-    [SerializeField] wv_subwave[] subwavesArr;
+    public wv_subwave[] subwavesArr;
 
-    public int Init() // returns enemy amount for this wave. kinda fucky but whtv
+    public int AmountOfEnemies()
     {
-
-
-
         return GetTotalEnemyAmount();
     }
 
@@ -21,7 +18,7 @@ public class wv_wave : ScriptableObject
 
         foreach(wv_subwave subwave in subwavesArr)
         {
-            foreach(wv_subwave_enemytuple enemyTuple in subwave.enemyTuples)
+            foreach(wv_subwave_enemyinfo enemyTuple in subwave.enemyInfoArr)
             {
                 amount += enemyTuple.amount;
             }

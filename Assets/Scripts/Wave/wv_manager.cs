@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class wv_manager : MonoBehaviour
@@ -11,6 +12,7 @@ public class wv_manager : MonoBehaviour
     [SerializeField] wv_wave_list[] loopingWavesArr;
 
     [SerializeField] TextMeshPro waveCounterText, enemiesCounterText;
+    [SerializeField] GameObject waveCompleteTextWrapper;
 
     // these values now reside in pd_sesion ScriptableObject instance
     //int currentWaveIDXRegular = 0;
@@ -24,11 +26,11 @@ public class wv_manager : MonoBehaviour
         waveCounterText.text = "WAVE " + g_refs.Instance.sessionData.currentWaveTotal;
 
         wv_wave waveToInit = GetWaveFromList();
-        remainingEnemiesCounter = waveToInit.Init(); // init func starts wave (coroutines, setup, etc...) and returns total enemy amount of wave. kinda fucky but whtv
 
+        remainingEnemiesCounter = waveToInit.AmountOfEnemies();
         enemiesCounterText.text = "REMAINING ENEMIES: " + remainingEnemiesCounter;
 
-        AdvanceWaveIDX();
+        spawner.InitNewWave(waveToInit);
     }
 
     private wv_wave GetWaveFromList()
@@ -62,12 +64,22 @@ public class wv_manager : MonoBehaviour
     public void HandleEnemyDeath() // called from en_health_base through g_refs singleton instance
     {
         remainingEnemiesCounter--;
-        if (remainingEnemiesCounter <= 0) ExitWave();
+        enemiesCounterText.text = "REMAINING ENEMIES: " + remainingEnemiesCounter;
+        if (remainingEnemiesCounter <= 0)
+        {
+            StartCoroutine(ExitWave());
+        }
     }
 
-    private void ExitWave()
+    private IEnumerator ExitWave()
     {
-        print("WAVE COMPLETE!");
+        g_refs.Instance.sessionData.currentWaveTotal++;
+        AdvanceWaveIDX();
+
+        waveCompleteTextWrapper.SetActive(true);
+
+        yield return new WaitForSeconds(2.5f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
 

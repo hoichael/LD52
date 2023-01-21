@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] float containerEnableDelay;
 
-    [SerializeField] GameObject enemiesContainer;
+    //[SerializeField] GameObject enemiesContainer;
     [SerializeField] GameObject weaponsContainer;
 
     [SerializeField] TextMeshPro scoreText;
@@ -27,7 +27,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] Rigidbody plRB;
     [SerializeField] pl_cam_rot camRot;
     [SerializeField] pl_wep_manager weaponManager;
-    [SerializeField] nv_spawner enemySpawner;
+    //[SerializeField] nv_spawner enemySpawner;
+    [SerializeField] wv_manager waveManager;
 
     [SerializeField] GameObject humanArm;
     [SerializeField] GameObject cornArmsHolder;
@@ -98,21 +99,23 @@ public class GameManager : MonoBehaviour
 
         if (!DEV_DONTSPAWN)
         {
-            enemiesContainer.SetActive(true);
-            enemySpawner.enabled = true;
+            //enemiesContainer.SetActive(true);
+            //enemySpawner.enabled = true;
         }
 
         humanArm.SetActive(false);
         //cornArmsHolder.SetActive(true);
         rendererCornLeft.enabled = true;
         rendererCornRight.enabled = true;
+
+        waveManager.InitWave();
     }
 
     public void UpdateScore(int scoreToAdd)
     {
         score += scoreToAdd;
         scoreText.text = "SCORE: " + score;
-        enemySpawner.OnEnemyDeath();
+        //enemySpawner.OnEnemyDeath();
     }
 
     public void HandleDeath()
