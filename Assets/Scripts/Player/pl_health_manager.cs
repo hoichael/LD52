@@ -50,6 +50,7 @@ public class pl_health_manager : MonoBehaviour
     public void UpdateUI()
     {
         //hpTextElement.text = "HEALTH: " + refs.state.hp + "/" + refs.settings.maxHP;
-        hpTextElement.text = "HEALTH: " + g_refs.Instance.sessionData.playerHP + "/" + refs.settings.maxHP;
+        //hpTextElement.text = "HEALTH: " + g_refs.Instance.sessionData.playerHP + "/" + refs.settings.maxHP;
+        hpTextElement.text = g_refs.Instance.sessionData.playerHP + "/" + refs.settings.maxHP;
     }
 }

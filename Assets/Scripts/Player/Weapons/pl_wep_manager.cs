@@ -16,6 +16,9 @@ public class pl_wep_manager : MonoBehaviour
     [SerializeField] pl_wep_bob wepBobManager;
     [SerializeField] pl_wep_sway wepSwayManager;
 
+    [SerializeField] GameObject humanArm;
+    [SerializeField] SkinnedMeshRenderer rendererCornLeft, rendererCornRight;
+
     private void Start()
     {
         SetIKPosToDefault();
@@ -101,6 +104,11 @@ public class pl_wep_manager : MonoBehaviour
 
     private void SetupWepUI()
     {
+        // doesnt belong here but its fine for now
+        humanArm.SetActive(false);
+        rendererCornLeft.enabled = true;
+        rendererCornRight.enabled = true;
+
         // doesnt belong here but its fine for now
         g_refs.Instance.sessionData.wepInfoDict[wepType.rifle].wepScript = rifleScript;
         g_refs.Instance.sessionData.wepInfoDict[wepType.shotgun].wepScript = shotgunScript;
