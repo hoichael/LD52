@@ -11,6 +11,8 @@ public abstract class pl_wep_base : MonoBehaviour
     [SerializeField] protected Transform firePoint;
     [SerializeField] protected AudioSource audioSource;
     [SerializeField] GameObject crosshair;
+    public GameObject uiObject;
+    public ui_rotate uiRotator;
     public Transform pivotTrans;
 
     [Header("BASE --- RECOIL")]
@@ -53,6 +55,9 @@ public abstract class pl_wep_base : MonoBehaviour
         canShoot = true;
         //defaultPos = transform.localPosition;
         currentRecoilAnimFactor = 1;
+
+        uiObject.SetActive(true);
+        uiRotator.enabled = true;
     }
 
     public void Drop()
@@ -66,6 +71,8 @@ public abstract class pl_wep_base : MonoBehaviour
         //transform.localPosition = defaultPos;
         crosshair.SetActive(false);
         this.gameObject.SetActive(false);
+
+        uiRotator.enabled = false;
     }
 
     protected virtual void Shoot() {}

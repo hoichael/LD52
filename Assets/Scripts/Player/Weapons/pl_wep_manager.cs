@@ -23,6 +23,10 @@ public class pl_wep_manager : MonoBehaviour
         {
             SetupWepInfoDict();
         }
+        else
+        {
+            SetupWepUI();
+        }
     }
 
     public void PickupWeapon(wepType type)
@@ -88,23 +92,48 @@ public class pl_wep_manager : MonoBehaviour
     private void SetupWepInfoDict()
     {
         Dictionary<wepType, pl_wep_info> freshWepInfoDict = new Dictionary<wepType, pl_wep_info>();
-        freshWepInfoDict.Add(wepType.rifle, new pl_wep_info(rifleScript));
-        freshWepInfoDict.Add(wepType.shotgun, new pl_wep_info(shotgunScript));
-        freshWepInfoDict.Add(wepType.launcher, new pl_wep_info(launcherScript));
+        freshWepInfoDict.Add(wepType.rifle, new pl_wep_info(wepType.rifle, rifleScript));
+        freshWepInfoDict.Add(wepType.shotgun, new pl_wep_info(wepType.shotgun, shotgunScript));
+        freshWepInfoDict.Add(wepType.launcher, new pl_wep_info(wepType.launcher, launcherScript));
 
         g_refs.Instance.sessionData.wepInfoDict = freshWepInfoDict;
+    }
+
+    private void SetupWepUI()
+    {
+        // doesnt belong here but its fine for now
+        g_refs.Instance.sessionData.wepInfoDict[wepType.rifle].wepScript = rifleScript;
+        g_refs.Instance.sessionData.wepInfoDict[wepType.shotgun].wepScript = shotgunScript;
+        g_refs.Instance.sessionData.wepInfoDict[wepType.launcher].wepScript = launcherScript;
+
+        foreach (pl_wep_info wepInfo in g_refs.Instance.sessionData.wepInfoDict.Values)
+        {
+            if(wepInfo.owned)
+            {
+                wepInfo.wepScript.uiObject.SetActive(true);
+                if(wepInfo.active)
+                {
+                    wepInfo.wepScript.uiRotator.enabled = true;
+
+                    // doesnt belong here but its fine for now
+                    PickupWeapon(wepInfo.type);
+                }
+            }
+        }
     }
 }
 
 public class pl_wep_info
 {
+    public wepType type;
     public pl_wep_base wepScript;
     public bool owned;
     public bool active;
     public int ammo;
 
-    public pl_wep_info(pl_wep_base wepScript)
+    public pl_wep_info(wepType type, pl_wep_base wepScript)
     {
+        this.type = type;
         this.wepScript = wepScript;
         owned = active = false;
         ammo = 0;
