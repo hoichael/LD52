@@ -49,9 +49,9 @@ public class pl_interact : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.E))
         {
-            if(hoverInteractable.weaponID != "")
+            if(hoverInteractable.weaponType != wepType.NULL)
             {
-                weaponManager.PickupWeapon(hoverInteractable.weaponID);
+                weaponManager.PickupWeapon(hoverInteractable.weaponType);
             }
             else if (hoverInteractable.upgradeKey != "")
             {

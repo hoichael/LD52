@@ -2153,7 +2153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverText: Press E To Upgrade Health
-  weaponID: 
+  weaponType: 0
   upgradeKey: Health
   isMonitorButton: 0
 --- !u!65 &184237968
@@ -2266,7 +2266,7 @@ PrefabInstance:
     - target: {fileID: 9090698853622565482, guid: f10bbf4a1dbda9447a116683164917c3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 9090698853622565482, guid: f10bbf4a1dbda9447a116683164917c3,
         type: 3}
@@ -2341,7 +2341,7 @@ PrefabInstance:
     - target: {fileID: 9090698853622565482, guid: b43ae2720829db9468eb64902a7fdf66,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9090698853622565482, guid: b43ae2720829db9468eb64902a7fdf66,
         type: 3}
@@ -5497,7 +5497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverText: Press E To Upgrade Speed
-  weaponID: 
+  weaponType: 0
   upgradeKey: Move
   isMonitorButton: 0
 --- !u!65 &356043611
@@ -5653,7 +5653,7 @@ PrefabInstance:
     - target: {fileID: 9090698853622565482, guid: aac36f844b36dcd43a77d5af30fbc0d2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9090698853622565482, guid: aac36f844b36dcd43a77d5af30fbc0d2,
         type: 3}
@@ -7275,7 +7275,7 @@ PrefabInstance:
     - target: {fileID: 9090698853622565482, guid: aac36f844b36dcd43a77d5af30fbc0d2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 9090698853622565482, guid: aac36f844b36dcd43a77d5af30fbc0d2,
         type: 3}
@@ -7344,7 +7344,7 @@ PrefabInstance:
     - target: {fileID: 9090698853622565482, guid: f10bbf4a1dbda9447a116683164917c3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 9090698853622565482, guid: f10bbf4a1dbda9447a116683164917c3,
         type: 3}
@@ -9582,7 +9582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverText: Press E To Upgrade Jump
-  weaponID: 
+  weaponType: 0
   upgradeKey: Jump
   isMonitorButton: 0
 --- !u!65 &559465219
@@ -10689,7 +10689,7 @@ PrefabInstance:
     - target: {fileID: 9090698853622565482, guid: aac36f844b36dcd43a77d5af30fbc0d2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9090698853622565482, guid: aac36f844b36dcd43a77d5af30fbc0d2,
         type: 3}
@@ -11473,7 +11473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverText: PRESS BUTTONS TO BUY UPGRADES
-  weaponID: 
+  weaponType: 0
   upgradeKey: 
   isMonitorButton: 0
   hpAmount: 0
@@ -16289,7 +16289,7 @@ PrefabInstance:
     - target: {fileID: 9090698853622565482, guid: aac36f844b36dcd43a77d5af30fbc0d2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9090698853622565482, guid: aac36f844b36dcd43a77d5af30fbc0d2,
         type: 3}
@@ -16461,7 +16461,7 @@ PrefabInstance:
     - target: {fileID: 9090698853622565482, guid: aac36f844b36dcd43a77d5af30fbc0d2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9090698853622565482, guid: aac36f844b36dcd43a77d5af30fbc0d2,
         type: 3}
@@ -17374,7 +17374,7 @@ PrefabInstance:
     - target: {fileID: 9090698853622565482, guid: f10bbf4a1dbda9447a116683164917c3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 9090698853622565482, guid: f10bbf4a1dbda9447a116683164917c3,
         type: 3}
@@ -21474,7 +21474,7 @@ PrefabInstance:
     - target: {fileID: 9090698853622565482, guid: f10bbf4a1dbda9447a116683164917c3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9090698853622565482, guid: f10bbf4a1dbda9447a116683164917c3,
         type: 3}
@@ -22690,7 +22690,7 @@ PrefabInstance:
     - target: {fileID: 9090698853622565482, guid: f10bbf4a1dbda9447a116683164917c3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9090698853622565482, guid: f10bbf4a1dbda9447a116683164917c3,
         type: 3}
@@ -22868,7 +22868,7 @@ PrefabInstance:
     - target: {fileID: 9090698853622565482, guid: aac36f844b36dcd43a77d5af30fbc0d2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9090698853622565482, guid: aac36f844b36dcd43a77d5af30fbc0d2,
         type: 3}
@@ -24255,7 +24255,7 @@ PrefabInstance:
     - target: {fileID: 9090698853622565482, guid: b43ae2720829db9468eb64902a7fdf66,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 9090698853622565482, guid: b43ae2720829db9468eb64902a7fdf66,
         type: 3}
@@ -25555,7 +25555,7 @@ PrefabInstance:
     - target: {fileID: 9090698853622565482, guid: aac36f844b36dcd43a77d5af30fbc0d2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9090698853622565482, guid: aac36f844b36dcd43a77d5af30fbc0d2,
         type: 3}
@@ -26335,11 +26335,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camHolderTrans: {fileID: 1466185155}
-  weaponList:
-  - {fileID: 341212183}
-  - {fileID: 945168587}
-  - {fileID: 628840972}
-  - {fileID: 99958174}
+  rifleScript: {fileID: 945168587}
+  shotgunScript: {fileID: 628840972}
+  launcherScript: {fileID: 99958174}
   ikPosHandlerLeft: {fileID: 116464756}
   ikPosHandlerRight: {fileID: 1797801419}
   ikTargetHolderDefLeft: {fileID: 938540644}

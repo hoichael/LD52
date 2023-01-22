@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverText: '"E" TO PICKUP'
-  weaponID: rifle
+  weaponType: 1
   upgradeKey: 
   isMonitorButton: 0
 --- !u!1 &9090698853694841661

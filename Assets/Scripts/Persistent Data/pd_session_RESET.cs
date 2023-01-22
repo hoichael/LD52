@@ -29,5 +29,6 @@ public class pd_session_RESET : MonoBehaviour
         sessionData.upgradeLevelHealth = 0;
         sessionData.upgradeLevelMove = 0;
         sessionData.upgradeLevelJump = 0;
+        sessionData.wepInfoDict = null;
     }
 }
