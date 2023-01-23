@@ -5,8 +5,8 @@ public class DevManager : MonoBehaviour
 {
     [SerializeField] Camera baseCam;
     [SerializeField] MeshRenderer rtQuadRenderer;
-    [SerializeField] RenderTexture renTex128, renTex256, renTex384, renTex512, renTex640;
-    [SerializeField] Material m128, m256, m384, m512, m640;
+    [SerializeField] RenderTexture renTex128, renTex256, renTex384, renTex512, renTex640, renText768;
+    [SerializeField] Material m128, m256, m384, m512, m640, m768;
     
     void Update()
     {
@@ -48,6 +48,12 @@ public class DevManager : MonoBehaviour
         {
             baseCam.targetTexture = renTex640;
             rtQuadRenderer.material = m640;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            baseCam.targetTexture = renText768;
+            rtQuadRenderer.material = m768;
         }
     }
 

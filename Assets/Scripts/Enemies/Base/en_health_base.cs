@@ -46,20 +46,22 @@ public class en_health_base : MonoBehaviour
     private void HandleDrop()
     {
         float randomNum = Random.Range(0, 1f);
-        if(randomNum < 0.13f)
+        if(randomNum < 0.07f)
         {
-            InstantiatePickup(hpPickupPrefab);
+            //InstantiatePickup(hpPickupPrefab);
+            g_refs.Instance.pool.Dispatch(PoolType.drop_health, info.trans.position + Vector3.up, Quaternion.identity);
         }
-        else if(randomNum < 0.38f)
+        else if(randomNum < 0.33f)
         {
-            InstantiatePickup(moneyPickupPrefab);
+            //InstantiatePickup(moneyPickupPrefab);
+            g_refs.Instance.pool.Dispatch(PoolType.drop_cash, info.trans.position + Vector3.up, Quaternion.identity);
         }
     }
 
-    private void InstantiatePickup(Rigidbody pickupToInstantiate)
-    {
-        Rigidbody instantiatedRB = Instantiate(pickupToInstantiate, info.trans.position + Vector3.up, Quaternion.identity);
-        instantiatedRB.AddForce(Vector3.up * 8f, ForceMode.Impulse);
-        instantiatedRB.AddTorque((Vector3.up + Vector3.right) * 0.4f, ForceMode.Impulse);
-    }
+    //private void InstantiatePickup(Rigidbody pickupToInstantiate)
+    //{
+    //    Rigidbody instantiatedRB = Instantiate(pickupToInstantiate, info.trans.position + Vector3.up, Quaternion.identity);
+    //    instantiatedRB.AddForce(Vector3.up * 8f, ForceMode.Impulse);
+    //    instantiatedRB.AddTorque((Vector3.up + Vector3.right) * 0.4f, ForceMode.Impulse);
+    //}
 }

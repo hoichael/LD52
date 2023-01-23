@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bded433264f5284fa894720b600ae2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmgAmount: 1
+  dmgAmount: 12
   hitPos: {x: 0, y: 0, z: 0}
   force: 5
 --- !u!114 &4549558597956047441

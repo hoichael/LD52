@@ -207,13 +207,14 @@ GameObject:
   - component: {fileID: 7272605533279926369}
   - component: {fileID: 7272605533279926368}
   - component: {fileID: 7272605533279926371}
+  - component: {fileID: 1005147813122571389}
   m_Layer: 17
   m_Name: PU_Health
   m_TagString: Health
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7272605533279926383
 Transform:
   m_ObjectHideFlags: 0
@@ -310,3 +311,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1005147813122571389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7272605533279926370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26b6ba3b90fd0c54883358d4d3ad1225, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 7272605533279926371}

@@ -1066,7 +1066,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3f29e90a4acdee84f955820fb6629597, type: 2}
+  - {fileID: 2100000, guid: 3c08e3aed6158de4c851f66fba884d42, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4653,6 +4653,16 @@ MonoBehaviour:
       type: 3}
     amount: 15
     name: en_exploder_explosion
+  - key: 15
+    prefab: {fileID: 7272605533279926370, guid: 562429ecab5284d4a99f60dc9b7a4bd0,
+      type: 3}
+    amount: 25
+    name: drop_health
+  - key: 16
+    prefab: {fileID: 2905069486923240946, guid: 8f327a1221159574bab354d9fd098fd6,
+      type: 3}
+    amount: 45
+    name: drop_cash
   outerContainer: {fileID: 748281468}
 --- !u!1 &308359051
 GameObject:
@@ -5155,7 +5165,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 2796375
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: 8052b5d1736992148b150036eab13063, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 0c32f9a272fa1a443ae97b177423b88a, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -7799,11 +7809,13 @@ MonoBehaviour:
   renTex384: {fileID: 8400000, guid: 381400c1753eaf241a4450e59656e988, type: 2}
   renTex512: {fileID: 8400000, guid: 1e7ef1b954f61714491babab4a3f4f5b, type: 2}
   renTex640: {fileID: 8400000, guid: 8052b5d1736992148b150036eab13063, type: 2}
+  renText768: {fileID: 8400000, guid: 0c32f9a272fa1a443ae97b177423b88a, type: 2}
   m128: {fileID: 2100000, guid: e9ad18cb7c2808f4fb1a95af7b46f51f, type: 2}
   m256: {fileID: 2100000, guid: ded77dcfa5b6aab4ea5a33a931a4a17f, type: 2}
   m384: {fileID: 2100000, guid: 9e7e360cdb7972a4cbe045624f0907ff, type: 2}
   m512: {fileID: 2100000, guid: 6740f1bdf00e45445b19b99a3f0833bb, type: 2}
   m640: {fileID: 2100000, guid: 3f29e90a4acdee84f955820fb6629597, type: 2}
+  m768: {fileID: 2100000, guid: 3c08e3aed6158de4c851f66fba884d42, type: 2}
 --- !u!114 &439486655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7817,7 +7829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sessionData: {fileID: 11400000, guid: 36937538a05297846a8cd47d23862b70, type: 2}
-  reset: 0
+  reset: 1
 --- !u!1001 &450855544
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8684,12 +8696,16 @@ MonoBehaviour:
   state: {fileID: 978510479}
   refs: {fileID: 978510480}
   healthUpgrades:
-  - value: 3
+  - value: 25
     cost: 1337
-  - value: 4
+  - value: 50
     cost: 300
-  - value: 5
-    cost: 800
+  - value: 75
+    cost: 900
+  - value: 90
+    cost: 1750
+  - value: 1000
+    cost: 3333
   moveUpdgrades:
   - value: 42
     cost: 1337

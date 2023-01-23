@@ -34346,7 +34346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bded433264f5284fa894720b600ae2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmgAmount: 2
+  dmgAmount: 15
   hitPos: {x: 0, y: 0, z: 0}
   force: 25
 --- !u!114 &861126957580153796

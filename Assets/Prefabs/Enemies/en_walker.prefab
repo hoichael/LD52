@@ -222,7 +222,7 @@ Rigidbody:
   m_GameObject: {fileID: 3319311974592477194}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 2.2
+  m_Drag: 2.4
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bded433264f5284fa894720b600ae2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmgAmount: 1
+  dmgAmount: 5
   hitPos: {x: 0, y: 0, z: 0}
   force: 5
 --- !u!114 &1995441950030111915
@@ -346,7 +346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2468128288045246835}
-  gravForce: 34
+  gravForce: 20
 --- !u!1 &4818094373885318243
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,7 +413,7 @@ MonoBehaviour:
   stateID: chase
   info: {fileID: 3297844883612648194}
   rotSlerpDamp: 0.08
-  moveSpeed: 16
+  moveSpeed: 14.5
   attackDistance: 3.5
 --- !u!114 &153234953211492484
 MonoBehaviour:

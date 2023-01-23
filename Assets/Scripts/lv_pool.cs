@@ -95,7 +95,9 @@ public enum PoolType
     vfx_jump_small,
     vfx_jump_big,
     en_exploder,
-    en_exploder_explosion
+    en_exploder_explosion,
+    drop_health,
+    drop_cash
 }
 
 [System.Serializable]
