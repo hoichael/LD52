@@ -32,7 +32,20 @@ public class pl_wep_manager : MonoBehaviour
         }
     }
 
-    public void PickupWeapon(wepType type)
+    private void Update()
+    {
+        if(Input.mouseScrollDelta.y != 0)
+        {
+            TryWeaponSwitch((int)Mathf.Sign(Input.mouseScrollDelta.y));
+        }
+
+        if(Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.CapsLock))
+        {
+            TryWeaponSwitch(1);
+        }
+    }
+
+    public void SwitchWeapon(wepType type)
     {
         pl_wep_base newWeapon = g_refs.Instance.sessionData.wepInfoDict[type].wepScript;
 
@@ -59,13 +72,51 @@ public class pl_wep_manager : MonoBehaviour
     {
         if (activeWeaponScript == null) return;
 
-        activeWeaponScript.Drop();
+        activeWeaponScript.Unequip();
         activeWeaponScript = null;
 
         g_refs.Instance.sessionData.wepInfoDict[activeWeaponType].active = false;
         activeWeaponType = wepType.NULL;
 
         SetIKPosToDefault();
+    }
+
+    private void TryWeaponSwitch(int dirMult) // dir mult 1 or -1
+    {
+        if (activeWeaponScript == null) return;
+
+        // this whole function is utterly retarded but I do not care, for I have embraced the schizo code
+        pl_wep_info[] wepInfoArr = new pl_wep_info[g_refs.Instance.sessionData.wepInfoDict.Count];
+        int currentCheckIDX = 0;
+
+        foreach(pl_wep_info wepInfo in g_refs.Instance.sessionData.wepInfoDict.Values)
+        {
+            wepInfoArr[wepInfo.carryOrder] = wepInfo;
+            if(wepInfo.type == activeWeaponType)
+            {
+                currentCheckIDX = wepInfo.carryOrder;
+            }
+        }
+        
+        for(int i = 0; i < wepInfoArr.Length; i++)
+        {
+            currentCheckIDX += dirMult;
+
+            if(currentCheckIDX == wepInfoArr.Length)
+            {
+                currentCheckIDX = 0;
+            }
+            else if(currentCheckIDX == -1)
+            {
+                currentCheckIDX = wepInfoArr.Length - 1;
+            }
+
+            if(wepInfoArr[currentCheckIDX].owned)
+            {
+                SwitchWeapon(wepInfoArr[currentCheckIDX].type);
+                return;
+            }
+        }
     }
 
     private void ParentIKTargets()
@@ -95,9 +146,9 @@ public class pl_wep_manager : MonoBehaviour
     private void SetupWepInfoDict()
     {
         Dictionary<wepType, pl_wep_info> freshWepInfoDict = new Dictionary<wepType, pl_wep_info>();
-        freshWepInfoDict.Add(wepType.rifle, new pl_wep_info(wepType.rifle, rifleScript));
-        freshWepInfoDict.Add(wepType.shotgun, new pl_wep_info(wepType.shotgun, shotgunScript));
-        freshWepInfoDict.Add(wepType.launcher, new pl_wep_info(wepType.launcher, launcherScript));
+        freshWepInfoDict.Add(wepType.rifle, new pl_wep_info(wepType.rifle, rifleScript, 0));
+        freshWepInfoDict.Add(wepType.shotgun, new pl_wep_info(wepType.shotgun, shotgunScript, 1));
+        freshWepInfoDict.Add(wepType.launcher, new pl_wep_info(wepType.launcher, launcherScript, 2));
 
         g_refs.Instance.sessionData.wepInfoDict = freshWepInfoDict;
     }
@@ -124,7 +175,7 @@ public class pl_wep_manager : MonoBehaviour
                     wepInfo.wepScript.uiRotator.enabled = true;
 
                     // doesnt belong here but its fine for now
-                    PickupWeapon(wepInfo.type);
+                    SwitchWeapon(wepInfo.type);
                 }
             }
         }
@@ -138,11 +189,13 @@ public class pl_wep_info
     public bool owned;
     public bool active;
     public int ammo;
+    public int carryOrder;
 
-    public pl_wep_info(wepType type, pl_wep_base wepScript)
+    public pl_wep_info(wepType type, pl_wep_base wepScript, int carryOrder)
     {
         this.type = type;
         this.wepScript = wepScript;
+        this.carryOrder = carryOrder;
         owned = active = false;
         ammo = 0;
     }

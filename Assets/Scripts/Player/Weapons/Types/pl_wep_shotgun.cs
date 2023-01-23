@@ -62,6 +62,12 @@ public class pl_wep_shotgun : pl_wep_base
         return refs.camHolderTrans.forward + offset;
     }
 
+    protected override void ResetVisuals()
+    {
+        base.ResetVisuals();
+        muzzleFlashLight.enabled = false;
+    }
+
     private IEnumerator HandleMuzzleLight()
     {
         muzzleFlashLight.enabled = true;

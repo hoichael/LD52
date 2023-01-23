@@ -7,7 +7,7 @@ public abstract class pl_wep_base : MonoBehaviour
     [Header("BASE --- REFS")]
     [SerializeField] protected pl_wep_refs refs;
     [SerializeField] protected dmg_info dmgInfo;
-    [SerializeField] GameObject dropPrefab;
+    //[SerializeField] GameObject dropPrefab;
     [SerializeField] protected Transform firePoint;
     [SerializeField] protected AudioSource audioSource;
     [SerializeField] GameObject crosshair;
@@ -49,22 +49,22 @@ public abstract class pl_wep_base : MonoBehaviour
 
     public void Equip()
     {
-        transform.localPosition = defaultPos;
+        ResetVisuals();
+
         crosshair.SetActive(true);
         this.gameObject.SetActive(true);
         canShoot = true;
         //defaultPos = transform.localPosition;
-        currentRecoilAnimFactor = 1;
 
         uiObject.SetActive(true);
         uiRotator.enabled = true;
     }
 
-    public void Drop()
+    public void Unequip()
     {
-        Rigidbody rb = Instantiate(dropPrefab, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-        rb.AddForce((Vector3.up + refs.camHolderTrans.forward.normalized) * 2.5f, ForceMode.Impulse);
-        rb.AddTorque(refs.camHolderTrans.forward, ForceMode.Impulse);
+        //Rigidbody rb = Instantiate(dropPrefab, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+        //rb.AddForce((Vector3.up + refs.camHolderTrans.forward.normalized) * 2.5f, ForceMode.Impulse);
+        //rb.AddTorque(refs.camHolderTrans.forward, ForceMode.Impulse);
 
         StopAllCoroutines();
 
@@ -86,6 +86,12 @@ public abstract class pl_wep_base : MonoBehaviour
             defaultPos,
             recoilAnimCurve.Evaluate(currentRecoilAnimFactor)
             );
+    }
+
+    protected virtual void ResetVisuals()
+    {
+        transform.localPosition = defaultPos;
+        currentRecoilAnimFactor = 1;
     }
 
     private IEnumerator HandleFirerate()

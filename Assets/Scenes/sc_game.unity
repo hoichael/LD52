@@ -1458,8 +1458,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   refs: {fileID: 2006918371}
   dmgInfo: {fileID: 99958173}
-  dropPrefab: {fileID: 9090698853622565526, guid: b43ae2720829db9468eb64902a7fdf66,
-    type: 3}
   firePoint: {fileID: 1162413990}
   audioSource: {fileID: 46302435}
   crosshair: {fileID: 690727621}
@@ -5504,8 +5502,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   refs: {fileID: 2006918371}
   dmgInfo: {fileID: 341212184}
-  dropPrefab: {fileID: 9090698853622565526, guid: 3d932583b17ff48428ff21bd6beda815,
-    type: 3}
   firePoint: {fileID: 1359250368}
   audioSource: {fileID: 46302435}
   crosshair: {fileID: 0}
@@ -8254,7 +8250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2246a099188e4ac49a7c312628c38d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotSpeed: 30
+  rotSpeed: 55
 --- !u!1001 &472334033
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8800,6 +8796,75 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06a914c8753b33241869f81b4b17ffc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &506771014
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: c2aecda68b2abf24592f4a9bf219adfa,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c2aecda68b2abf24592f4a9bf219adfa,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 18.322737
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c2aecda68b2abf24592f4a9bf219adfa,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.044157982
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c2aecda68b2abf24592f4a9bf219adfa,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.8330486
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c2aecda68b2abf24592f4a9bf219adfa,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c2aecda68b2abf24592f4a9bf219adfa,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c2aecda68b2abf24592f4a9bf219adfa,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c2aecda68b2abf24592f4a9bf219adfa,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c2aecda68b2abf24592f4a9bf219adfa,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c2aecda68b2abf24592f4a9bf219adfa,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c2aecda68b2abf24592f4a9bf219adfa,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2aecda68b2abf24592f4a9bf219adfa,
+        type: 3}
+      propertyPath: m_Name
+      value: Exploder (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c2aecda68b2abf24592f4a9bf219adfa, type: 3}
 --- !u!1 &508230174
 GameObject:
   m_ObjectHideFlags: 0
@@ -11249,8 +11314,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   refs: {fileID: 2006918371}
   dmgInfo: {fileID: 628840974}
-  dropPrefab: {fileID: 9090698853622565526, guid: f10bbf4a1dbda9447a116683164917c3,
-    type: 3}
   firePoint: {fileID: 2138013335}
   audioSource: {fileID: 1635206900}
   crosshair: {fileID: 841250369}
@@ -14924,8 +14987,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   refs: {fileID: 2006918371}
   dmgInfo: {fileID: 945168586}
-  dropPrefab: {fileID: 9090698853622565526, guid: aac36f844b36dcd43a77d5af30fbc0d2,
-    type: 3}
   firePoint: {fileID: 727199346}
   audioSource: {fileID: 46302435}
   crosshair: {fileID: 1672241547}
@@ -25497,7 +25558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2246a099188e4ac49a7c312628c38d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotSpeed: 30
+  rotSpeed: 55
 --- !u!1 &1902313116
 GameObject:
   m_ObjectHideFlags: 0
@@ -26521,7 +26582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2246a099188e4ac49a7c312628c38d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotSpeed: 30
+  rotSpeed: 55
 --- !u!4 &1977228697 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8780220586858543353, guid: 1ec8de62c928e3740a3b6ee939a5ddcd,

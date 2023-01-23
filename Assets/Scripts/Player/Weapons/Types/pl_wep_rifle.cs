@@ -38,6 +38,12 @@ public class pl_wep_rifle : pl_wep_base
         }
     }
 
+    protected override void ResetVisuals()
+    {
+        base.ResetVisuals();
+        muzzleFlashLight.enabled = false;
+    }
+
     private IEnumerator HandleMuzzleLight()
     {
         muzzleFlashLight.enabled = true;
