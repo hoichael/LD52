@@ -93,7 +93,9 @@ public enum PoolType
     proj_en_shooter,
     vfx_mflash_en_shooter,
     vfx_jump_small,
-    vfx_jump_big
+    vfx_jump_big,
+    en_exploder,
+    en_exploder_explosion
 }
 
 [System.Serializable]

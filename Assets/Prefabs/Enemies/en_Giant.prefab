@@ -275,6 +275,7 @@ GameObject:
   - component: {fileID: 3482240940240282008}
   - component: {fileID: 3297844883612648194}
   - component: {fileID: 5176658184172704435}
+  - component: {fileID: 4549558597956047441}
   m_Layer: 0
   m_Name: Systems
   m_TagString: Untagged
@@ -332,6 +333,20 @@ MonoBehaviour:
   dmgAmount: 1
   hitPos: {x: 0, y: 0, z: 0}
   force: 5
+--- !u!114 &4549558597956047441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3449602196130080069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55c3947df531434ab23a6574e1dd9b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 2468128288045246835}
+  gravForce: 48
 --- !u!1 &4818094373885318243
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,7 +413,7 @@ MonoBehaviour:
   stateID: chase
   info: {fileID: 3297844883612648194}
   rotSlerpDamp: 0.08
-  moveSpeed: 16
+  moveSpeed: 24
   attackDistance: 16
 --- !u!114 &153234953211492484
 MonoBehaviour:
