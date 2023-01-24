@@ -22,6 +22,8 @@ public abstract class pl_wep_base : MonoBehaviour
 
     [Header("BASE --- VALUES")]
     [SerializeField] float fireRate;
+    [SerializeField] Vector3 hiddenRot;
+    [SerializeField] float equipAnimSpeed;
 
     float currentRecoilAnimFactor = 1;
     public Transform ikTargetHolderLeft, ikTargetHolderRight;
@@ -30,20 +32,29 @@ public abstract class pl_wep_base : MonoBehaviour
     public Vector3 defaultPos;
     public Vector3 pivotTransDefaultPos;
     public float animWeightMult; // the lower the value (0-1) the heigher the "weight"
+    float currentEquipAnimFactor = 1;
+
 
     private void Update()
     {
-        if(currentRecoilAnimFactor != 1)
+        if (currentEquipAnimFactor != 1)
         {
-            HandleRecoiAnim();
+            HandleEquipAnim();
         }
-
-        if(canShoot && Input.GetKey(KeyCode.Mouse0))
+        else
         {
-            Shoot();
-            currentRecoilAnimFactor = 0;
-            transform.localPosition = new Vector3(0, 0, recoilPosZ);
-            StartCoroutine(HandleFirerate());
+            if (currentRecoilAnimFactor != 1)
+            {
+                HandleRecoiAnim();
+            }
+
+            if (canShoot && Input.GetKey(KeyCode.Mouse0))
+            {
+                Shoot();
+                currentRecoilAnimFactor = 0;
+                transform.localPosition = new Vector3(0, 0, recoilPosZ);
+                StartCoroutine(HandleFirerate());
+            }
         }
     }
 
@@ -58,6 +69,9 @@ public abstract class pl_wep_base : MonoBehaviour
 
         uiObject.SetActive(true);
         uiRotator.enabled = true;
+
+        //pivotTrans.localRotation = Quaternion.Euler(hiddenRot);
+        currentEquipAnimFactor = 0;
     }
 
     public void Unequip()
@@ -92,6 +106,16 @@ public abstract class pl_wep_base : MonoBehaviour
     {
         transform.localPosition = defaultPos;
         currentRecoilAnimFactor = 1;
+    }
+
+    private void HandleEquipAnim()
+    {
+        currentEquipAnimFactor = Mathf.MoveTowards(currentEquipAnimFactor, 1, equipAnimSpeed * Time.deltaTime);
+        pivotTrans.localRotation = Quaternion.Euler(Vector3.Lerp(
+            hiddenRot,
+            Vector3.zero,
+            currentEquipAnimFactor
+            ));
     }
 
     private IEnumerator HandleFirerate()

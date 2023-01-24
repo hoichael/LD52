@@ -1500,6 +1500,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   fireRate: 0.77
+  hiddenRot: {x: 321.8, y: 356.19, z: 16.979994}
+  equipAnimSpeed: 2.3
   ikTargetHolderLeft: {fileID: 1443641008}
   ikTargetHolderRight: {fileID: 1534424652}
   ID: launcher
@@ -5564,6 +5566,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   fireRate: 0.6
+  hiddenRot: {x: 0, y: 0, z: 0}
+  equipAnimSpeed: 0
   ikTargetHolderLeft: {fileID: 2145499902}
   ikTargetHolderRight: {fileID: 757362484}
   ID: DEV
@@ -11313,6 +11317,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   fireRate: 0.62
+  hiddenRot: {x: 55, y: 0, z: 0}
+  equipAnimSpeed: 4
   ikTargetHolderLeft: {fileID: 252116825}
   ikTargetHolderRight: {fileID: 186231652}
   ID: shotgun
@@ -14986,6 +14992,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   fireRate: 0.16
+  hiddenRot: {x: 55, y: 0, z: 0}
+  equipAnimSpeed: 4
   ikTargetHolderLeft: {fileID: 622347440}
   ikTargetHolderRight: {fileID: 1028625085}
   ID: rifle

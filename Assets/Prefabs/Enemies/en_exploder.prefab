@@ -519,9 +519,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateID: Chase
   info: {fileID: 6620312706671479817}
-  rotSlerpDamp: 0.055
+  rotSlerpDamp: 0.085
   moveSpeed: 36
-  attackDistance: 5.8
+  attackDistance: 6.2
 --- !u!114 &559676088780113615
 MonoBehaviour:
   m_ObjectHideFlags: 0
