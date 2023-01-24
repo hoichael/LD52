@@ -39,6 +39,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: EyeMat
+    second: {fileID: 2100000, guid: ef58bfe407b811d4784c72f420a674d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: TextureMat
     second: {fileID: 2100000, guid: 95103995100eb9e409d8d1e1937acdcc, type: 2}
   materials:
