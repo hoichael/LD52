@@ -16,8 +16,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   <groundCheckRadius>k__BackingField: 0.3
-  maxHP: 3
-  <interactRange>k__BackingField: 3.5
+  maxHP: 25
+  <interactRange>k__BackingField: 5
   mouseSens: 0.8
   moveForceBase: 42
   <dragGround>k__BackingField: 5
