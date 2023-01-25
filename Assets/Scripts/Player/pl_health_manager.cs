@@ -43,7 +43,8 @@ public class pl_health_manager : MonoBehaviour
     public void HandleHeal(int healAmount)
     {
         //refs.state.hp = Mathf.Clamp(refs.state.hp + healAmount, 1, refs.settings.maxHP);
-        g_refs.Instance.sessionData.playerHP = Mathf.Clamp(g_refs.Instance.sessionData.playerHP + healAmount, 1, refs.settings.maxHP);
+        //g_refs.Instance.sessionData.playerHP = Mathf.Clamp(g_refs.Instance.sessionData.playerHP + healAmount, 1, refs.settings.maxHP);
+        g_refs.Instance.sessionData.playerHP = Mathf.Clamp(g_refs.Instance.sessionData.playerHP + healAmount, 1, g_refs.Instance.sessionData.currentPlMaxHp);
         UpdateUI();
     }
 

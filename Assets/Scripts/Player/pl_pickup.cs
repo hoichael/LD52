@@ -16,8 +16,9 @@ public class pl_pickup : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.M))
         {
-            state.money = 9999999;
-            moneyTextEl.text = "CASH: " + state.money;
+            //state.money = 9999999;
+            g_refs.Instance.sessionData.cash = 9999999;
+            moneyTextEl.text = "CASH: " + g_refs.Instance.sessionData.cash;
         }
     }
 
@@ -27,8 +28,8 @@ public class pl_pickup : MonoBehaviour
         {
             //print("moneeee");
             Destroy(other.gameObject);
-            state.money += pickupAmounttMoney;
-            moneyTextEl.text = "CASH: " + state.money;
+            g_refs.Instance.sessionData.cash += pickupAmounttMoney;
+            moneyTextEl.text = "CASH: " + g_refs.Instance.sessionData.cash;
 
         }
         else if(other.CompareTag("Health"))

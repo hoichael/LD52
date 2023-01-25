@@ -2466,8 +2466,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   terminalManager: {fileID: 1820906510}
   slTextUpper: HEAL 4 CASH
-  slTextLower: 'Cost: 150'
-  isAmmo: 0
+  cost: 150
+  hpAmount: 3
 --- !u!1 &186231651
 GameObject:
   m_ObjectHideFlags: 0
@@ -4653,8 +4653,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   terminalManager: {fileID: 1820906510}
   slTextUpper: BUY AMMO
-  slTextLower: 'Cost: 50'
-  isAmmo: 1
+  cost: 50
+  hpAmount: 0
 --- !u!1 &298613283
 GameObject:
   m_ObjectHideFlags: 0
@@ -8118,7 +8118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sessionData: {fileID: 11400000, guid: 36937538a05297846a8cd47d23862b70, type: 2}
-  reset: 1
+  reset: 0
 --- !u!1001 &450855544
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8982,7 +8982,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0963d1ce3d54e6e459425e1cf0a085f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: {fileID: 978510479}
   refs: {fileID: 978510480}
   healthUpgrades:
   - value: 25
@@ -11574,9 +11573,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   terminalManager: {fileID: 1820906510}
   slTextUpper: BUY A RIFLE
-  slTextLower: 'Cost: 550'
+  cost: 550
   type: 1
-  ownedText: ALREADY OWNED
+  wepManager: {fileID: 2006918369}
 --- !u!1 &621169846
 GameObject:
   m_ObjectHideFlags: 0
@@ -13634,9 +13633,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   terminalManager: {fileID: 1820906510}
   slTextUpper: ROCKET LAUNCHER
-  slTextLower: 'Cost: 3333'
+  cost: 3333
   type: 3
-  ownedText: ALREADY OWNED
+  wepManager: {fileID: 2006918369}
 --- !u!1001 &761957744
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15130,9 +15129,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   terminalManager: {fileID: 1820906510}
   slTextUpper: BUY A SHOTGUN
-  slTextLower: 'Cost: 1500'
+  cost: 1500
   type: 2
-  ownedText: ALREADY OWNED
+  wepManager: {fileID: 2006918369}
 --- !u!1 &883284283
 GameObject:
   m_ObjectHideFlags: 0
@@ -16378,8 +16377,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grounded: 0
-  hp: 0
-  money: 0
 --- !u!114 &978510480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21640,9 +21637,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   terminalManager: {fileID: 1820906510}
-  slTextUpper: UPGRADE MOVESPEED
-  slTextLower: 'Cost:'
+  slTextUpper: UPGRADE SPEED
+  cost: 0
   upgradeType: Move
+  upgradeManager: {fileID: 495337695}
 --- !u!1 &1370828795
 GameObject:
   m_ObjectHideFlags: 0
@@ -23590,8 +23588,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   terminalManager: {fileID: 1820906510}
   slTextUpper: UPGRADE JUMP
-  slTextLower: 'Cost:'
+  cost: 0
   upgradeType: Jump
+  upgradeManager: {fileID: 495337695}
 --- !u!1 &1529696306
 GameObject:
   m_ObjectHideFlags: 0
@@ -25281,8 +25280,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   terminalManager: {fileID: 1820906510}
   slTextUpper: UPGRADE HEALTH
-  slTextLower: 'Cost:'
+  cost: 0
   upgradeType: Health
+  upgradeManager: {fileID: 495337695}
 --- !u!1001 &1689717440
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -6,7 +6,9 @@ using UnityEngine;
 public class pd_session : ScriptableObject
 {
     public int score;
+    public int cash;
     public int playerHP;
+    public int currentPlMaxHp;
 
     public int currentWaveTotal = 1;
     public int currentWaveRegular = 0;

@@ -22,13 +22,18 @@ public class pd_session_RESET : MonoBehaviour
     private void ResetToDefaults() // DEV STUFF, ONLY MATTERS IN EDITOR, COMMENT OUT FOR BUILDS
     {
         sessionData.score = 0;
+        sessionData.cash = 0;
         sessionData.playerHP = 0;
+        sessionData.currentPlMaxHp = 0;
+
         sessionData.currentWaveTotal = 1;
         sessionData.currentWaveRegular = 0;
         sessionData.currentWaveLooping = -1;
+
         sessionData.upgradeLevelHealth = 0;
         sessionData.upgradeLevelMove = 0;
         sessionData.upgradeLevelJump = 0;
+
         sessionData.wepInfoDict = null;
     }
 }

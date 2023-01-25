@@ -4,7 +4,7 @@ using TMPro;
 
 public class pl_upgrade_manager : MonoBehaviour
 {
-    [SerializeField] pl_state state;
+    //[SerializeField] pl_state state;
     [SerializeField] pl_refs refs;
     [SerializeField] List<pl_upgrade> healthUpgrades;
     [SerializeField] List<pl_upgrade> moveUpdgrades;
@@ -20,6 +20,15 @@ public class pl_upgrade_manager : MonoBehaviour
         ApplyUpgrades();
     }
 
+    public int GetCurrentCost(string key)
+    {
+        if (upgradeInfoDict[key].currentUpgradeStep >= upgradeInfoDict[key].upgradeList.Count - 1)
+        {
+            return 0;
+        }
+        return upgradeInfoDict[key].upgradeList[upgradeInfoDict[key].currentUpgradeStep + 1].cost;
+    }
+
     public pl_upgrade_message TryUpgrade(string key)
     {
         pl_upgrade_info info = upgradeInfoDict[key];
@@ -29,14 +38,14 @@ public class pl_upgrade_manager : MonoBehaviour
             return new pl_upgrade_message(false, key + " Already Maxed Out");
         }
 
-        if(state.money < info.upgradeList[info.currentUpgradeStep + 1].cost)
+        if(g_refs.Instance.sessionData.cash < info.upgradeList[info.currentUpgradeStep + 1].cost)
         {
             return new pl_upgrade_message(false, "Insufficent Funds (" + info.upgradeList[info.currentUpgradeStep + 1].cost + " needed)");
         }
 
         info.currentUpgradeStep++;
-        state.money -= info.upgradeList[info.currentUpgradeStep].cost;
-        moneyTextEl.text = "CASH: " + state.money;
+        g_refs.Instance.sessionData.cash -= info.upgradeList[info.currentUpgradeStep].cost;
+        moneyTextEl.text = "CASH: " + g_refs.Instance.sessionData.cash;
 
         ApplyUpgrades();
 
@@ -51,7 +60,8 @@ public class pl_upgrade_manager : MonoBehaviour
         refs.settings.jumpForceBase = upgradeInfoDict["Jump"].upgradeList[upgradeInfoDict["Jump"].currentUpgradeStep].value;
         g_refs.Instance.sessionData.upgradeLevelJump = upgradeInfoDict["Jump"].currentUpgradeStep;
 
-        refs.settings.maxHP = upgradeInfoDict["Health"].upgradeList[upgradeInfoDict["Health"].currentUpgradeStep].value;
+        //refs.settings.maxHP = upgradeInfoDict["Health"].upgradeList[upgradeInfoDict["Health"].currentUpgradeStep].value;
+        g_refs.Instance.sessionData.currentPlMaxHp = upgradeInfoDict["Health"].upgradeList[upgradeInfoDict["Health"].currentUpgradeStep].value;
         g_refs.Instance.sessionData.upgradeLevelHealth = upgradeInfoDict["Health"].currentUpgradeStep;
         g_refs.Instance.plHealth.UpdateUI();
     }

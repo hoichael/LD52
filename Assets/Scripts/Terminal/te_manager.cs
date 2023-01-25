@@ -32,7 +32,7 @@ public class te_manager : MonoBehaviour
     {
         if(id == 0)
         {
-
+            selectables[activeSlIdx].Use();
         }
         else
         {
