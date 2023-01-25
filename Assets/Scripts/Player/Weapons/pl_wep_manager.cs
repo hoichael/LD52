@@ -57,7 +57,13 @@ public class pl_wep_manager : MonoBehaviour
         DropWeapon();
 
         activeWeaponType = type;
-        g_refs.Instance.sessionData.wepInfoDict[activeWeaponType].owned = true;
+
+        if(!g_refs.Instance.sessionData.wepInfoDict[activeWeaponType].owned)
+        {
+            g_refs.Instance.sessionData.wepInfoDict[activeWeaponType].owned = true;
+            g_refs.Instance.sessionData.wepInfoDict[activeWeaponType].ammo = g_refs.Instance.sessionData.wepInfoDict[activeWeaponType].wepScript.initAmmo;
+        }
+        
         g_refs.Instance.sessionData.wepInfoDict[activeWeaponType].active = true;
         activeWeaponScript = newWeapon;
         activeWeaponScript.Equip();

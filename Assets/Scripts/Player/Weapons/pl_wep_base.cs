@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public abstract class pl_wep_base : MonoBehaviour
 {
@@ -13,9 +14,11 @@ public abstract class pl_wep_base : MonoBehaviour
     [SerializeField] GameObject crosshair;
     public GameObject uiObject;
     public ui_rotate uiRotator;
+    public TextMeshPro ammoCountTextEl;
     public Transform pivotTrans;
 
     [Header("BASE --- RECOIL")]
+    [SerializeField] wepType type;
     [SerializeField] float recoilPosZ;
     [SerializeField] float recoilAnimSpeed;
     [SerializeField] AnimationCurve recoilAnimCurve;
@@ -24,6 +27,8 @@ public abstract class pl_wep_base : MonoBehaviour
     [SerializeField] float fireRate;
     [SerializeField] Vector3 hiddenRot;
     [SerializeField] float equipAnimSpeed;
+    public int initAmmo;
+    [SerializeField] int ammoAddAmount;
 
     float currentRecoilAnimFactor = 1;
     public Transform ikTargetHolderLeft, ikTargetHolderRight;
@@ -50,6 +55,9 @@ public abstract class pl_wep_base : MonoBehaviour
 
             if (canShoot && Input.GetKey(KeyCode.Mouse0))
             {
+                if (g_refs.Instance.sessionData.wepInfoDict[type].ammo <= 0) return;
+                g_refs.Instance.sessionData.wepInfoDict[type].ammo--;
+                UpdateAmmoUI();
                 Shoot();
                 currentRecoilAnimFactor = 0;
                 transform.localPosition = new Vector3(0, 0, recoilPosZ);
@@ -61,6 +69,7 @@ public abstract class pl_wep_base : MonoBehaviour
     public void Equip()
     {
         ResetVisuals();
+        UpdateAmmoUI();
 
         crosshair.SetActive(true);
         this.gameObject.SetActive(true);
@@ -87,6 +96,12 @@ public abstract class pl_wep_base : MonoBehaviour
         this.gameObject.SetActive(false);
 
         uiRotator.enabled = false;
+    }
+
+    public void AddAmmo() // called from te_sl_consumable - currently the only way to add ammo is buying it from terminal
+    {
+        g_refs.Instance.sessionData.wepInfoDict[type].ammo += ammoAddAmount;
+        UpdateAmmoUI();
     }
 
     protected virtual void Shoot() {}
@@ -116,6 +131,11 @@ public abstract class pl_wep_base : MonoBehaviour
             Vector3.zero,
             currentEquipAnimFactor
             ));
+    }
+
+    private void UpdateAmmoUI()
+    {
+        ammoCountTextEl.text = "" + g_refs.Instance.sessionData.wepInfoDict[type].ammo;
     }
 
     private IEnumerator HandleFirerate()
