@@ -533,7 +533,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &35521106
 Transform:
   m_ObjectHideFlags: 0
@@ -548,7 +548,7 @@ Transform:
   m_Children:
   - {fileID: 1698270518}
   m_Father: {fileID: 1500627494}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &38400933
 PrefabInstance:
@@ -2471,6 +2471,7 @@ MonoBehaviour:
   terminalManager: {fileID: 1820906510}
   slTextUpper: HEAL 4 CASH
   cost: 150
+  cashTextEl: {fileID: 414053466}
   hpAmount: 3
 --- !u!1 &186231651
 GameObject:
@@ -3437,6 +3438,7 @@ Transform:
   - {fileID: 204169986}
   - {fileID: 1535070368}
   - {fileID: 1516731931}
+  - {fileID: 997889581}
   m_Father: {fileID: 1586082242}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3455,7 +3457,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 499949c44a6632443b629c61aedb0588,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.404
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 499949c44a6632443b629c61aedb0588,
         type: 3}
@@ -3505,7 +3507,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 499949c44a6632443b629c61aedb0588,
         type: 3}
       propertyPath: m_Name
-      value: Vending machine
+      value: Model
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 499949c44a6632443b629c61aedb0588, type: 3}
@@ -4658,6 +4660,7 @@ MonoBehaviour:
   terminalManager: {fileID: 1820906510}
   slTextUpper: BUY AMMO
   cost: 50
+  cashTextEl: {fileID: 414053466}
   hpAmount: 0
 --- !u!1 &298613283
 GameObject:
@@ -7270,7 +7273,7 @@ GameObject:
   - component: {fileID: 414053467}
   - component: {fileID: 414053466}
   m_Layer: 5
-  m_Name: Money Text
+  m_Name: Cash Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9829,6 +9832,7 @@ MonoBehaviour:
   containerEnableDelay: 0.15
   weaponsContainer: {fileID: 621169846}
   scoreText: {fileID: 851412455}
+  cashText: {fileID: 414053466}
   upperPromptText: {fileID: 1985271751}
   musicSource: {fileID: 425781842}
   plRB: {fileID: 6773398}
@@ -9840,6 +9844,8 @@ MonoBehaviour:
   rendererCornRight: {fileID: 686423043}
   rendererCornLeft: {fileID: 799998324}
   mouseSensAudio: {fileID: 1335632852}
+  vendingMachineObj: {fileID: 997889580}
+  terminalObj: {fileID: 1079877784}
 --- !u!1001 &536847312
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11794,6 +11800,7 @@ MonoBehaviour:
   terminalManager: {fileID: 1820906510}
   slTextUpper: BUY A RIFLE
   cost: 550
+  cashTextEl: {fileID: 414053466}
   type: 1
   wepManager: {fileID: 2006918369}
 --- !u!1 &621169846
@@ -12577,7 +12584,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &680413278
 Transform:
   m_ObjectHideFlags: 0
@@ -14064,6 +14071,7 @@ MonoBehaviour:
   terminalManager: {fileID: 1820906510}
   slTextUpper: ROCKET LAUNCHER
   cost: 3333
+  cashTextEl: {fileID: 414053466}
   type: 3
   wepManager: {fileID: 2006918369}
 --- !u!1001 &761957744
@@ -15560,6 +15568,7 @@ MonoBehaviour:
   terminalManager: {fileID: 1820906510}
   slTextUpper: BUY A SHOTGUN
   cost: 1500
+  cashTextEl: {fileID: 414053466}
   type: 2
   wepManager: {fileID: 2006918369}
 --- !u!1 &883284283
@@ -17020,12 +17029,12 @@ GameObject:
   m_Component:
   - component: {fileID: 997889581}
   m_Layer: 0
-  m_Name: UpgradeStation
+  m_Name: Vending Machine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &997889581
 Transform:
   m_ObjectHideFlags: 0
@@ -17042,8 +17051,8 @@ Transform:
   - {fileID: 1712288341}
   - {fileID: 680413278}
   - {fileID: 224067106}
-  m_Father: {fileID: 1500627494}
-  m_RootOrder: 1
+  m_Father: {fileID: 219723980}
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1007228037
 PrefabInstance:
@@ -18309,7 +18318,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1079877785
 Transform:
   m_ObjectHideFlags: 0
@@ -18318,7 +18327,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1079877784}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.149, y: 1.898, z: 4.425}
+  m_LocalPosition: {x: 2.011, y: 1.898, z: 4.425}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -22073,6 +22082,7 @@ MonoBehaviour:
   terminalManager: {fileID: 1820906510}
   slTextUpper: UPGRADE SPEED
   cost: 0
+  cashTextEl: {fileID: 414053466}
   upgradeType: Move
   upgradeManager: {fileID: 495337695}
 --- !u!1 &1370828795
@@ -23654,7 +23664,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1441639688}
-  - {fileID: 997889581}
   - {fileID: 35521106}
   m_Father: {fileID: 1586082242}
   m_RootOrder: 5
@@ -24195,6 +24204,7 @@ MonoBehaviour:
   terminalManager: {fileID: 1820906510}
   slTextUpper: UPGRADE JUMP
   cost: 0
+  cashTextEl: {fileID: 414053466}
   upgradeType: Jump
   upgradeManager: {fileID: 495337695}
 --- !u!1 &1529696306
@@ -25887,6 +25897,7 @@ MonoBehaviour:
   terminalManager: {fileID: 1820906510}
   slTextUpper: UPGRADE HEALTH
   cost: 0
+  cashTextEl: {fileID: 414053466}
   upgradeType: Health
   upgradeManager: {fileID: 495337695}
 --- !u!1001 &1689717440
@@ -26255,7 +26266,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1712288341
 Transform:
   m_ObjectHideFlags: 0

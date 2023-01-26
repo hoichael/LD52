@@ -30,6 +30,7 @@ public class te_sl_consumable : te_selectable_base
                 {
                     g_refs.Instance.plHealth.HandleHeal(hpAmount);
                     g_refs.Instance.sessionData.cash -= cost;
+                    cashTextEl.text = "CASH: " + g_refs.Instance.sessionData.cash;
                 }
             }
             else
@@ -40,6 +41,7 @@ public class te_sl_consumable : te_selectable_base
                     {
                         wepInfo.wepScript.AddAmmo();
                         g_refs.Instance.sessionData.cash -= cost;
+                        cashTextEl.text = "CASH: " + g_refs.Instance.sessionData.cash;
                         return;
                     }
                 }

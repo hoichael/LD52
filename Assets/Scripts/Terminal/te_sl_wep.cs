@@ -30,6 +30,7 @@ public class te_sl_wep : te_selectable_base
         else
         {
             g_refs.Instance.sessionData.cash -= cost;
+            cashTextEl.text = "CASH: " + g_refs.Instance.sessionData.cash;
             wepManager.SwitchWeapon(type);
             terminalManager.textElLower.text = "OWNED";
         }

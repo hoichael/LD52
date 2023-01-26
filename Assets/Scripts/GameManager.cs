@@ -18,7 +18,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject weaponsContainer;
 
     [SerializeField] TextMeshPro scoreText;
-    int score;
+    [SerializeField] TextMeshPro cashText;
+    //int score;
 
     [SerializeField] TextMeshPro upperPromptText;
 
@@ -36,11 +37,24 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] AudioSource mouseSensAudio;
 
+    [SerializeField] GameObject vendingMachineObj, terminalObj;
+
     bool DEV_DONTSPAWN;
 
     private void Start()
     {
         UpdateScore(0);
+        cashText.text = "CASH: " + g_refs.Instance.sessionData.cash;
+        if (g_refs.Instance.sessionData.currentWaveRegular > 0)
+        {
+            terminalObj.SetActive(true);
+            vendingMachineObj.SetActive(false);
+        }
+        else
+        {
+            vendingMachineObj.SetActive(true);
+            terminalObj.SetActive(false);
+        }
     }
 
     private void Update()
@@ -113,8 +127,8 @@ public class GameManager : MonoBehaviour
 
     public void UpdateScore(int scoreToAdd)
     {
-        score += scoreToAdd;
-        scoreText.text = "SCORE: " + score;
+        g_refs.Instance.sessionData.score += scoreToAdd;
+        scoreText.text = "SCORE: " + g_refs.Instance.sessionData.score;
         //enemySpawner.OnEnemyDeath();
     }
 

@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class te_selectable_base : MonoBehaviour
 {
     [SerializeField] protected te_manager terminalManager;
     public string slTextUpper/*, slTextLower*/;
     [SerializeField] protected int cost;
+    [SerializeField] protected TextMeshPro cashTextEl; 
 
     public virtual void Select()
     {
