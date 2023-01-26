@@ -19,7 +19,7 @@ public class pd_session_RESET : MonoBehaviour
         ResetToDefaults(); // DEV STUFF, ONLY MATTERS IN EDITOR, COMMENT OUT FOR BUILDS
     }
 
-    private void ResetToDefaults() // DEV STUFF, ONLY MATTERS IN EDITOR, COMMENT OUT FOR BUILDS
+    public void ResetToDefaults() // DEV STUFF, ONLY MATTERS IN EDITOR, COMMENT OUT FOR BUILDS
     {
         sessionData.score = 0;
         sessionData.cash = 0;

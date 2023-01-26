@@ -39,6 +39,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameObject vendingMachineObj, terminalObj;
 
+    [SerializeField] pd_session_RESET pdRest;
+    [SerializeField] ui_shutter uiShutterManager;
+
     bool DEV_DONTSPAWN;
 
     private void Start()
@@ -102,7 +105,7 @@ public class GameManager : MonoBehaviour
         musicSource.Play();
     }
 
-    private void HarvestTime()
+    public void HarvestTime()
     {
         print("HARVEST TIME");
         monitorManager.HandleHarvestTime();
@@ -139,12 +142,14 @@ public class GameManager : MonoBehaviour
         camRot.enabled = false;
         weaponManager.DropWeapon();
 
+        uiShutterManager.OnSceneExit();
         StartCoroutine(HandleDeathTimer());
     }
 
     private IEnumerator HandleDeathTimer()
     {
-        yield return new WaitForSeconds(3.8f);
+        yield return new WaitForSeconds(3f);
+        pdRest.ResetToDefaults();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

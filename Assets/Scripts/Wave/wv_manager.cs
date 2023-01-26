@@ -14,6 +14,8 @@ public class wv_manager : MonoBehaviour
     [SerializeField] TextMeshPro waveCounterText, enemiesCounterText;
     [SerializeField] GameObject waveCompleteTextWrapper;
 
+    [SerializeField] ui_shutter uiShutterManager;
+
     // these values now reside in pd_sesion ScriptableObject instance
     //int currentWaveIDXRegular = 0;
     //int currentWaveIDXLooping = -1;
@@ -77,6 +79,10 @@ public class wv_manager : MonoBehaviour
         AdvanceWaveIDX();
 
         waveCompleteTextWrapper.SetActive(true);
+
+        yield return new WaitForSeconds(2f);
+
+        uiShutterManager.OnSceneExit();
 
         yield return new WaitForSeconds(2.5f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

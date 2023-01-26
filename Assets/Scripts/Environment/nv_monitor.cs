@@ -24,14 +24,23 @@ public class nv_monitor : MonoBehaviour
 
         currentPromptIDX++;
 
-        if (currentPromptIDX == 1)
-        {
-            gameManager.InitHarvestTimer();
-        }
-
-        if(currentPromptIDX != 0)
+        if (currentPromptIDX != 0)
         {
             audioSource.Play();
+        }
+
+        if (currentPromptIDX == 1)
+        {
+            if (g_refs.Instance.sessionData.currentWaveRegular > 0)
+            {
+                gameManager.HarvestTime();
+                return;
+            }
+            else
+            {
+                gameManager.InitHarvestTimer();
+                return;
+            }
         }
 
         if(currentPromptIDX == promptsList.Count)
