@@ -39,7 +39,6 @@ public abstract class pl_wep_base : MonoBehaviour
     public float animWeightMult; // the lower the value (0-1) the heigher the "weight"
     float currentEquipAnimFactor = 1;
 
-
     private void Update()
     {
         if (currentEquipAnimFactor != 1)
@@ -133,7 +132,7 @@ public abstract class pl_wep_base : MonoBehaviour
             ));
     }
 
-    private void UpdateAmmoUI()
+    public void UpdateAmmoUI()
     {
         ammoCountTextEl.text = "" + g_refs.Instance.sessionData.wepInfoDict[type].ammo;
     }

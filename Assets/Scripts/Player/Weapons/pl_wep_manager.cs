@@ -176,7 +176,8 @@ public class pl_wep_manager : MonoBehaviour
             if(wepInfo.owned)
             {
                 wepInfo.wepScript.uiObject.SetActive(true);
-                if(wepInfo.active)
+                wepInfo.wepScript.UpdateAmmoUI();
+                if (wepInfo.active)
                 {
                     wepInfo.wepScript.uiRotator.enabled = true;
 

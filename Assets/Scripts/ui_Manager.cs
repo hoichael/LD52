@@ -3,96 +3,120 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+// LEGACY, UNUSED
 public class ui_Manager : MonoBehaviour
 {
-    [SerializeField] TextMeshPro hTimeText;
-    [SerializeField] Vector3 hTimeTextOrigin, hTimeTextTarget;
-    [SerializeField] float hTimeTextSpeed;
-    [SerializeField] AnimationCurve hTimeAnimCurve;
+    public TextMeshPro hTimeText;
+    public Vector3 hTimeTextOrigin, hTimeTextTarget;
+    public float hTimeTextSpeed;
+    public AnimationCurve hTimeAnimCurve;
 
-    [SerializeField] TextMeshPro healthText, moneyText, scoreText;
-    [SerializeField] Vector3 healthTextPosTarget, moneyTextPosTarget, scoreTextPosTarget;
-    Vector3 healthTextPosStart, moneyTextPosStart, scoreTextPosStart;
+    public TextMeshPro healthText, moneyText, scoreText;
+    public Vector3 healthTextPosTarget, moneyTextPosTarget, scoreTextPosTarget;
+    public Vector3 healthTextPosStart, moneyTextPosStart, scoreTextPosStart;
 
-    [SerializeField] Transform chicken;
-    [SerializeField] Vector3 chickenPosTarget;
-    Vector3 chickenPosStart;
+    public Transform chicken;
+    public Vector3 chickenPosTarget;
+    public Vector3 chickenPosStart;
 
 
-    [SerializeField] TextMeshPro waveCounterText, enemyCounterText;
-    [SerializeField] Vector3 waveCounterPosTarget, enemyCounterPosTarget;
-    Vector3 waveCounterPosStart, enemyCounterPosStart;
+    public TextMeshPro waveCounterText, enemyCounterText;
+    public Vector3 waveCounterPosTarget, enemyCounterPosTarget;
+    public Vector3 waveCounterPosStart, enemyCounterPosStart;
 
     float currentHTimeTextFactor;
     bool harvestTimeAnim;
 
+    [SerializeField] ui_setup_init uiHandlerInit;
+    [SerializeField] ui_setup_consecutive uiHanderConsecutive;
+
+    public Transform uiBar;
+    public Vector3 uiBarPosStart, uiBarPosTarget;
+
+    private void Start()
+    {
+        if(g_refs.Instance.sessionData.currentWaveRegular > 0)
+        {
+            uiHanderConsecutive.HandleSceneLoad();
+        }
+    }
+
     public void HandleHarvestTime()
     {
-        harvestTimeAnim = true;
+        //harvestTimeAnim = true;
         healthTextPosStart = healthText.transform.localPosition;
         moneyTextPosStart = moneyText.transform.localPosition;
-        scoreTextPosStart = moneyText.transform.localPosition;
+        scoreTextPosStart = scoreText.transform.localPosition;
         chickenPosStart = chicken.localPosition;
         waveCounterPosStart = waveCounterText.transform.localPosition;
         enemyCounterPosStart = enemyCounterText.transform.localPosition;
 
         enemyCounterText.gameObject.SetActive(true);
-    }
 
-    private void Update()
-    {
-        if(harvestTimeAnim)
+        if (g_refs.Instance.sessionData.currentWaveRegular > 0)
         {
-            HandleHarvestTimeAnim();
-        }    
+            uiHanderConsecutive.HandleHarvestTime();
+        }
+        else
+        {
+            uiHandlerInit.HandleHarvestTime();
+        }
     }
 
-    private void HandleHarvestTimeAnim()
-    {
-        currentHTimeTextFactor = Mathf.MoveTowards(currentHTimeTextFactor, 1, hTimeTextSpeed * Time.deltaTime);
+    //private void Update()
+    //{
+    //    if(harvestTimeAnim)
+    //    {
+    //        HandleHarvestTimeAnim();
+    //    }    
+    //}
 
-        hTimeText.transform.localPosition = Vector3.Lerp(
-            hTimeTextOrigin,
-            hTimeTextTarget,
-            hTimeAnimCurve.Evaluate(Mathf.PingPong(currentHTimeTextFactor, 0.5f))
-            );
+    //private void HandleHarvestTimeAnim()
+    //{
+    //    currentHTimeTextFactor = Mathf.MoveTowards(currentHTimeTextFactor, 1, hTimeTextSpeed * Time.deltaTime);
 
-        healthText.transform.localPosition = Vector3.Lerp(
-            healthTextPosStart,
-            healthTextPosTarget,
-            currentHTimeTextFactor
-            );
+    //    hTimeText.transform.localPosition = Vector3.Lerp(
+    //        hTimeTextOrigin,
+    //        hTimeTextTarget,
+    //        hTimeAnimCurve.Evaluate(Mathf.PingPong(currentHTimeTextFactor, 0.5f))
+    //        );
 
-        moneyText.transform.localPosition = Vector3.Lerp(
-            moneyTextPosStart,
-            moneyTextPosTarget,
-            currentHTimeTextFactor
-            );
+    //    healthText.transform.localPosition = Vector3.Lerp(
+    //        healthTextPosStart,
+    //        healthTextPosTarget,
+    //        currentHTimeTextFactor
+    //        );
 
-        scoreText.transform.localPosition = Vector3.Lerp(
-            scoreTextPosStart,
-            scoreTextPosTarget,
-            currentHTimeTextFactor
-            );
+    //    moneyText.transform.localPosition = Vector3.Lerp(
+    //        moneyTextPosStart,
+    //        moneyTextPosTarget,
+    //        currentHTimeTextFactor
+    //        );
 
-        chicken.localPosition = Vector3.Lerp(
-            chickenPosStart,
-            chickenPosTarget,
-            currentHTimeTextFactor
-            );
+    //    scoreText.transform.localPosition = Vector3.Lerp(
+    //        scoreTextPosStart,
+    //        scoreTextPosTarget,
+    //        currentHTimeTextFactor
+    //        );
 
-        waveCounterText.transform.localPosition = Vector3.Lerp(
-            waveCounterPosStart,
-            waveCounterPosTarget,
-            currentHTimeTextFactor
-            );
+    //    chicken.localPosition = Vector3.Lerp(
+    //        chickenPosStart,
+    //        chickenPosTarget,
+    //        currentHTimeTextFactor
+    //        );
 
-        enemyCounterText.transform.localPosition = Vector3.Lerp(
-            enemyCounterPosStart,
-            enemyCounterPosTarget,
-            currentHTimeTextFactor
-            );
+    //    waveCounterText.transform.localPosition = Vector3.Lerp(
+    //        waveCounterPosStart,
+    //        waveCounterPosTarget,
+    //        currentHTimeTextFactor
+    //        );
 
-        if (currentHTimeTextFactor == 1) harvestTimeAnim = false;
-    }
+    //    enemyCounterText.transform.localPosition = Vector3.Lerp(
+    //        enemyCounterPosStart,
+    //        enemyCounterPosTarget,
+    //        currentHTimeTextFactor
+    //        );
+
+    //    if (currentHTimeTextFactor == 1) harvestTimeAnim = false;
+    //}
 }
