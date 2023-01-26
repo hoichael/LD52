@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Scene
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 101
+  controlID: 29
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 18
+  controlID: 30
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 19
+  controlID: 31
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -270,8 +270,8 @@ MonoBehaviour:
     y: 0
     width: 335
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -607,9 +607,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 32.990234, y: -15.902754, z: -117.18615}
+    m_Target: {x: 23.968294, y: -11.482508, z: -119.255516}
     speed: 2
-    m_Value: {x: 32.990234, y: -15.902754, z: -117.18615}
+    m_Value: {x: 23.968294, y: -11.482508, z: -119.255516}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -658,11 +658,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.0051413197, y: 0.9946574, z: -0.06155652, w: 0.08286197}
     speed: 2
-    m_Value: {x: 0.0051412554, y: 0.99464494, z: -0.06155575, w: 0.08286093}
+    m_Value: {x: 0.0051413197, y: 0.99465734, z: -0.061556518, w: 0.08286196}
   m_Size:
-    m_Target: 74.73938
+    m_Target: 77.00225
     speed: 2
-    m_Value: 71.520935
+    m_Value: 77.00225
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -837,9 +837,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 12f70000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 14fbffff
+      m_ExpandedIDs: 34fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -905,22 +905,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Imports/Floater
+    - Assets/Imports
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 71
   m_LastFolders:
-  - Assets/Imports/Floater
+  - Assets/Imports
   m_LastFoldersGridSize: 71
   m_LastProjectPath: C:\Users\MOritz\Documents\GitHub\LD52
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 32f60000
-    m_LastClickedID: 63026
-    m_ExpandedIDs: 000000000c8100000e8100001681000000ca9a3b
+    scrollPos: {x: 0, y: 24}
+    m_SelectedIDs: 04810000
+    m_LastClickedID: 33028
+    m_ExpandedIDs: 0000000004810000068100001081000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -948,7 +948,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000000c8100000e810000
+    m_ExpandedIDs: 000000000481000006810000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
