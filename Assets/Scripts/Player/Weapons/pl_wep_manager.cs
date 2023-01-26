@@ -6,7 +6,7 @@ public class pl_wep_manager : MonoBehaviour
 {
     [SerializeField] Transform camHolderTrans;
     //[SerializeField] List<pl_wep_base> weaponList;
-    [SerializeField] pl_wep_base rifleScript, shotgunScript, launcherScript;
+    [SerializeField] pl_wep_base rifleScript, shotgunScript, launcherScript, axeScript;
     pl_wep_base activeWeaponScript;
     wepType activeWeaponType;
 
@@ -152,9 +152,10 @@ public class pl_wep_manager : MonoBehaviour
     private void SetupWepInfoDict()
     {
         Dictionary<wepType, pl_wep_info> freshWepInfoDict = new Dictionary<wepType, pl_wep_info>();
-        freshWepInfoDict.Add(wepType.rifle, new pl_wep_info(wepType.rifle, rifleScript, 0));
-        freshWepInfoDict.Add(wepType.shotgun, new pl_wep_info(wepType.shotgun, shotgunScript, 1));
-        freshWepInfoDict.Add(wepType.launcher, new pl_wep_info(wepType.launcher, launcherScript, 2));
+        freshWepInfoDict.Add(wepType.axe, new pl_wep_info(wepType.axe, axeScript, 0));
+        freshWepInfoDict.Add(wepType.rifle, new pl_wep_info(wepType.rifle, rifleScript, 1));
+        freshWepInfoDict.Add(wepType.shotgun, new pl_wep_info(wepType.shotgun, shotgunScript, 2));
+        freshWepInfoDict.Add(wepType.launcher, new pl_wep_info(wepType.launcher, launcherScript, 3));
 
         g_refs.Instance.sessionData.wepInfoDict = freshWepInfoDict;
     }
@@ -167,6 +168,7 @@ public class pl_wep_manager : MonoBehaviour
         rendererCornRight.enabled = true;
 
         // doesnt belong here but its fine for now
+        g_refs.Instance.sessionData.wepInfoDict[wepType.axe].wepScript = axeScript;
         g_refs.Instance.sessionData.wepInfoDict[wepType.rifle].wepScript = rifleScript;
         g_refs.Instance.sessionData.wepInfoDict[wepType.shotgun].wepScript = shotgunScript;
         g_refs.Instance.sessionData.wepInfoDict[wepType.launcher].wepScript = launcherScript;
@@ -213,5 +215,6 @@ public enum wepType
     NULL,
     rifle,
     shotgun,
-    launcher
+    launcher,
+    axe
 }
