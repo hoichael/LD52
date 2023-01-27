@@ -90,11 +90,15 @@ public class ui_shutter : MonoBehaviour
 
     }
 
-    public void OnSceneExit()
+    public void OnWaveComplete()
     {
         shutterTop.gameObject.SetActive(true);
         shutterBottom.gameObject.SetActive(true);
-        //currentShutterFactor = 1;
+
+        // shouldnt make a difference but prevents weird flash
+        shutterTop.localPosition = new Vector3(0, shutterYHidden, 0);
+        shutterBottom.localPosition = new Vector3(0, -shutterYHidden, 0);
+
         currentShutterTarget = 0;
     }
 }

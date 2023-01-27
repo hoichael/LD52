@@ -100,7 +100,7 @@ public class GameManager : MonoBehaviour
     public void InitHarvestTimer()
     {
         StartCoroutine(HandleHarvestTimer());
-        musicSource.Play();
+        //musicSource.Play();
     }
 
     public void HarvestTime()
@@ -140,7 +140,7 @@ public class GameManager : MonoBehaviour
         camRot.enabled = false;
         weaponManager.DropWeapon();
 
-        uiShutterManager.OnSceneExit();
+        uiShutterManager.OnWaveComplete();
         StartCoroutine(HandleDeathTimer());
     }
 

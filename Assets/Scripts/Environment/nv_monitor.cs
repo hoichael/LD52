@@ -8,6 +8,8 @@ public class nv_monitor : MonoBehaviour
     [SerializeField] TextMeshPro promptTextEl;
     [SerializeField] GameManager gameManager;
 
+    [SerializeField] music_manager musicManager;
+
     //[SerializeField] AudioSource audioSource;
 
     public int currentPromptIDX = -1;
@@ -32,6 +34,8 @@ public class nv_monitor : MonoBehaviour
 
         if (currentPromptIDX == 1)
         {
+            musicManager.OnInitButtonPress();
+
             if (g_refs.Instance.sessionData.currentWaveRegular > 0)
             {
                 gameManager.HarvestTime();

@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 7272605533070656452}
   m_Layer: 17
   m_Name: Cross_A
-  m_TagString: Untagged
+  m_TagString: Health
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

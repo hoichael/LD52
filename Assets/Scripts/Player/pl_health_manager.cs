@@ -9,6 +9,9 @@ public class pl_health_manager : MonoBehaviour
     [SerializeField] GameManager gameManager;
     [SerializeField] TextMeshPro hpTextElement;
 
+    [SerializeField] SpriteRenderer overlaySprRenderer;
+    [SerializeField] float dmgOverlayFadeSpeed;
+    float currentFadeFactor = 0;
     //[SerializeField] AudioSource hurtAudio;
     bool dead;
 
@@ -22,9 +25,21 @@ public class pl_health_manager : MonoBehaviour
         UpdateUI();
     }
 
+    private void Update()
+    {
+        if(currentFadeFactor != 0)
+        {
+            currentFadeFactor = Mathf.MoveTowards(currentFadeFactor, 0, dmgOverlayFadeSpeed * Time.deltaTime);
+            overlaySprRenderer.color = new Color(255, 0, 0, currentFadeFactor);
+        }
+    }
+
     public void HandleDamage(dmg_info dmgInfo)
     {
         if (dead) return;
+        if (currentFadeFactor != 0) return; // simple i-frames
+
+        currentFadeFactor = 1;
 
         print("Damage Taken! (" + dmgInfo.dmgAmount + ")");
         //refs.state.hp -= dmgInfo.dmgAmount;
