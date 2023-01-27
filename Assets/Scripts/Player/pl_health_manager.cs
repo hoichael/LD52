@@ -9,7 +9,7 @@ public class pl_health_manager : MonoBehaviour
     [SerializeField] GameManager gameManager;
     [SerializeField] TextMeshPro hpTextElement;
 
-    [SerializeField] AudioSource hurtAudio;
+    //[SerializeField] AudioSource hurtAudio;
     bool dead;
 
     private void Start()
@@ -32,12 +32,14 @@ public class pl_health_manager : MonoBehaviour
         //if(refs.state.hp <= 0)
         if (g_refs.Instance.sessionData.playerHP <= 0)
         {
+            g_refs.Instance.sessionData.playerHP = 0;
             gameManager.HandleDeath();
             dead = true;
         }
         UpdateUI();
 
-        hurtAudio.Play();
+        //hurtAudio.Play();
+        g_refs.Instance.sfxOneshot2D.Play(SfxType.player_hurt);
     }
 
     public void HandleHeal(int healAmount)

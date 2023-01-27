@@ -19,4 +19,8 @@ MonoBehaviour:
   enemyInfoArr:
   - type: 0
     amount: 4
+  - type: 8
+    amount: 2
+  - type: 13
+    amount: 1
   spawnDelay: 1.2

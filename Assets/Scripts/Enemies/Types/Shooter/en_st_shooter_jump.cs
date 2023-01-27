@@ -14,6 +14,8 @@ public class en_st_shooter_jump : en_state_base
     [SerializeField] float gravForce;
     [SerializeField] float airDrag, groundDrag;
 
+    [SerializeField] AudioSource jumpAudioSrc, landAudioSrc;
+
     Quaternion currentTargetRot;
     bool conductGroundcheck;
 
@@ -67,6 +69,7 @@ public class en_st_shooter_jump : en_state_base
             info.rb.velocity = Vector3.zero;
             info.rb.drag = groundDrag;
             info.rb.interpolation = RigidbodyInterpolation.None;
+            landAudioSrc.Play();
             ChangeState("idle");
         }
     }
@@ -87,6 +90,7 @@ public class en_st_shooter_jump : en_state_base
         info.rb.drag = airDrag;
         info.rb.AddForce(Vector3.up * jumpForceUp, ForceMode.Impulse);
         info.rb.AddForce(info.trans.forward * jumpForceForward, ForceMode.Impulse);
+        jumpAudioSrc.Play();
     }
 
     protected override void OnDisable()

@@ -19,7 +19,7 @@ public class pl_wep_rifle : pl_wep_base
     {
         base.Shoot();
 
-        audioSource.Play();
+        //audioSource.Play();
         muzzleFlashParticles.Play();
         StartCoroutine(HandleMuzzleLight());
 

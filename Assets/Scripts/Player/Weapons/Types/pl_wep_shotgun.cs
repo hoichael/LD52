@@ -20,7 +20,7 @@ public class pl_wep_shotgun : pl_wep_base
     protected override void Shoot()
     {
         base.Shoot();
-        audioSource.Play();
+        //audioSource.Play();
         StartCoroutine(HandleMuzzleLight());
 
         muzzleFlashParticles.Play();

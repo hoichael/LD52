@@ -9,4 +9,5 @@ public class g_refs : ut_singleton<g_refs>
     public GameManager gameManager;
     public lv_pool pool;
     public wv_manager waveManager;
+    public sfx_oneshot2d sfxOneshot2D;
 }

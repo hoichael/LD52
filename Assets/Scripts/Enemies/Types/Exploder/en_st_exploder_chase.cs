@@ -7,6 +7,7 @@ public class en_st_exploder_chase : en_state_base
     [SerializeField] float rotSlerpDamp;
     [SerializeField] float moveSpeed;
     [SerializeField] float attackDistance;
+    [SerializeField] AudioSource runAudioSrc;
     Transform playerTrans;
 
     private void Start()
@@ -19,6 +20,7 @@ public class en_st_exploder_chase : en_state_base
         base.OnEnable();
 
         info.anim.CrossFade("Run", 0.3f);
+        runAudioSrc.Play();
     }
 
     private void FixedUpdate()

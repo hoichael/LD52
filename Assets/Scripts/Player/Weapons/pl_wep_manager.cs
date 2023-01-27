@@ -72,6 +72,8 @@ public class pl_wep_manager : MonoBehaviour
 
         wepBobManager.OnWeaponSwitch(activeWeaponScript.animWeightMult);
         wepSwayManager.OnWeaponSwitch(activeWeaponScript.pivotTransDefaultPos, activeWeaponScript.pivotTrans, activeWeaponScript.animWeightMult);
+
+        g_refs.Instance.sfxOneshot2D.Play(SfxType.wep_switch);
     }
 
     public void DropWeapon()

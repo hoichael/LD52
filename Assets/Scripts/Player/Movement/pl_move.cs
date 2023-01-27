@@ -4,9 +4,9 @@ public class pl_move : MonoBehaviour
 {
     [SerializeField] pl_refs refs;
     [SerializeField] Transform orientation;
-    [SerializeField] AudioSource footstepAudio;
+    //[SerializeField] AudioSource footstepAudio;
 
-    bool audioPlaying;
+    //bool audioPlaying;
 
     private void FixedUpdate()
     {
@@ -19,18 +19,18 @@ public class pl_move : MonoBehaviour
             orientation.forward * Input.GetAxisRaw("Vertical") +
             orientation.right * Input.GetAxisRaw("Horizontal");
 
-        if (refs.state.grounded && dir.normalized != Vector3.zero)
-        {
-            if (audioPlaying) return dir.normalized;
-            footstepAudio.Play();
-            audioPlaying = true;
-        }
-        else
-        {
-            if (!audioPlaying) return dir.normalized;
-            footstepAudio.Stop();
-            audioPlaying = false;
-        }
+        //if (refs.state.grounded && dir.normalized != Vector3.zero)
+        //{
+        //    if (audioPlaying) return dir.normalized;
+        //    footstepAudio.Play();
+        //    audioPlaying = true;
+        //}
+        //else
+        //{
+        //    if (!audioPlaying) return dir.normalized;
+        //    footstepAudio.Stop();
+        //    audioPlaying = false;
+        //}
 
         return dir.normalized;
     }

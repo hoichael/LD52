@@ -8,7 +8,7 @@ public class nv_monitor : MonoBehaviour
     [SerializeField] TextMeshPro promptTextEl;
     [SerializeField] GameManager gameManager;
 
-    [SerializeField] AudioSource audioSource;
+    //[SerializeField] AudioSource audioSource;
 
     public int currentPromptIDX = -1;
     bool harvestTime;
@@ -26,7 +26,8 @@ public class nv_monitor : MonoBehaviour
 
         if (currentPromptIDX != 0)
         {
-            audioSource.Play();
+            //audioSource.Play();
+            g_refs.Instance.sfxOneshot2D.Play(SfxType.button_a);
         }
 
         if (currentPromptIDX == 1)

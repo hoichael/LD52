@@ -38,6 +38,8 @@ public class te_manager : MonoBehaviour
         {
             SwitchSelectable(id);
         }
+
+        g_refs.Instance.sfxOneshot2D.Play(SfxType.button_b);
     }
 
     private void SwitchSelectable(int dirMult)

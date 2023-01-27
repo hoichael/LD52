@@ -38,5 +38,7 @@ public class pl_pickup : MonoBehaviour
             Destroy(other.gameObject);
             healthManager.HandleHeal(pickupAmountHealth);
         }
+
+        g_refs.Instance.sfxOneshot2D.Play(SfxType.pickup);
     }
 }

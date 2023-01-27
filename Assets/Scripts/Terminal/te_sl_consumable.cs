@@ -37,11 +37,12 @@ public class te_sl_consumable : te_selectable_base
             {
                 foreach(pl_wep_info wepInfo in g_refs.Instance.sessionData.wepInfoDict.Values)
                 {
-                    if(wepInfo.active)
+                    if(wepInfo.active && wepInfo.type != wepType.axe)
                     {
                         wepInfo.wepScript.AddAmmo();
                         g_refs.Instance.sessionData.cash -= cost;
                         cashTextEl.text = "CASH: " + g_refs.Instance.sessionData.cash;
+                        g_refs.Instance.sfxOneshot2D.Play(SfxType.ammo_get);
                         return;
                     }
                 }

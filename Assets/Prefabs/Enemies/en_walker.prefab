@@ -44,7 +44,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.298
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -53,9 +53,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 135
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -71,6 +71,15 @@ AudioSource:
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.066969216
+      value: 0.55259115
+      inSlope: -0.6220141
+      outSlope: -0.6220141
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.27523345
     - serializedVersion: 3
       time: 1
       value: 0
@@ -346,7 +355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2468128288045246835}
-  gravForce: 20
+  gravForce: 11
 --- !u!1 &4818094373885318243
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,7 +422,7 @@ MonoBehaviour:
   stateID: chase
   info: {fileID: 3297844883612648194}
   rotSlerpDamp: 0.08
-  moveSpeed: 14.5
+  moveSpeed: 11
   attackDistance: 3.5
 --- !u!114 &153234953211492484
 MonoBehaviour:
@@ -430,8 +439,8 @@ MonoBehaviour:
   stateID: attack
   info: {fileID: 3297844883612648194}
   duration: 1.1
-  hitboxDelay: 0.45
-  rotSlerpDamp: 0.2
+  hitboxDelay: 0.4
+  rotSlerpDamp: 0.28
   dmgInfo: {fileID: 5176658184172704435}
   attackPosTrans: {fileID: 1486792563217586002}
   attackRadius: 1.6

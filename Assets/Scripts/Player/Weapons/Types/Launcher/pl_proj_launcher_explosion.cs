@@ -10,6 +10,7 @@ public class pl_proj_launcher_explosion : MonoBehaviour
     [SerializeField] LayerMask enemyMask, playerMask;
 
     [SerializeField] dmg_info dmgInfo;
+    [SerializeField] AudioSource audioSrc;
 
     [Header("Rocket Jump")]
     [SerializeField] float maxRJCheckDist;
@@ -21,6 +22,7 @@ public class pl_proj_launcher_explosion : MonoBehaviour
         particles.Play();
         StartCoroutine(HandleLifetime());
         HandleCol();
+        audioSrc.Play();
     }
 
     private void HandleCol()

@@ -35,8 +35,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject cornArmsHolder;
     [SerializeField] SkinnedMeshRenderer rendererCornRight, rendererCornLeft;
 
-    [SerializeField] AudioSource mouseSensAudio;
-
     [SerializeField] GameObject vendingMachineObj, terminalObj;
 
     [SerializeField] pd_session_RESET pdRest;
@@ -94,9 +92,9 @@ public class GameManager : MonoBehaviour
 
     private void IncrementSens(int mult)
     {
-        mouseSensAudio.Play();
         settings.mouseSens += 0.1f * mult;
         settings.mouseSens = Mathf.Clamp(settings.mouseSens, 0.1f, 3);
+        g_refs.Instance.sfxOneshot2D.Play(SfxType.wep_switch);
     }
 
     public void InitHarvestTimer()

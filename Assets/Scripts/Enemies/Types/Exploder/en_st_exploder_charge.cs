@@ -5,10 +5,11 @@ using UnityEngine;
 public class en_st_exploder_charge : en_state_base
 {
     [SerializeField] float duration;
-
+    [SerializeField] AudioSource chargeAudioSrc;
     protected override void OnEnable()
     {
         base.OnEnable();
+        chargeAudioSrc.Play();
         info.anim.CrossFade("Explode", 0.2f);
         StartCoroutine(HandleDuration());
     }

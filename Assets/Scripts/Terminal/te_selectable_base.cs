@@ -28,6 +28,7 @@ public class te_selectable_base : MonoBehaviour
 
     protected virtual void Deny()
     {
-        print("DENIED");
+        g_refs.Instance.sfxOneshot2D.Play(SfxType.error);
+        //print("DENIED");
     }
 }

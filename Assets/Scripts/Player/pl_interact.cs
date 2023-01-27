@@ -15,8 +15,8 @@ public class pl_interact : MonoBehaviour
     [SerializeField] nv_monitor monitorManager;
     nv_int_base hoverInteractable;
 
-    [SerializeField] AudioSource interactAudio;
-    [SerializeField] AudioSource vendingMachine;
+    //[SerializeField] AudioSource interactAudio;
+    //[SerializeField] AudioSource vendingMachine;
     
     private void Update()
     {
@@ -60,7 +60,7 @@ public class pl_interact : MonoBehaviour
                 uiTextElUpper.text = msg.message;
                 StopAllCoroutines();
                 StartCoroutine(HandleUpperTextDuration());
-                vendingMachine.Play();
+                //vendingMachine.Play();
             }
             else if(hoverInteractable.isMonitorButton)
             {
@@ -68,7 +68,7 @@ public class pl_interact : MonoBehaviour
             }
 
             hoverInteractable.HandleInteract();
-            interactAudio.Play();
+            //interactAudio.Play();
         }
     }
 

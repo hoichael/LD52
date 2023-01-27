@@ -10,7 +10,7 @@ public abstract class pl_wep_base : MonoBehaviour
     [SerializeField] protected dmg_info dmgInfo;
     //[SerializeField] GameObject dropPrefab;
     [SerializeField] protected Transform firePoint;
-    [SerializeField] protected AudioSource audioSource;
+    //[SerializeField] protected AudioSource audioSource;
     [SerializeField] GameObject crosshair;
     public GameObject uiObject;
     public ui_rotate uiRotator;
@@ -29,6 +29,7 @@ public abstract class pl_wep_base : MonoBehaviour
     [SerializeField] float equipAnimSpeed;
     public int initAmmo;
     [SerializeField] int ammoAddAmount;
+    [SerializeField] protected SfxType sfxShootType;
 
     float currentRecoilAnimFactor = 1;
     public Transform ikTargetHolderLeft, ikTargetHolderRight;
@@ -103,7 +104,10 @@ public abstract class pl_wep_base : MonoBehaviour
         UpdateAmmoUI();
     }
 
-    protected virtual void Shoot() {}
+    protected virtual void Shoot()
+    {
+        g_refs.Instance.sfxOneshot2D.Play(sfxShootType);
+    }
 
     protected virtual void HandleRecoiAnim()
     {
