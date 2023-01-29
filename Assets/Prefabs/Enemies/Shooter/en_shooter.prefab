@@ -327,8 +327,9 @@ MonoBehaviour:
   stateID: chase
   info: {fileID: 5909234707402061221}
   rotSlerpDamp: 0.08
-  moveSpeed: 20
+  moveSpeed: 60
   attackDistance: 32
+  maxVelMagnitude: 4.4
 --- !u!114 &8616128784054261629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,8 +366,8 @@ MonoBehaviour:
   info: {fileID: 5909234707402061221}
   rotSlerpDamp: 0.08
   delayBeforeJump: 0.45
-  jumpForceUp: 32
-  jumpForceForward: 27
+  jumpForceUp: 42
+  jumpForceForward: 36
   groundcheckTrans: {fileID: 4747090835105900571}
   groundcheckRadius: 0.5
   groundMask:
@@ -475,7 +476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6738810299191533524}
-  gravForce: 22
+  gravForce: 24
 --- !u!1 &5896634117788880557
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,7 +527,7 @@ Rigidbody:
   m_GameObject: {fileID: 5896634117788880557}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 2.2
+  m_Drag: 2.6
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0

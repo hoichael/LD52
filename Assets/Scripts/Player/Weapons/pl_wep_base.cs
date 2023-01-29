@@ -20,7 +20,7 @@ public abstract class pl_wep_base : MonoBehaviour
     [Header("BASE --- RECOIL")]
     [SerializeField] wepType type;
     [SerializeField] float recoilPosZ;
-    [SerializeField] float recoilAnimSpeed;
+    [SerializeField] protected float recoilAnimSpeed;
     [SerializeField] AnimationCurve recoilAnimCurve;
 
     [Header("BASE --- VALUES")]
@@ -31,7 +31,7 @@ public abstract class pl_wep_base : MonoBehaviour
     [SerializeField] int ammoAddAmount;
     [SerializeField] protected SfxType sfxShootType;
 
-    float currentRecoilAnimFactor = 1;
+    protected float currentRecoilAnimFactor = 1;
     public Transform ikTargetHolderLeft, ikTargetHolderRight;
     public string ID;
     bool canShoot;

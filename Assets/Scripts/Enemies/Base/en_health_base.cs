@@ -46,12 +46,12 @@ public class en_health_base : MonoBehaviour
     private void HandleDrop()
     {
         float randomNum = Random.Range(0, 1f);
-        if(randomNum < 0.07f)
+        if(randomNum < 0.04f)
         {
             //InstantiatePickup(hpPickupPrefab);
             g_refs.Instance.pool.Dispatch(PoolType.drop_health, info.trans.position + Vector3.up, Quaternion.identity);
         }
-        else if(randomNum < 0.33f)
+        else if(randomNum < 0.39f)
         {
             //InstantiatePickup(moneyPickupPrefab);
             g_refs.Instance.pool.Dispatch(PoolType.drop_cash, info.trans.position + Vector3.up, Quaternion.identity);
