@@ -9696,7 +9696,7 @@ MonoBehaviour:
   - value: 100
     cost: 3333
   moveUpdgrades:
-  - value: 42
+  - value: 44
     cost: 1337
   - value: 52
     cost: 150
