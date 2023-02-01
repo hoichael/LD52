@@ -311,7 +311,7 @@ MonoBehaviour:
   stateID: idle
   info: {fileID: 5909234707402061221}
   maxChaseDistance: 54
-  maxAttackDistance: 32
+  maxAttackDistance: 36
 --- !u!114 &919684073067275867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,9 +327,9 @@ MonoBehaviour:
   stateID: chase
   info: {fileID: 5909234707402061221}
   rotSlerpDamp: 0.08
-  moveSpeed: 60
-  attackDistance: 32
-  maxVelMagnitude: 4.4
+  moveSpeed: 100
+  attackDistance: 36
+  maxVelMagnitude: 4.6
 --- !u!114 &8616128784054261629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -369,7 +369,7 @@ MonoBehaviour:
   jumpForceUp: 42
   jumpForceForward: 36
   groundcheckTrans: {fileID: 4747090835105900571}
-  groundcheckRadius: 0.5
+  groundcheckRadius: 0.55
   groundMask:
     serializedVersion: 2
     m_Bits: 64
@@ -421,6 +421,7 @@ GameObject:
   - component: {fileID: 5735046560087119679}
   - component: {fileID: 5909234707402061221}
   - component: {fileID: 1564190012679043963}
+  - component: {fileID: 875567373401953333}
   m_Layer: 0
   m_Name: Systems
   m_TagString: Untagged
@@ -461,7 +462,10 @@ MonoBehaviour:
   rb: {fileID: 6738810299191533524}
   anim: {fileID: 3620157946762425014}
   col: {fileID: 5829765831996773435}
+  groundcheckPos: {fileID: 4747090835105900571}
   knockbackMult: 0
+  groundcheckRadius: 0.7
+  score: 500
   grounded: 0
 --- !u!114 &1564190012679043963
 MonoBehaviour:
@@ -476,7 +480,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6738810299191533524}
-  gravForce: 24
+  gravForce: 100
+  info: {fileID: 5909234707402061221}
+  gravGrowSpeed: 1
+--- !u!114 &875567373401953333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5772188866927924194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a90c673d9f5a62f4280c7b8bfba88a53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  info: {fileID: 5909234707402061221}
+  solidMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &5896634117788880557
 GameObject:
   m_ObjectHideFlags: 0

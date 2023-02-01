@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "wv_wave_", menuName = "ScriptableObjects/Wave/Wave", order = 0)]
-public class wv_wave : ScriptableObject
+public class wv_wave : MonoBehaviour
 {
     public wv_subwave[] subwavesArr;
 
@@ -18,9 +17,9 @@ public class wv_wave : ScriptableObject
 
         foreach(wv_subwave subwave in subwavesArr)
         {
-            foreach(wv_subwave_enemyinfo enemyTuple in subwave.enemyInfoArr)
+            foreach(wv_subwave_enemyinfo enemyInfo in subwave.enemyInfoArr)
             {
-                amount += enemyTuple.amount;
+                amount += enemyInfo.amount;
             }
         }
 

@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1540987500307159902
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5800338322759218674}
+  m_Layer: 13
+  m_Name: GroundcheckTrans
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5800338322759218674
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540987500307159902}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.902, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6447170391654773129}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2375605838471213488
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,14 +233,15 @@ Transform:
   m_GameObject: {fileID: 3319311974592477194}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 7, y: 7, z: 7}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 5.5, y: 5.5, z: 5.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6527209996253167244}
   - {fileID: 1786854972348564326}
   - {fileID: 3482240940240282008}
   - {fileID: 1486792563217586002}
   - {fileID: 1905551707437122306}
+  - {fileID: 5800338322759218674}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -276,6 +308,7 @@ GameObject:
   - component: {fileID: 3297844883612648194}
   - component: {fileID: 5176658184172704435}
   - component: {fileID: 4549558597956047441}
+  - component: {fileID: 968779935512434436}
   m_Layer: 0
   m_Name: Systems
   m_TagString: Untagged
@@ -316,7 +349,10 @@ MonoBehaviour:
   rb: {fileID: 2468128288045246835}
   anim: {fileID: 9177322122661591615}
   col: {fileID: 3396524431238570652}
+  groundcheckPos: {fileID: 5800338322759218674}
   knockbackMult: 0
+  groundcheckRadius: 6
+  score: 1000
   grounded: 0
 --- !u!114 &5176658184172704435
 MonoBehaviour:
@@ -346,7 +382,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2468128288045246835}
-  gravForce: 48
+  gravForce: 30
+  info: {fileID: 3297844883612648194}
+  gravGrowSpeed: 30
+--- !u!114 &968779935512434436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3449602196130080069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a90c673d9f5a62f4280c7b8bfba88a53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  info: {fileID: 3297844883612648194}
+  solidMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &4818094373885318243
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,7 +451,7 @@ MonoBehaviour:
   stateID: idle
   info: {fileID: 3297844883612648194}
   maxChaseDistance: 36
-  maxAttackDistance: 4
+  maxAttackDistance: 14.5
 --- !u!114 &6234708315519598885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -413,8 +467,9 @@ MonoBehaviour:
   stateID: chase
   info: {fileID: 3297844883612648194}
   rotSlerpDamp: 0.08
-  moveSpeed: 24
-  attackDistance: 16
+  moveSpeed: 60
+  attackDistance: 14.5
+  maxVelMagnitude: 8.5
 --- !u!114 &153234953211492484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -429,12 +484,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateID: attack
   info: {fileID: 3297844883612648194}
-  duration: 1.1
-  hitboxDelay: 0.6
+  duration: 1.2
+  hitboxDelay: 0.62
   rotSlerpDamp: 0.2
   dmgInfo: {fileID: 5176658184172704435}
   attackPosTrans: {fileID: 1486792563217586002}
-  attackRadius: 4
+  attackRadius: 8
   playerLayerMask:
     serializedVersion: 2
     m_Bits: 512

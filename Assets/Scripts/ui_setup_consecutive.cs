@@ -12,6 +12,7 @@ public class ui_setup_consecutive : MonoBehaviour
         manager.uiBar.localPosition = manager.uiBarPosTarget;
         manager.healthText.transform.localPosition = manager.healthTextPosTarget;
         //manager.moneyText.transform.position = manager.moneyTextPosTarget;
+        manager.scoreText.transform.localPosition = manager.scoreTextPosTarget;
         manager.moneyText.transform.localPosition = new Vector3(-25.85f, 7.42f, 0);
     }
 

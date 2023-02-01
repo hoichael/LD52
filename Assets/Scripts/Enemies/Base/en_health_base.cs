@@ -38,7 +38,7 @@ public class en_health_base : MonoBehaviour
     {
         //print("ded lel");
         HandleDrop();
-        g_refs.Instance.gameManager.UpdateScore(100);
+        g_refs.Instance.gameManager.UpdateScore(info.score);
         g_refs.Instance.waveManager.HandleEnemyDeath();
         //g_refs.Instance.pool.Dispatch(PoolType.vfx_blood_expl, info.trans.position, Quaternion.identity);
     }
@@ -51,7 +51,7 @@ public class en_health_base : MonoBehaviour
             //InstantiatePickup(hpPickupPrefab);
             g_refs.Instance.pool.Dispatch(PoolType.drop_health, info.trans.position + Vector3.up, Quaternion.identity);
         }
-        else if(randomNum < 0.39f)
+        else if(randomNum < 0.44f)
         {
             //InstantiatePickup(moneyPickupPrefab);
             g_refs.Instance.pool.Dispatch(PoolType.drop_cash, info.trans.position + Vector3.up, Quaternion.identity);

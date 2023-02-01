@@ -6,6 +6,7 @@ public class pl_wep_axe : pl_wep_base
 {
     [Header("AXE --- VALUES")]
     [SerializeField] float meleeRange;
+    [SerializeField] float swingRayDelay;
     [SerializeField] Vector3 swingAnimPosTarget;
     [SerializeField] Vector3 swingAnimRotTarget;
 
@@ -15,7 +16,12 @@ public class pl_wep_axe : pl_wep_base
         //audioSource.Play();
         //muzzleFlashParticles.Play();
         //StartCoroutine(HandleMuzzleLight());
+        StartCoroutine(HandleAxeSwing());
+    }
 
+    private IEnumerator HandleAxeSwing()
+    {
+        yield return new WaitForSeconds(swingRayDelay);
         RaycastHit hit;
         if (Physics.Raycast(refs.camHolderTrans.position, refs.camHolderTrans.forward, out hit, meleeRange, refs.enemyLayerMask))
         {
@@ -23,6 +29,7 @@ public class pl_wep_axe : pl_wep_base
 
             hit.transform.GetComponent<en_health_base>().HandleDamage(dmgInfo);
             refs.generalPool.Dispatch(PoolType.vfx_blood, hit.point, Quaternion.identity);
+            g_refs.Instance.sfxOneshot2D.Play(SfxType.axe_hit);
         }
     }
 

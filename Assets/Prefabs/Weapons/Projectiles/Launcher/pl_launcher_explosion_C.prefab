@@ -14823,7 +14823,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particles: {fileID: 2811957473599172322}
   lifeTime: 3
-  colRadius: 6.5
+  colRadius: 8
   enemyMask:
     serializedVersion: 2
     m_Bits: 8192
@@ -14832,9 +14832,9 @@ MonoBehaviour:
     m_Bits: 512
   dmgInfo: {fileID: -8961653077944669872}
   audioSrc: {fileID: 8850415025291027182}
-  maxRJCheckDist: 4
+  maxRJCheckDist: 7
   maxRJkForce: 26
-  minRJForce: 12
+  minRJForce: 19
   rjUpwardsForceBase: 0.2
 --- !u!114 &-8961653077944669872
 MonoBehaviour:

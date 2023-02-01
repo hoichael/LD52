@@ -51,8 +51,8 @@ public class en_exploder_explosion : MonoBehaviour
 
     private void ApplyForce(Rigidbody rb)
     {
-        Vector3 dir = rb.transform.position + new Vector3(0, 2.2f, 0) - transform.position;
-        rb.AddForce(dir * knockbackForce, ForceMode.Impulse);
+        Vector3 dir = rb.transform.position - transform.position;
+        rb.AddForce((dir + new Vector3(0, 4f, 0)) * knockbackForce, ForceMode.Impulse);
     }
 
     private IEnumerator HandleLifetime()

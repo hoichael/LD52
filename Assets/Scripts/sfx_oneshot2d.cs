@@ -44,5 +44,6 @@ public enum SfxType
 
     ammo_get,
     
-    axe_swing
+    axe_swing,
+    axe_hit
 }

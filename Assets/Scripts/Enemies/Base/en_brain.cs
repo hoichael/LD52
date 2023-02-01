@@ -19,6 +19,11 @@ public class en_brain : MonoBehaviour
 
     protected virtual void Init()
     {
+        foreach(en_state_base state in states)
+        {
+            state.enabled = false;
+        }
+
         currentState = initialState;
         currentStateID = initialState.stateID;
         currentState.enabled = true;

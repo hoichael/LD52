@@ -59062,8 +59062,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particles: {fileID: 2811957473599172322}
   lifeTime: 5
-  colRadius: 8.9
-  dmgDist: 5.3
+  colRadius: 11
+  dmgDist: 6.8
   enemyMask:
     serializedVersion: 2
     m_Bits: 8192
@@ -59071,7 +59071,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   dmgInfo: {fileID: -8961653077944669872}
-  knockbackForce: 19
+  knockbackForce: 20
 --- !u!1 &7233984569883078034
 GameObject:
   m_ObjectHideFlags: 0

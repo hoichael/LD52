@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class wv_spawner : MonoBehaviour
 {
@@ -26,12 +27,14 @@ public class wv_spawner : MonoBehaviour
     {
         foreach (wv_subwave_enemyinfo enemyInfo in currentWave.subwavesArr[currentSubwaveIDX].enemyInfoArr)
         {
+            Transform[] spawnPointsArr = currentWave.subwavesArr[currentSubwaveIDX].spawnPointsContainer.Cast<Transform>().ToArray();
+            
             for (int i = 0; i < enemyInfo.amount; i++)
             {
-                int spawnPosIDX = Random.Range(0, currentWave.subwavesArr[currentSubwaveIDX].spawnPointsArr.Length);
+                int spawnPosIDX = Random.Range(0, spawnPointsArr.Length);
                 pool.Dispatch(
-                    enemyInfo.type, 
-                    currentWave.subwavesArr[currentSubwaveIDX].spawnPointsArr[spawnPosIDX], 
+                    enemyInfo.type,
+                    spawnPointsArr[spawnPosIDX].position, 
                     Quaternion.identity);
             }
         }

@@ -44,7 +44,8 @@ public class pl_pickup : MonoBehaviour
             if (col.CompareTag("Money"))
             {
                 //print("moneeee");
-                Destroy(col.gameObject);
+                //Destroy(col.gameObject);
+                g_refs.Instance.pool.Return(PoolType.drop_cash, col.transform, false);
                 g_refs.Instance.sessionData.cash += pickupAmounttMoney;
                 moneyTextEl.text = "CASH: " + g_refs.Instance.sessionData.cash;
 
@@ -52,7 +53,8 @@ public class pl_pickup : MonoBehaviour
             else if (col.CompareTag("Health"))
             {
                 //print("hppp");
-                Destroy(col.gameObject);
+                //Destroy(col.gameObject);
+                g_refs.Instance.pool.Return(PoolType.drop_health, col.transform, false);
                 healthManager.HandleHeal(pickupAmountHealth);
             }
         }

@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: SessionData
   m_EditorClassIdentifier: 
   score: 0
+  cash: 0
   playerHP: 0
-  currentWave: 0
-  initialHarvesttimeCompleted: 0
+  currentPlMaxHp: 0
+  currentWaveTotal: 1
+  currentWaveRegular: 0
+  currentWaveLooping: -1
+  upgradeLevelHealth: 0
+  upgradeLevelMove: 0
+  upgradeLevelJump: 0

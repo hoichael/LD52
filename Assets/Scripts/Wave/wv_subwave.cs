@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "wv_subwave_", menuName = "ScriptableObjects/Wave/Subwave", order = 1)]
-public class wv_subwave : ScriptableObject
+public class wv_subwave : MonoBehaviour
 {
-    public Vector3[] spawnPointsArr;
+    //public Vector3[] spawnPointsArr;
+    public Transform spawnPointsContainer;
     public wv_subwave_enemyinfo[] enemyInfoArr;
     public float spawnDelay;
 }
