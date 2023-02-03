@@ -33,6 +33,9 @@ public class wv_manager : MonoBehaviour
         remainingEnemiesCounter = waveToInit.AmountOfEnemies();
         enemiesCounterText.text = "REMAINING ENEMIES: " + remainingEnemiesCounter;
 
+        waveToInit.nvInfo.nvContainer.SetActive(true);
+        RenderSettings.skybox = waveToInit.nvInfo.matSkybox;
+
         spawner.InitNewWave(waveToInit);
     }
 

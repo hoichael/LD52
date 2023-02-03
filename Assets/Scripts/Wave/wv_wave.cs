@@ -5,6 +5,7 @@ using UnityEngine;
 public class wv_wave : MonoBehaviour
 {
     public wv_subwave[] subwavesArr;
+    public wv_wave_nv nvInfo;
 
     public int AmountOfEnemies()
     {
@@ -25,4 +26,11 @@ public class wv_wave : MonoBehaviour
 
         return amount;
     }
+}
+
+[System.Serializable]
+public class wv_wave_nv
+{
+    public GameObject nvContainer;
+    public Material matSkybox;
 }
