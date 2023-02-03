@@ -13,6 +13,6 @@ public class wv_subwave : MonoBehaviour
 [System.Serializable]
 public class wv_subwave_enemyinfo
 {
-    public PoolType type;
+    public en_type type;
     public int amount;
 }
