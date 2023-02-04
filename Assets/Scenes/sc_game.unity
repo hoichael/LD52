@@ -458,7 +458,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &13619271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,9 +473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPointsContainer: {fileID: 13619276}
   enemyInfoArr:
-  - type: 4
-    amount: 1
-  - type: 5
+  - type: 6
     amount: 1
   spawnDelay: 0.5
 --- !u!114 &13619272
@@ -43862,7 +43860,7 @@ MonoBehaviour:
   spawner: {fileID: 1877759964}
   regularWavesArr:
   - possibleWaves:
-    - {fileID: 508172625}
+    - {fileID: 13619272}
   - possibleWaves:
     - {fileID: 484941954}
   - possibleWaves:
@@ -43911,7 +43909,7 @@ MonoBehaviour:
     type: 3}
   exploderElite: {fileID: 6355933130497603329, guid: 8887cabcac4193d40b6ee9592d707971,
     type: 3}
-  runner: {fileID: 0}
+  runner: {fileID: 3319311974592477194, guid: 0eeefd882fb09144b867ae20568ee8f8, type: 3}
   runnerElite: {fileID: 0}
   floater: {fileID: 0}
   floaterElite: {fileID: 0}

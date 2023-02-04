@@ -53,7 +53,7 @@ public class en_st_shooter_chase : en_state_base
 
     protected override void OnDisable()
     {
-        base.OnEnable();
+        base.OnDisable();
         forcesHandler.moveForward = false;
     }
 }

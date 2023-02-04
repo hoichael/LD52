@@ -32,7 +32,7 @@ public class en_forces : MonoBehaviour
         ClampVelocity();
 
         if (gravForceCurrent == 0) return;
-        print(gravForceCurrent);
+        //print(gravForceCurrent);
     }
 
     private void MoveForward()

@@ -22,7 +22,6 @@ public class en_st_exploder_chase : en_state_base
         base.OnEnable();
 
         info.anim.CrossFade("Run", 0.3f);
-        runAudioSrc.Play();
         forcesHandler.moveForward = true;
     }
 
@@ -30,8 +29,22 @@ public class en_st_exploder_chase : en_state_base
     {
         CheckDistance();
         LookAtPlayer();
-        //info.rb.AddForce(transform.forward * moveSpeed);
-        //info.rb.velocity = Vector3.ClampMagnitude(info.rb.velocity, maxVelMagnitude);
+        HandleRunAudio();
+    }
+
+    private void HandleRunAudio()
+    {
+        if (!info.grounded || this.enabled == false /* unity lifecycling be trippin */)
+        {
+            runAudioSrc.Stop();
+        }
+        else
+        {
+            if (!runAudioSrc.isPlaying)
+            {
+                runAudioSrc.Play();
+            }
+        }
     }
 
     private void CheckDistance()
@@ -54,7 +67,8 @@ public class en_st_exploder_chase : en_state_base
 
     protected override void OnDisable()
     {
-        base.OnEnable();
+        base.OnDisable();
         forcesHandler.moveForward = false;
+        runAudioSrc.Stop();
     }
 }

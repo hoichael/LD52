@@ -1,11 +1,13 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class en_st_walker_chase : en_state_base
+public class en_st_runner_chase : en_state_base
 {
     [SerializeField] float rotSlerpDamp;
     [SerializeField] float attackDistance;
-    [SerializeField] float maxVelMagnitude;
     [SerializeField] en_forces forcesHandler;
+    [SerializeField] AudioSource runAudioSrc;
     Transform playerTrans;
 
     private void Start()
@@ -17,7 +19,7 @@ public class en_st_walker_chase : en_state_base
     {
         base.OnEnable();
 
-        info.anim.CrossFade("Walk", 0.3f);
+        info.anim.CrossFade("Run", 0.25f);
         forcesHandler.moveForward = true;
     }
 
@@ -25,9 +27,22 @@ public class en_st_walker_chase : en_state_base
     {
         CheckDistance();
         LookAtPlayer();
-        //info.rb.AddForce(transform.forward * (info.grounded ? moveSpeedGround : moveSpeedAir));
-        //print(info.rb.velocity.magnitude);
-        //info.rb.velocity = Vector3.ClampMagnitude(info.rb.velocity, maxVelMagnitude);
+        HandleRunAudio();
+    }
+
+    private void HandleRunAudio()
+    {
+        if (!info.grounded || this.enabled == false /* unity lifecycling be trippin */)
+        {
+            runAudioSrc.Stop();
+        }
+        else
+        {
+            if (!runAudioSrc.isPlaying)
+            {
+                runAudioSrc.Play();
+            }
+        }
     }
 
     private void CheckDistance()
@@ -53,5 +68,6 @@ public class en_st_walker_chase : en_state_base
     {
         base.OnDisable();
         forcesHandler.moveForward = false;
+        runAudioSrc.Stop();
     }
 }

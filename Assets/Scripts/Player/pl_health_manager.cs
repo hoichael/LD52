@@ -41,7 +41,7 @@ public class pl_health_manager : MonoBehaviour
 
         currentFadeFactor = 1;
 
-        print("Damage Taken! (" + dmgInfo.dmgAmount + ")");
+        //print("Damage Taken! (" + dmgInfo.dmgAmount + ")");
         //refs.state.hp -= dmgInfo.dmgAmount;
         g_refs.Instance.sessionData.playerHP -= dmgInfo.dmgAmount;
         //if(refs.state.hp <= 0)
