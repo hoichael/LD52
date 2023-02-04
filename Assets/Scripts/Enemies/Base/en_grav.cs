@@ -12,14 +12,15 @@ public class en_grav : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(!info.grounded)
-        {
-            currentGravForce = Mathf.MoveTowards(currentGravForce, gravForce, gravGrowSpeed);
-            rb.AddForce(Vector3.down * currentGravForce, ForceMode.Acceleration);
-        }
-        else
-        {
-            currentGravForce = 0;
-        }
+        //print(currentGravForce);
+        //if(!info.grounded)
+        //{
+        //    currentGravForce = Mathf.MoveTowards(currentGravForce, gravForce, gravGrowSpeed);
+        //    rb.AddForce(Vector3.down * currentGravForce, ForceMode.Acceleration);
+        //}
+        //else
+        //{
+        //    currentGravForce = 0;
+        //}
     }
 }

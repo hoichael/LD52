@@ -524,6 +524,7 @@ MonoBehaviour:
   maxVelMagnitude: 14
   attackDistance: 6.5
   runAudioSrc: {fileID: 8539006856349557118}
+  forcesHandler: {fileID: 104101133221195553}
 --- !u!114 &559676088780113615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1233,8 +1234,8 @@ GameObject:
   - component: {fileID: 5077589266924760723}
   - component: {fileID: 6620312706671479817}
   - component: {fileID: 3599343770144955832}
-  - component: {fileID: 1937408650042703490}
   - component: {fileID: 2942769558364300115}
+  - component: {fileID: 104101133221195553}
   m_Layer: 0
   m_Name: Systems
   m_TagString: Untagged
@@ -1295,22 +1296,6 @@ MonoBehaviour:
   dmgAmount: 1
   hitPos: {x: 0, y: 0, z: 0}
   force: 5
---- !u!114 &1937408650042703490
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6483826451040135758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a55c3947df531434ab23a6574e1dd9b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 6081217117560858232}
-  gravForce: 100
-  info: {fileID: 6620312706671479817}
-  gravGrowSpeed: 1
 --- !u!114 &2942769558364300115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1327,6 +1312,26 @@ MonoBehaviour:
   solidMask:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &104101133221195553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6483826451040135758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dbd868f2ec13474c8837ac87e549b35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  info: {fileID: 6620312706671479817}
+  velClampGround: 14
+  velClampAir: 35
+  moveSpeedGround: 100
+  moveSpeedAir: 5
+  moveForward: 0
+  gravForceMax: 50
+  gravGrowSpeed: 1.1
 --- !u!1 &6488400504186309287
 GameObject:
   m_ObjectHideFlags: 0

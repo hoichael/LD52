@@ -39,7 +39,7 @@ public class en_st_shooter_jump : en_state_base
     {
         if (conductGroundcheck)
         {
-            ApplyGravity();
+            //ApplyGravity();
             HandleGroundcheck();
         }
         else

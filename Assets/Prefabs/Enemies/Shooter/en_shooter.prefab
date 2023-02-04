@@ -330,6 +330,7 @@ MonoBehaviour:
   moveSpeed: 100
   attackDistance: 36
   maxVelMagnitude: 4.6
+  forcesHandler: {fileID: 1822415918439568957}
 --- !u!114 &8616128784054261629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,8 +367,8 @@ MonoBehaviour:
   info: {fileID: 5909234707402061221}
   rotSlerpDamp: 0.08
   delayBeforeJump: 0.45
-  jumpForceUp: 42
-  jumpForceForward: 36
+  jumpForceUp: 120
+  jumpForceForward: 69
   groundcheckTrans: {fileID: 4747090835105900571}
   groundcheckRadius: 0.55
   groundMask:
@@ -420,8 +421,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5735046560087119679}
   - component: {fileID: 5909234707402061221}
-  - component: {fileID: 1564190012679043963}
   - component: {fileID: 875567373401953333}
+  - component: {fileID: 1822415918439568957}
   m_Layer: 0
   m_Name: Systems
   m_TagString: Untagged
@@ -464,25 +465,9 @@ MonoBehaviour:
   col: {fileID: 5829765831996773435}
   groundcheckPos: {fileID: 4747090835105900571}
   knockbackMult: 0
-  groundcheckRadius: 0.7
+  groundcheckRadius: 0.55
   score: 500
   grounded: 0
---- !u!114 &1564190012679043963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5772188866927924194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a55c3947df531434ab23a6574e1dd9b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 6738810299191533524}
-  gravForce: 100
-  info: {fileID: 5909234707402061221}
-  gravGrowSpeed: 1
 --- !u!114 &875567373401953333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -499,6 +484,26 @@ MonoBehaviour:
   solidMask:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &1822415918439568957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5772188866927924194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dbd868f2ec13474c8837ac87e549b35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  info: {fileID: 5909234707402061221}
+  velClampGround: 4.6
+  velClampAir: 35
+  moveSpeedGround: 100
+  moveSpeedAir: 5
+  moveForward: 0
+  gravForceMax: 50
+  gravGrowSpeed: 0.9
 --- !u!1 &5896634117788880557
 GameObject:
   m_ObjectHideFlags: 0

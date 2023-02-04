@@ -8,6 +8,7 @@ public class en_st_shooter_chase : en_state_base
     [SerializeField] float moveSpeed;
     [SerializeField] float attackDistance;
     [SerializeField] float maxVelMagnitude;
+    [SerializeField] en_forces forcesHandler;
     Transform playerTrans;
 
     private void Start()
@@ -20,6 +21,7 @@ public class en_st_shooter_chase : en_state_base
         base.OnEnable();
 
         info.anim.CrossFade("Walk", 0.3f);
+        forcesHandler.moveForward = true;
     }
 
     private void FixedUpdate()
@@ -52,5 +54,6 @@ public class en_st_shooter_chase : en_state_base
     protected override void OnDisable()
     {
         base.OnEnable();
+        forcesHandler.moveForward = false;
     }
 }

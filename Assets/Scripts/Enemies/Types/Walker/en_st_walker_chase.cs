@@ -3,9 +3,10 @@ using UnityEngine;
 public class en_st_walker_chase : en_state_base
 {
     [SerializeField] float rotSlerpDamp;
-    [SerializeField] float moveSpeed;
+    [SerializeField] float moveSpeedGround, moveSpeedAir;
     [SerializeField] float attackDistance;
     [SerializeField] float maxVelMagnitude;
+    [SerializeField] en_forces forcesHandler;
     Transform playerTrans;
 
     private void Start()
@@ -18,15 +19,16 @@ public class en_st_walker_chase : en_state_base
         base.OnEnable();
 
         info.anim.CrossFade("Walk", 0.3f);
+        forcesHandler.moveForward = true;
     }
 
     private void FixedUpdate()
     {
         CheckDistance();
         LookAtPlayer();
-        info.rb.AddForce(transform.forward * moveSpeed);
+        //info.rb.AddForce(transform.forward * (info.grounded ? moveSpeedGround : moveSpeedAir));
         //print(info.rb.velocity.magnitude);
-        info.rb.velocity = Vector3.ClampMagnitude(info.rb.velocity, maxVelMagnitude);
+        //info.rb.velocity = Vector3.ClampMagnitude(info.rb.velocity, maxVelMagnitude);
     }
 
     private void CheckDistance()
@@ -51,5 +53,6 @@ public class en_st_walker_chase : en_state_base
     protected override void OnDisable()
     {
         base.OnEnable();
+        forcesHandler.moveForward = false;
     }
 }
