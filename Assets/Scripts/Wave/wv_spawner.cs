@@ -58,11 +58,11 @@ public class wv_spawner : MonoBehaviour
     {
         enDict = new Dictionary<en_type, GameObject>();
         enDict.Add(en_type.walker, walker);
-        //enDict.Add(en_type.walker_elite, walkerElite);
+        enDict.Add(en_type.walker_elite, walkerElite);
         enDict.Add(en_type.shooter, shooter);
-        //enDict.Add(en_type.shooter_elite, shooterElite);
+        enDict.Add(en_type.shooter_elite, shooterElite);
         enDict.Add(en_type.exploder, exploder);
-        //enDict.Add(en_type.exploder_elite, exploderElite);
+        enDict.Add(en_type.exploder_elite, exploderElite);
         //enDict.Add(en_type.runner, runner);
         //enDict.Add(en_type.runner_elite, runnerElite);
         //enDict.Add(en_type.floater, floater);
