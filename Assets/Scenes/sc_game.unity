@@ -458,7 +458,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &13619271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,9 +473,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPointsContainer: {fileID: 13619276}
   enemyInfoArr:
-  - type: 6
+  - type: 8
     amount: 1
-  spawnDelay: 0.5
+  spawnDelay: 2
 --- !u!114 &13619272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -489,6 +489,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   subwavesArr:
+  - {fileID: 13619271}
+  - {fileID: 13619271}
   - {fileID: 13619271}
   nvInfo:
     nvContainer: {fileID: 1161476475}
@@ -7684,7 +7686,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 315099252}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.741, z: 0.388}
+  m_LocalPosition: {x: 0, y: 0.25, z: -1.165}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43860,7 +43862,7 @@ MonoBehaviour:
   spawner: {fileID: 1877759964}
   regularWavesArr:
   - possibleWaves:
-    - {fileID: 13619272}
+    - {fileID: 508172625}
   - possibleWaves:
     - {fileID: 484941954}
   - possibleWaves:
@@ -43911,7 +43913,7 @@ MonoBehaviour:
     type: 3}
   runner: {fileID: 3319311974592477194, guid: 0eeefd882fb09144b867ae20568ee8f8, type: 3}
   runnerElite: {fileID: 0}
-  floater: {fileID: 0}
+  floater: {fileID: 3319311974592477194, guid: 050c7f9f7e81cb944a3ea5302ea959cd, type: 3}
   floaterElite: {fileID: 0}
   giant: {fileID: 3319311974592477194, guid: e87fc4618d78e4a49a9f1b9513e6870e, type: 3}
 --- !u!1 &1879870983

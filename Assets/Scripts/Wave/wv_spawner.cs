@@ -65,7 +65,7 @@ public class wv_spawner : MonoBehaviour
         enDict.Add(en_type.exploder_elite, exploderElite);
         enDict.Add(en_type.runner, runner);
         //enDict.Add(en_type.runner_elite, runnerElite);
-        //enDict.Add(en_type.floater, floater);
+        enDict.Add(en_type.floater, floater);
         //enDict.Add(en_type.floater_elite, floaterElite);
         enDict.Add(en_type.giant, giant);
     }
