@@ -30,8 +30,8 @@ TagManager:
   - 
   - EnemyProjectile
   - 
-  - 
-  - 
+  - MapBorder
+  - MapBorderOnlyPlayer
   - 
   - 
   - 
