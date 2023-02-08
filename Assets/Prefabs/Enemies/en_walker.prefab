@@ -329,7 +329,7 @@ MonoBehaviour:
   col: {fileID: 3396524431238570652}
   groundcheckPos: {fileID: 4062633825215181127}
   knockbackMult: 0
-  groundcheckRadius: 0.96
+  groundcheckRadius: 0.9
   score: 100
   grounded: 0
 --- !u!114 &5176658184172704435
@@ -449,8 +449,6 @@ MonoBehaviour:
   stateID: chase
   info: {fileID: 3297844883612648194}
   rotSlerpDamp: 0.08
-  moveSpeedGround: 100
-  moveSpeedAir: 5
   attackDistance: 3.5
   maxVelMagnitude: 4.1
   forcesHandler: {fileID: 6700973949709475375}

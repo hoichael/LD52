@@ -38,8 +38,7 @@ public class en_st_floater_chase : en_state_base
 
     private void LookAtPlayer()
     {
-        Vector3 targetVec = (g_refs.Instance.plTrans.position + Vector3.up * 7) - info.trans.position;
-        targetVec.y = 0;
+        Vector3 targetVec = (g_refs.Instance.plTrans.position + Vector3.up * 4f) - info.trans.position;
         Quaternion targetRot = Quaternion.LookRotation(targetVec);
 
         info.trans.localRotation = Quaternion.Slerp(info.trans.localRotation, targetRot, rotSlerpDamp);

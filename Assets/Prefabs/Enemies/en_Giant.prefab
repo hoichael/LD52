@@ -288,7 +288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   info: {fileID: 3297844883612648194}
-  hpMax: 56
+  hpMax: 92
   hpCurrent: 0
   hpPickupPrefab: {fileID: 7272605533279926371, guid: 562429ecab5284d4a99f60dc9b7a4bd0,
     type: 3}
@@ -351,7 +351,7 @@ MonoBehaviour:
   col: {fileID: 3396524431238570652}
   groundcheckPos: {fileID: 5800338322759218674}
   knockbackMult: 0
-  groundcheckRadius: 6
+  groundcheckRadius: 2.8
   score: 1000
   grounded: 0
 --- !u!114 &5176658184172704435
@@ -471,8 +471,6 @@ MonoBehaviour:
   stateID: chase
   info: {fileID: 3297844883612648194}
   rotSlerpDamp: 0.08
-  moveSpeedGround: 0
-  moveSpeedAir: 0
   attackDistance: 14.5
   maxVelMagnitude: 8.5
   forcesHandler: {fileID: 2102661057948016781}

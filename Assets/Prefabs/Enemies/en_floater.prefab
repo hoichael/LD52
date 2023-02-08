@@ -362,8 +362,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateID: chase
   info: {fileID: 3297844883612648194}
-  moveSpeed: 18
-  attackDistance: 44
+  moveSpeed: 13.5
+  attackDistance: 49
   rotSlerpDamp: 0.07
 --- !u!114 &3634831409553245624
 MonoBehaviour:
@@ -381,7 +381,7 @@ MonoBehaviour:
   info: {fileID: 3297844883612648194}
   shootInterval: 0.22
   durationAfterShooting: 0.34
-  chaseDistance: 49
+  chaseDistance: 52
   rotSlerpDamp: 0.105
   firePointTrans: {fileID: 1486792563217586002}
   shootAudioSrc: {fileID: 46437155340152437}
@@ -400,7 +400,7 @@ MonoBehaviour:
   stateID: float
   info: {fileID: 3297844883612648194}
   duration: 1.8
-  moveSpeed: 12
+  moveSpeed: 9.8
   rotSlerpDamp: 0.085
 --- !u!114 &1454345389766904763
 MonoBehaviour:

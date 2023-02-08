@@ -28,8 +28,6 @@ public class en_st_shooter_chase : en_state_base
     {
         CheckDistance();
         LookAtPlayer();
-        info.rb.AddForce(transform.forward * moveSpeed);
-        info.rb.velocity = Vector3.ClampMagnitude(info.rb.velocity, maxVelMagnitude);
     }
 
     private void CheckDistance()

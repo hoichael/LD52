@@ -530,7 +530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   info: {fileID: 3297844883612648194}
-  velClampGround: 12.5
+  velClampGround: 12.25
   velClampAir: 30
   moveSpeedGround: 100
   moveSpeedAir: 7
@@ -601,7 +601,7 @@ MonoBehaviour:
   stateID: chase
   info: {fileID: 3297844883612648194}
   rotSlerpDamp: 0.12
-  attackDistance: 4
+  attackDistance: 3.9
   forcesHandler: {fileID: 6700973949709475375}
   runAudioSrc: {fileID: 8214235174348095620}
 --- !u!114 &1534609119593578477
@@ -619,7 +619,7 @@ MonoBehaviour:
   stateID: attack
   info: {fileID: 3297844883612648194}
   duration: 0.85
-  hitboxDelay: 0.45
+  hitboxDelay: 0.54
   rotSlerpDamp: 0.2
   dmgInfo: {fileID: 5176658184172704435}
   attackPosTrans: {fileID: 1486792563217586002}

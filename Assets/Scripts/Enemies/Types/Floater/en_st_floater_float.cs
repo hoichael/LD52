@@ -21,6 +21,7 @@ public class en_st_floater_float : en_state_base
         base.OnEnable();
         info.anim.CrossFade("Float", 0.45f);
         floatDir = Random.insideUnitSphere;
+        floatDir = new Vector3(floatDir.x, floatDir.y * 0.5f, floatDir.z);
         StartCoroutine(HandleDuration());
     }
 

@@ -465,7 +465,7 @@ MonoBehaviour:
   col: {fileID: 5829765831996773435}
   groundcheckPos: {fileID: 4747090835105900571}
   knockbackMult: 0
-  groundcheckRadius: 0.55
+  groundcheckRadius: 0.8
   score: 500
   grounded: 0
 --- !u!114 &875567373401953333
