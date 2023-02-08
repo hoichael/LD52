@@ -23,6 +23,8 @@ public class en_st_exploder_chase : en_state_base
 
         info.anim.CrossFade("Run", 0.3f);
         forcesHandler.moveForward = true;
+
+        StartCoroutine(HandleRunDustVFX());
     }
 
     private void FixedUpdate()
@@ -65,10 +67,21 @@ public class en_st_exploder_chase : en_state_base
         info.trans.localRotation = Quaternion.Slerp(info.trans.localRotation, targetRot, rotSlerpDamp);
     }
 
+    private IEnumerator HandleRunDustVFX()
+    {
+        if (info.grounded)
+        {
+            g_refs.Instance.pool.Dispatch(PoolType.vfx_dust_run, info.groundcheckPos.position + new Vector3(0, 0.15f, 0), Quaternion.identity);
+        }
+        yield return new WaitForSeconds(0.15f);
+        StartCoroutine(HandleRunDustVFX());
+    }
+
     protected override void OnDisable()
     {
         base.OnDisable();
         forcesHandler.moveForward = false;
         runAudioSrc.Stop();
+        StopAllCoroutines();
     }
 }

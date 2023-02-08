@@ -42,7 +42,7 @@ public class wv_manager : MonoBehaviour
     private wv_wave GetWaveFromList()
     {
         wv_wave[] possibleWaves = g_refs.Instance.sessionData.currentWaveLooping < 0 ? regularWavesArr[g_refs.Instance.sessionData.currentWaveRegular].possibleWaves : loopingWavesArr[g_refs.Instance.sessionData.currentWaveLooping].possibleWaves;
-        int randomIDX = Random.Range(0, possibleWaves.Length - 1);
+        int randomIDX = Random.Range(0, possibleWaves.Length);
         return possibleWaves[randomIDX];
     }
 

@@ -40,6 +40,10 @@ public class wv_spawner : MonoBehaviour
             {
                 int spawnPosIDX = Random.Range(0, spawnPointsArr.Length);
                 Instantiate(enDict[enemyInfo.type], spawnPointsArr[spawnPosIDX].position, Quaternion.identity);
+
+                // this should happen on enemy scripts to allow for accurate dispatch pos (tailored to enemy proportions and model offst). this is fine for now
+                pool.Dispatch(PoolType.vfx_dust_spawn, spawnPointsArr[spawnPosIDX].position + new Vector3(0, 1.8f, 0), Quaternion.identity);
+
                 //pool.Dispatch(
                 //    enemyInfo.type,
                 //    spawnPointsArr[spawnPosIDX].position, 

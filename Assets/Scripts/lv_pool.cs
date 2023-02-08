@@ -97,7 +97,9 @@ public enum PoolType
     en_exploder,
     en_exploder_explosion,
     drop_health,
-    drop_cash
+    drop_cash,
+    vfx_dust_spawn,
+    vfx_dust_run
 }
 
 [System.Serializable]
