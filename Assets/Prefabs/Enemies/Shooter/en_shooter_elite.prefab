@@ -367,8 +367,8 @@ MonoBehaviour:
   info: {fileID: 5909234707402061221}
   rotSlerpDamp: 0.08
   delayBeforeJump: 0.45
-  jumpForceUp: 50
-  jumpForceForward: 32
+  jumpForceUp: 30
+  jumpForceForward: 16
   groundcheckTrans: {fileID: 4747090835105900571}
   groundcheckRadius: 0.55
   groundMask:
@@ -437,7 +437,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5772188866927924194}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -465,7 +465,7 @@ MonoBehaviour:
   col: {fileID: 5829765831996773435}
   groundcheckPos: {fileID: 4747090835105900571}
   knockbackMult: 0
-  groundcheckRadius: 0.55
+  groundcheckRadius: 0.8
   score: 500
   grounded: 0
 --- !u!114 &875567373401953333
@@ -497,7 +497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   info: {fileID: 5909234707402061221}
-  velClampGround: 4.9
+  velClampGround: 4.6
   velClampAir: 70
   moveSpeedGround: 100
   moveSpeedAir: 5
@@ -518,7 +518,7 @@ GameObject:
   - component: {fileID: 5648552958002502966}
   m_Layer: 13
   m_Name: en_shooter_elite
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -532,8 +532,8 @@ Transform:
   m_GameObject: {fileID: 5896634117788880557}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2688881190047696939}
   - {fileID: 7424662255342695873}
@@ -588,7 +588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   info: {fileID: 5909234707402061221}
-  hpMax: 45
+  hpMax: 46
   hpCurrent: 0
   hpPickupPrefab: {fileID: 7272605533279926371, guid: 562429ecab5284d4a99f60dc9b7a4bd0,
     type: 3}

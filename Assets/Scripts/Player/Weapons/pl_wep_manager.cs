@@ -6,7 +6,7 @@ public class pl_wep_manager : MonoBehaviour
 {
     [SerializeField] Transform camHolderTrans;
     //[SerializeField] List<pl_wep_base> weaponList;
-    [SerializeField] pl_wep_base rifleScript, shotgunScript, launcherScript, axeScript;
+    [SerializeField] pl_wep_base rifleScript, shotgunScript, launcherScript, axeScript, chickenScript;
     pl_wep_base activeWeaponScript;
     wepType activeWeaponType;
 
@@ -158,6 +158,7 @@ public class pl_wep_manager : MonoBehaviour
         freshWepInfoDict.Add(wepType.rifle, new pl_wep_info(wepType.rifle, rifleScript, 1));
         freshWepInfoDict.Add(wepType.shotgun, new pl_wep_info(wepType.shotgun, shotgunScript, 2));
         freshWepInfoDict.Add(wepType.launcher, new pl_wep_info(wepType.launcher, launcherScript, 3));
+        freshWepInfoDict.Add(wepType.chicken, new pl_wep_info(wepType.chicken, chickenScript, 4));
 
         g_refs.Instance.sessionData.wepInfoDict = freshWepInfoDict;
     }
@@ -218,5 +219,6 @@ public enum wepType
     rifle,
     shotgun,
     launcher,
-    axe
+    axe,
+    chicken
 }

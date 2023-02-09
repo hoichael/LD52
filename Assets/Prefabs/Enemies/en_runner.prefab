@@ -352,7 +352,7 @@ GameObject:
   - component: {fileID: 4724260481438159153}
   m_Layer: 13
   m_Name: en_runner
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -605,7 +605,6 @@ MonoBehaviour:
   attackDistance: 3.9
   forcesHandler: {fileID: 6700973949709475375}
   runAudioSrc: {fileID: 8214235174348095620}
-  runDustVFX: {fileID: 173569011355181709}
 --- !u!114 &1534609119593578477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -969,12 +968,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bea81d7c5d9a594ab74d15e14699b02, type: 3}
---- !u!198 &173569011355181709 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 6284171236595394575, guid: 2bea81d7c5d9a594ab74d15e14699b02,
-    type: 3}
-  m_PrefabInstance: {fileID: 6151205060457630338}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3384944380130393201 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8909462101622912755, guid: 2bea81d7c5d9a594ab74d15e14699b02,

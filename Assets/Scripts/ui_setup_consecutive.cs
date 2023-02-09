@@ -36,11 +36,11 @@ public class ui_setup_consecutive : MonoBehaviour
             manager.hTimeAnimCurve.Evaluate(Mathf.PingPong(currentTransitionFactor, 0.5f))
             );
 
-        manager.chicken.localPosition = Vector3.Lerp(
-            manager.chickenPosStart,
-            manager.chickenPosTarget,
-            currentTransitionFactor
-            );
+        //manager.chicken.localPosition = Vector3.Lerp(
+        //    manager.chickenPosStart,
+        //    manager.chickenPosTarget,
+        //    currentTransitionFactor
+        //    );
 
         manager.waveCounterText.transform.localPosition = Vector3.Lerp(
             manager.waveCounterPosStart,

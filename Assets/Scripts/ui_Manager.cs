@@ -47,7 +47,7 @@ public class ui_Manager : MonoBehaviour
         healthTextPosStart = healthText.transform.localPosition;
         moneyTextPosStart = moneyText.transform.localPosition;
         scoreTextPosStart = scoreText.transform.localPosition;
-        chickenPosStart = chicken.localPosition;
+        //chickenPosStart = chicken.localPosition;
         waveCounterPosStart = waveCounterText.transform.localPosition;
         enemyCounterPosStart = enemyCounterText.transform.localPosition;
 

@@ -52,11 +52,11 @@ public class ui_setup_init : MonoBehaviour
             currentTransitionFactor
             );
 
-        manager.chicken.localPosition = Vector3.Lerp(
-            manager.chickenPosStart,
-            manager.chickenPosTarget,
-            currentTransitionFactor
-            );
+        //manager.chicken.localPosition = Vector3.Lerp(
+        //    manager.chickenPosStart,
+        //    manager.chickenPosTarget,
+        //    currentTransitionFactor
+        //    );
 
         manager.waveCounterText.transform.localPosition = Vector3.Lerp(
             manager.waveCounterPosStart,

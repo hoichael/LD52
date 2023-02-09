@@ -38,9 +38,9 @@ public abstract class pl_wep_base : MonoBehaviour
     public Vector3 defaultPos;
     public Vector3 pivotTransDefaultPos;
     public float animWeightMult; // the lower the value (0-1) the heigher the "weight"
-    float currentEquipAnimFactor = 1;
+    protected float currentEquipAnimFactor = 1;
 
-    private void Update()
+    protected virtual void Update()
     {
         if (currentEquipAnimFactor != 1)
         {
