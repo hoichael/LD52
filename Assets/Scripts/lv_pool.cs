@@ -99,7 +99,8 @@ public enum PoolType
     drop_health,
     drop_cash,
     vfx_dust_spawn,
-    vfx_dust_run
+    vfx_dust_run,
+    vfx_laser_hit
 }
 
 [System.Serializable]
