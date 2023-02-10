@@ -19,6 +19,13 @@ public class nv_whiteboard : MonoBehaviour
         intDict.Add(int_whiteboard_type.volSFX, intVolSFXArr);
     }
 
+    private void Start()
+    {
+        HandleIteration(intSensArr, intSensArr[g_refs.Instance.sessionData.mouseSensLevel]);
+        HandleIteration(intVolMusicArr, intVolMusicArr[g_refs.Instance.sessionData.audioVolumeMusic]);
+        HandleIteration(intVolSFXArr, intVolSFXArr[g_refs.Instance.sessionData.audioVolumeSFX]);
+    }
+
     public void HandleInteract(nv_int_whiteboard intObj)
     {
         int value = HandleIteration(intDict[intObj.type], intObj);
