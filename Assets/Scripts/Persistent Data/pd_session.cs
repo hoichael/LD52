@@ -19,4 +19,8 @@ public class pd_session : ScriptableObject
     public int upgradeLevelJump;
 
     public Dictionary<wepType, pl_wep_info> wepInfoDict;
+
+    public int mouseSensLevel;
+    public int audioVolumeMusic;
+    public int audioVolumeSFX;
 }
