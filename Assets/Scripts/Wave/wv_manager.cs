@@ -72,7 +72,7 @@ public class wv_manager : MonoBehaviour
     {
         remainingEnemiesCounter--;
         enemiesCounterText.text = "REMAINING ENEMIES: " + remainingEnemiesCounter;
-        if (remainingEnemiesCounter <= 0)
+        if (remainingEnemiesCounter <= 0 && g_refs.Instance.sessionData.playerHP > 0)
         {
             StartCoroutine(ExitWave());
         }

@@ -248,7 +248,9 @@ GameObject:
   m_Component:
   - component: {fileID: 686720842}
   - component: {fileID: 686720841}
-  - component: {fileID: 686720840}
+  - component: {fileID: 686720845}
+  - component: {fileID: 686720844}
+  - component: {fileID: 686720843}
   m_Layer: 0
   m_Name: Systems
   m_TagString: Untagged
@@ -256,18 +258,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &686720840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 686720839}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec1aff0041e99c342bf50779fecea7b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &686720841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,6 +285,54 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &686720843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686720839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 950508b6fd8b1fa43877b046477cfb7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sessionData: {fileID: 11400000, guid: 36937538a05297846a8cd47d23862b70, type: 2}
+  reset: 0
+--- !u!114 &686720844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686720839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f59faa12583d1df4f987292e09487ac0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  titleTextEl: {fileID: 0}
+  scoreTextEl: {fileID: 0}
+  highScoreTextEl_1: {fileID: 0}
+  highScoreTextEl_2: {fileID: 0}
+  highScoreTextEl_3: {fileID: 0}
+  highScoreTextEl_4: {fileID: 0}
+  highScoreTextEl_5: {fileID: 0}
+  scoreFileHandler: {fileID: 686720845}
+  sessionData: {fileID: 11400000, guid: 36937538a05297846a8cd47d23862b70, type: 2}
+  dataResetter: {fileID: 686720843}
+--- !u!114 &686720845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686720839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c9f917eac95f3b4b825c51f9665964b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &961739749
 GameObject:
   m_ObjectHideFlags: 0
