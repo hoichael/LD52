@@ -37,8 +37,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameObject vendingMachineObj, terminalObj;
 
-    [SerializeField] pd_session_RESET pdRest;
+    [SerializeField] pd_session_RESET pdReset;
     [SerializeField] ui_shutter uiShutterManager;
+    [SerializeField] g_audiovolume audioVolumeManager;
 
     bool DEV_DONTSPAWN;
 
@@ -140,15 +141,18 @@ public class GameManager : MonoBehaviour
         camRot.enabled = false;
         weaponManager.DropWeapon();
 
-        uiShutterManager.OnWaveComplete();
         StartCoroutine(HandleDeathTimer());
     }
 
     private IEnumerator HandleDeathTimer()
     {
-        yield return new WaitForSeconds(3f);
-        pdRest.ResetToDefaults();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        yield return new WaitForSeconds(0.35f);
+        audioVolumeManager.OnSceneExit();
+        uiShutterManager.OnDeath();
+        yield return new WaitForSeconds(3.9f);
+        //pdReset.ResetToDefaults();
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(1);
     }
 
     private IEnumerator HandleHarvestTimer()

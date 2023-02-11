@@ -15,7 +15,8 @@ public class wv_manager : MonoBehaviour
     [SerializeField] GameObject waveCompleteTextWrapper;
 
     [SerializeField] ui_shutter uiShutterManager;
-    [SerializeField] music_manager musicManager;
+    //[SerializeField] music_manager musicManager;
+    [SerializeField] g_audiovolume audioVolumeManager;
 
     // these values now reside in pd_sesion ScriptableObject instance
     //int currentWaveIDXRegular = 0;
@@ -84,12 +85,13 @@ public class wv_manager : MonoBehaviour
 
         waveCompleteTextWrapper.SetActive(true);
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2.1f);
 
         uiShutterManager.OnWaveComplete();
-        musicManager.OnWaveComplete();
+        //musicManager.OnWaveComplete();
+        audioVolumeManager.OnSceneExit();
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(3.7f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

@@ -7,8 +7,8 @@ public class music_manager : MonoBehaviour
     [SerializeField] AudioSource musicSrc;
     [SerializeField] float fadeSpeed;
 
-    float currentFadeFactor;
-    float defaultVolume;
+    //float currentFadeFactor;
+    //float defaultVolume;
 
     public void OnInitButtonPress()
     {
@@ -20,27 +20,28 @@ public class music_manager : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if(currentFadeFactor != 0)
-        {
-            HandleFadeout();
-        }
-    }
+    //private void Update()
+    //{
+    //    if(currentFadeFactor != 0)
+    //    {
+    //        HandleFadeout();
+    //    }
+    //}
 
-    private void HandleFadeout()
-    {
-        currentFadeFactor = Mathf.MoveTowards(currentFadeFactor, 0, fadeSpeed * Time.deltaTime);
-        musicSrc.volume = Mathf.Lerp(
-            0,
-            defaultVolume,
-            currentFadeFactor
-            );
-    }
+    //private void HandleFadeout()
+    //{
+    //    currentFadeFactor = Mathf.MoveTowards(currentFadeFactor, 0, fadeSpeed * Time.deltaTime);
 
-    public void OnWaveComplete()
-    {
-        currentFadeFactor = 1;
-        defaultVolume = musicSrc.volume;
-    }
+    //    musicSrc.volume = Mathf.Lerp(
+    //        0,
+    //        defaultVolume,
+    //        currentFadeFactor
+    //        );
+    //}
+
+    //public void OnWaveComplete()
+    //{
+    //    currentFadeFactor = 1;
+    //    defaultVolume = musicSrc.volume;
+    //}
 }

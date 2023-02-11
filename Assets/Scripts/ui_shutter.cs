@@ -21,7 +21,8 @@ public class ui_shutter : MonoBehaviour
     [SerializeField] RenderTexture[] rtArr;
     [SerializeField] Material[] matArr;
 
-    float currentSprFadeFactor = 0;
+    public float currentSprFadeFactor = 0;
+    float currentSprFadeTarget = 0;
     float currentShutterFactor = 1;
     float currentShutterTarget = 1;
 
@@ -31,6 +32,7 @@ public class ui_shutter : MonoBehaviour
         {
             fullscreenSpr.gameObject.SetActive(true);
             currentSprFadeFactor = 1;
+            currentSprFadeTarget = 0;
         }
         else
         {
@@ -44,19 +46,13 @@ public class ui_shutter : MonoBehaviour
 
     private void Update()
     {
-        if (currentSprFadeFactor != 0) HandleSpriteFade();
+        if (currentSprFadeFactor != currentSprFadeTarget) HandleSpriteFade();
         if (currentShutterFactor != currentShutterTarget) HandleShutterAnim();
     }
 
     private void HandleSpriteFade()
     {
-        currentSprFadeFactor = Mathf.MoveTowards(currentSprFadeFactor, 0, sprFadeSpeed * Time.deltaTime);
-
-        //fullscreenSpr.color = Color.Lerp(
-        //    Color.black,
-        //    new Color(0, 0, 0, 0),
-        //    currentSprFadeFactor
-        //    );
+        currentSprFadeFactor = Mathf.MoveTowards(currentSprFadeFactor, currentSprFadeTarget, (currentSprFadeTarget == 1 ? sprFadeSpeed * 2.8f : sprFadeSpeed) * Time.deltaTime);
 
         fullscreenSpr.color = new Color(0, 0, 0, overlayFadeAnimCurve.Evaluate(currentSprFadeFactor));
     }
@@ -76,18 +72,12 @@ public class ui_shutter : MonoBehaviour
             new Vector3(0, -shutterYHidden, 0),
             shutterAnimCurve.Evaluate(currentShutterFactor)
             );
-
-        if (currentShutterFactor == 1)
-        {
-            StartCoroutine(HandlePixelationFade());
-        }
     }
 
-    private IEnumerator HandlePixelationFade()
+    public void OnDeath()
     {
-        yield return new WaitForSeconds(0.25f);
-
-
+        currentSprFadeFactor = 0;
+        currentSprFadeTarget = 1;
     }
 
     public void OnWaveComplete()

@@ -7,6 +7,10 @@ public class g_audiovolume : MonoBehaviour
 {
     [SerializeField] AudioMixer mixer;
 
+    [SerializeField] float exitFadeSpeed;
+    float fadeStartVolume;
+    float currentFadeFactor;
+
     private void Start()
     {
         SetMixerVolume("volParamMusic", g_refs.Instance.sessionData.audioVolumeMusic);
@@ -19,5 +23,36 @@ public class g_audiovolume : MonoBehaviour
         mixer.SetFloat(mixerKey, Mathf.Log10(processedBaseValue) * 20);
 
         g_refs.Instance.sfxOneshot2D.Play(SfxType.pickup);
+    }
+
+    private void Update()
+    {
+        if (currentFadeFactor != 0)
+        {
+            HandleFadeout();
+        }
+    }
+
+    private void HandleFadeout()
+    {
+        currentFadeFactor = Mathf.MoveTowards(currentFadeFactor, 0, exitFadeSpeed * Time.deltaTime);
+
+        //musicSrc.volume = Mathf.Lerp(
+        //    0,
+        //    defaultVolume,
+        //    currentFadeFactor
+        //    );
+
+        mixer.SetFloat("volParamMaster", Mathf.Lerp(
+            -80,
+            fadeStartVolume,
+            currentFadeFactor
+            ));
+    }
+
+    public void OnSceneExit()
+    {
+        currentFadeFactor = 1;
+        mixer.GetFloat("volParamMaster", out fadeStartVolume);
     }
 }

@@ -63,6 +63,8 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters:
+  - guid: 6179749706f7e33489f8a403b6aa3ea6
+    name: volParamMaster
   - guid: dd6a5141f9e4bfc4d83b4758eb63349a
     name: volParamMusic
   - guid: 0dcfdd5864dccaf4082190f176a17235
