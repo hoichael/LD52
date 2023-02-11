@@ -21,9 +21,22 @@ public class death_scoreboard : MonoBehaviour
     {
         scoreDataList = new List<score_data>();
         scoreDataList.Add(new score_data(42));
-        scoreDataList.Add(new score_data(33));
+        scoreDataList.Add(new score_data(333));
 
         scoreFileHandler.SaveData(scoreDataList);
+
+        List<score_data> newScoreData = scoreFileHandler.GetData();
+        print(newScoreData.Count);
+
+        print(newScoreData[1].score);
+
+
+
+
+
+
+
+        dataResetter.ResetToDefaults();
     }
 
 }

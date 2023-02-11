@@ -1,8 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.IO;
+using System.Linq;
 
 public class pd_score : MonoBehaviour
 {
@@ -23,9 +23,29 @@ public class pd_score : MonoBehaviour
         }
     }
 
-    public void GetData()
+    public List<score_data> GetData()
     {
+        string path = Application.dataPath + saveFileName;
 
+        if (File.Exists(path))
+        {
+            using (StreamReader streamReader = new StreamReader(path))
+            {
+                string dataAsJson = streamReader.ReadToEnd();
+
+                if (String.IsNullOrEmpty(dataAsJson) || dataAsJson == "{}")
+                {
+                    return null;
+                }
+                else
+                {
+                    score_data_wrapper wrappedData = JsonUtility.FromJson<score_data_wrapper>(dataAsJson);
+                    return wrappedData.scores.ToList();
+                }
+            }
+        }
+
+        return null;
     }
 }
 
