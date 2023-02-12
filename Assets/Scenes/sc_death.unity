@@ -3517,7 +3517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprRenderer: {fileID: 998943684}
-  sprFadeSpeed: 0.045
+  sprFadeSpeed: 0.052
   overlayFadeAnimCurve:
     serializedVersion: 2
     m_Curve:
@@ -3609,6 +3609,7 @@ MonoBehaviour:
   scoreFileHandler: {fileID: 686720845}
   sessionData: {fileID: 11400000, guid: 36937538a05297846a8cd47d23862b70, type: 2}
   dataResetter: {fileID: 686720843}
+  overlayFader: {fileID: 686720841}
   textPulseAnimSpeed: 0.5
 --- !u!114 &686720845
 MonoBehaviour:
@@ -5631,7 +5632,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 998943683}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2.5}
+  m_LocalPosition: {x: 0, y: 0, z: -4.07}
   m_LocalScale: {x: 25, y: 25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9478,16 +9479,16 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Final Score: 3333333333333333'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5f4483acdce9cbe4aa8149da37427181, type: 2}
-  m_sharedMaterial: {fileID: 742028767289526671, guid: 5f4483acdce9cbe4aa8149da37427181,
+  m_fontAsset: {fileID: 11400000, guid: f4619a5b56bb5ff4b97159d2094be893, type: 2}
+  m_sharedMaterial: {fileID: 742028767289526671, guid: f4619a5b56bb5ff4b97159d2094be893,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4278255407
+  m_fontColor: {r: 0.18431373, g: 1, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -9569,7 +9570,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 742028767289526671, guid: 5f4483acdce9cbe4aa8149da37427181, type: 2}
+  - {fileID: 742028767289526671, guid: f4619a5b56bb5ff4b97159d2094be893, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

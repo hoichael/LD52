@@ -37,9 +37,11 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameObject vendingMachineObj, terminalObj;
 
-    [SerializeField] pd_session_RESET pdReset;
+    //[SerializeField] pd_session_RESET pdReset;
     [SerializeField] ui_shutter uiShutterManager;
     [SerializeField] g_audiovolume audioVolumeManager;
+
+    [SerializeField] GameObject defaultCrosshair;
 
     bool DEV_DONTSPAWN;
     bool harvestTimeHappened;
@@ -52,6 +54,7 @@ public class GameManager : MonoBehaviour
         {
             terminalObj.SetActive(true);
             vendingMachineObj.SetActive(false);
+            defaultCrosshair.SetActive(false);
         }
         else
         {
@@ -110,6 +113,7 @@ public class GameManager : MonoBehaviour
         harvestTimeHappened = true;
 
         print("HARVEST TIME");
+
         monitorManager.HandleHarvestTime();
         uiManager.HandleHarvestTime();
         officeCollapser.HandleHarvestTime();
@@ -142,7 +146,7 @@ public class GameManager : MonoBehaviour
         upperPromptText.text = "HARVESTED";
         plRB.isKinematic = true;
         camRot.enabled = false;
-        weaponManager.DropWeapon();
+        //weaponManager.DropWeapon();
 
         StartCoroutine(HandleDeathTimer());
     }

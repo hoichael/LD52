@@ -9,6 +9,7 @@ public class death_fade : MonoBehaviour
     [SerializeField] AnimationCurve overlayFadeAnimCurve;
 
     float currentFadeFactor;
+    float currentFadeTarget;
 
     private void Start()
     {
@@ -17,15 +18,22 @@ public class death_fade : MonoBehaviour
 
     private IEnumerator HandleFadeDelay()
     {
-        yield return new WaitForSeconds(0.85f);
+        yield return new WaitForSeconds(0.25f);
         currentFadeFactor = 1;
+        currentFadeTarget = 0;
+    }
+
+    public void OnSceneExit()
+    {
+        //currentFadeFactor = 0;
+        currentFadeTarget = 1;
     }
 
     private void Update()
     {
-        if (currentFadeFactor == 0) return;
+        if (currentFadeFactor == currentFadeTarget) return;
 
-        currentFadeFactor = Mathf.MoveTowards(currentFadeFactor, 0, sprFadeSpeed * Time.deltaTime);
+        currentFadeFactor = Mathf.MoveTowards(currentFadeFactor, currentFadeTarget, (currentFadeTarget == 1 ? sprFadeSpeed * 8.8f : sprFadeSpeed) * Time.deltaTime);
 
         sprRenderer.color = new Color(0, 0, 0, overlayFadeAnimCurve.Evaluate(currentFadeFactor));
     }

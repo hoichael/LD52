@@ -18,6 +18,7 @@ public class pl_wep_manager : MonoBehaviour
 
     [SerializeField] GameObject humanArm;
     [SerializeField] SkinnedMeshRenderer rendererCornLeft, rendererCornRight;
+    [SerializeField] GameObject defaultCrosshair;
 
     private void Start()
     {
@@ -47,6 +48,8 @@ public class pl_wep_manager : MonoBehaviour
 
     public void SwitchWeapon(wepType type)
     {
+        defaultCrosshair.SetActive(false);
+
         pl_wep_base newWeapon = g_refs.Instance.sessionData.wepInfoDict[type].wepScript;
 
         if(newWeapon == activeWeaponScript) // accounts for both picking up already equipped weapon as well as invalid ID
@@ -175,6 +178,7 @@ public class pl_wep_manager : MonoBehaviour
         g_refs.Instance.sessionData.wepInfoDict[wepType.rifle].wepScript = rifleScript;
         g_refs.Instance.sessionData.wepInfoDict[wepType.shotgun].wepScript = shotgunScript;
         g_refs.Instance.sessionData.wepInfoDict[wepType.launcher].wepScript = launcherScript;
+        g_refs.Instance.sessionData.wepInfoDict[wepType.chicken].wepScript = chickenScript;
 
         foreach (pl_wep_info wepInfo in g_refs.Instance.sessionData.wepInfoDict.Values)
         {

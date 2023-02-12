@@ -78,6 +78,7 @@ public class ui_shutter : MonoBehaviour
     {
         currentSprFadeFactor = 0;
         currentSprFadeTarget = 1;
+        fullscreenSpr.gameObject.SetActive(true);
     }
 
     public void OnWaveComplete()

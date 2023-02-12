@@ -20,7 +20,9 @@ public class pd_score : MonoBehaviour
         using (StreamWriter streamWriter = new StreamWriter(fileStream))
         {
             streamWriter.Write(wrappedDataAsJSON);
+            streamWriter.Close();
         }
+        fileStream.Close();
     }
 
     public List<score_data> GetData()
@@ -35,11 +37,13 @@ public class pd_score : MonoBehaviour
 
                 if (String.IsNullOrEmpty(dataAsJson) || dataAsJson == "{}")
                 {
+                    streamReader.Close();
                     return null;
                 }
                 else
                 {
                     score_data_wrapper wrappedData = JsonUtility.FromJson<score_data_wrapper>(dataAsJson);
+                    streamReader.Close();
                     return wrappedData.scores.ToList();
                 }
             }

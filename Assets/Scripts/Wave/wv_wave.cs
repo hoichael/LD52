@@ -20,7 +20,17 @@ public class wv_wave : MonoBehaviour
         {
             foreach(wv_subwave_enemyinfo enemyInfo in subwave.enemyInfoArr)
             {
-                amount += enemyInfo.amount;
+                int enemyAmount;
+                if (g_refs.Instance.sessionData.currentWaveLooping == 0)
+                {
+                    enemyAmount = enemyInfo.amount;
+                }
+                else
+                {
+                    enemyAmount = Mathf.RoundToInt(enemyInfo.amount * (1 + (g_refs.Instance.sessionData.currentWaveLooping * 0.1f)));
+                }
+
+                amount += enemyAmount;
             }
         }
 

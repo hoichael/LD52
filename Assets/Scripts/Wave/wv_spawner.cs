@@ -35,8 +35,18 @@ public class wv_spawner : MonoBehaviour
         foreach (wv_subwave_enemyinfo enemyInfo in currentWave.subwavesArr[currentSubwaveIDX].enemyInfoArr)
         {
             Transform[] spawnPointsArr = currentWave.subwavesArr[currentSubwaveIDX].spawnPointsContainer.Cast<Transform>().ToArray();
-            
-            for (int i = 0; i < enemyInfo.amount; i++)
+
+            int enemyAmount;
+            if(g_refs.Instance.sessionData.currentWaveLooping == 0)
+            {
+                enemyAmount = enemyInfo.amount;
+            }
+            else
+            {
+                enemyAmount = Mathf.RoundToInt(enemyInfo.amount * (1 + (g_refs.Instance.sessionData.currentWaveLooping * 0.1f)));
+            }
+
+            for (int i = 0; i < enemyAmount; i++)
             {
                 int spawnPosIDX = Random.Range(0, spawnPointsArr.Length);
                 Instantiate(enDict[enemyInfo.type], spawnPointsArr[spawnPosIDX].position, Quaternion.identity);

@@ -16,15 +16,17 @@ public class death_scoreboard : MonoBehaviour
     [SerializeField] pd_score scoreFileHandler;
     [SerializeField] pd_session sessionData;
     [SerializeField] pd_session_RESET dataResetter;
+    [SerializeField] death_fade overlayFader;
 
     [Header("Values")]
     [SerializeField] float textPulseAnimSpeed;
 
     float currentTextPulseAnimFactor;
+    bool canExitScene;
 
     List<score_data> scoreDataList;
 
-    private void Awake()
+    private void Start()
     {
         Cursor.visible = false;
 
@@ -51,7 +53,7 @@ public class death_scoreboard : MonoBehaviour
 
         SetTextElements();
 
-        dataResetter.ResetToDefaults();
+        //dataResetter.ResetToDefaults();
     }
 
     private void SetTextElements()
@@ -84,8 +86,16 @@ public class death_scoreboard : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadScene(0);
+            overlayFader.OnSceneExit();
+            StartCoroutine(HandleDelayedSceneSwitch());
         }
+    }
+
+    private IEnumerator HandleDelayedSceneSwitch()
+    {
+        yield return new WaitForSeconds(2.45f);
+        dataResetter.ResetToDefaults();
+        SceneManager.LoadScene(0);
     }
 
     private void HandleHighscoreTextScale()

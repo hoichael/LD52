@@ -53,7 +53,7 @@ public abstract class pl_wep_base : MonoBehaviour
                 HandleRecoiAnim();
             }
 
-            if (canShoot && Input.GetKey(KeyCode.Mouse0))
+            if (Input.GetKey(KeyCode.Mouse0) && canShoot && g_refs.Instance.sessionData.playerHP > 0)
             {
                 if (g_refs.Instance.sessionData.wepInfoDict[type].ammo <= 0) return;
                 g_refs.Instance.sessionData.wepInfoDict[type].ammo--;

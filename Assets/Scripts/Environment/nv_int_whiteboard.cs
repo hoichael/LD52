@@ -24,5 +24,6 @@ public class nv_int_whiteboard : nv_int_base
     {
         base.HandleInteract();
         whiteboardManager.HandleInteract(this);
+        g_refs.Instance.sfxOneshot2D.Play(SfxType.pickup);
     }
 }
