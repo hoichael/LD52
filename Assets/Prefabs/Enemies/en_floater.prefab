@@ -384,8 +384,11 @@ MonoBehaviour:
   durationAfterShooting: 0.34
   chaseDistance: 52
   rotSlerpDamp: 0.105
-  firePointTrans: {fileID: 1486792563217586002}
+  firePointMouth: {fileID: 1486792563217586002}
+  firePointEye_L: {fileID: 0}
+  firePointEye_R: {fileID: 0}
   shootAudioSrc: {fileID: 46437155340152437}
+  isBoss: 0
 --- !u!114 &2134655656140984564
 MonoBehaviour:
   m_ObjectHideFlags: 0

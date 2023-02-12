@@ -100,7 +100,8 @@ public enum PoolType
     drop_cash,
     vfx_dust_spawn,
     vfx_dust_run,
-    vfx_laser_hit
+    vfx_laser_hit,
+    proj_en_floater_boss
 }
 
 [System.Serializable]

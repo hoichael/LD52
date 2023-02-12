@@ -6,7 +6,7 @@ using System.Linq;
 public class wv_spawner : MonoBehaviour
 {
     [SerializeField] lv_pool pool;
-    [SerializeField] GameObject walker, walkerElite, shooter, shooterElite, exploder, exploderElite, runner, runnerElite, floater, floaterElite, giant;
+    [SerializeField] GameObject walker, walkerElite, shooter, shooterElite, exploder, exploderElite, runner, runnerElite, floater, floaterElite, giant, floaterBoss;
     Dictionary<en_type, GameObject> enDict;
     wv_wave currentWave;
     int currentSubwaveIDX;
@@ -72,6 +72,7 @@ public class wv_spawner : MonoBehaviour
         enDict.Add(en_type.floater, floater);
         //enDict.Add(en_type.floater_elite, floaterElite);
         enDict.Add(en_type.giant, giant);
+        enDict.Add(en_type.floater_boss, floaterBoss);
     }
 }
 
@@ -87,5 +88,6 @@ public enum en_type
     runner_elite,
     floater,
     floater_elite,
-    giant
+    giant,
+    floater_boss
 }

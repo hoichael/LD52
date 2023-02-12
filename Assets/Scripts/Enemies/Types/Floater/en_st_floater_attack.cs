@@ -9,8 +9,10 @@ public class en_st_floater_attack : en_state_base
     [SerializeField] float chaseDistance;
     [SerializeField] float rotSlerpDamp;
 
-    [SerializeField] Transform firePointTrans;
+    [SerializeField] Transform firePointMouth, firePointEye_L, firePointEye_R;
     [SerializeField] AudioSource shootAudioSrc;
+
+    [SerializeField] bool isBoss;
 
     Transform targetTrans;
 
@@ -55,9 +57,19 @@ public class en_st_floater_attack : en_state_base
 
     private void FireProjectile()
     {
-        firePointTrans.LookAt(g_refs.Instance.plTrans.position);
-        g_refs.Instance.pool.Dispatch(PoolType.proj_en_shooter, firePointTrans.position, firePointTrans.rotation);
-        g_refs.Instance.pool.Dispatch(PoolType.vfx_mflash_en_shooter, firePointTrans.position, firePointTrans.rotation);
+        if(isBoss)
+        {
+            firePointEye_L.LookAt(g_refs.Instance.plTrans.position);
+            firePointEye_R.LookAt(g_refs.Instance.plTrans.position);
+            g_refs.Instance.pool.Dispatch(PoolType.proj_en_floater_boss, firePointEye_L.position, firePointEye_L.rotation);
+            g_refs.Instance.pool.Dispatch(PoolType.proj_en_floater_boss, firePointEye_R.position, firePointEye_R.rotation);
+        }
+        else
+        {
+            firePointMouth.LookAt(g_refs.Instance.plTrans.position);
+            g_refs.Instance.pool.Dispatch(PoolType.proj_en_shooter, firePointMouth.position, firePointMouth.rotation);
+        }
+        g_refs.Instance.pool.Dispatch(PoolType.vfx_mflash_en_shooter, firePointMouth.position, firePointMouth.rotation);
         shootAudioSrc.Play();
     }
 }

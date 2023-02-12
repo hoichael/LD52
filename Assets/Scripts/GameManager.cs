@@ -152,7 +152,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(0.35f);
         audioVolumeManager.OnSceneExit();
         uiShutterManager.OnDeath();
-        yield return new WaitForSeconds(3.9f);
+        yield return new WaitForSeconds(4.3f);
         //pdReset.ResetToDefaults();
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         SceneManager.LoadScene(1);
