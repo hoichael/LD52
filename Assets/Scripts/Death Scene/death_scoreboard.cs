@@ -1,20 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
+using System.Linq;
 
 public class death_scoreboard : MonoBehaviour
 {
     [Header("Text Elements")]
-    [SerializeField] TextMeshPro titleTextEl;
-    [SerializeField] TextMeshPro newHighscoreTextEl, scoreTextEl, highScoreTextEl_1, highScoreTextEl_2, highScoreTextEl_3, highScoreTextEl_4, highScoreTextEl_5;
-    //[SerializeField] TextMeshPro highScoreTimeTextEl_1, highScoreTimeTextEl_2, highScoreTimeTextEl_3, highScoreTimeTextEl_4, highScoreTimeTextEl_5;
+    [SerializeField] TextMeshPro runScoreTitleTextEl;
+    [SerializeField] TextMeshPro newHighscoreTextEl;
+    [SerializeField] TextMeshPro[] highscoreTextElValuesArr, highscoreTextElDatesArr;
 
     [Header("Other Refs")]
     [SerializeField] pd_score scoreFileHandler;
     [SerializeField] pd_session sessionData;
     [SerializeField] pd_session_RESET dataResetter;
-
 
     [Header("Values")]
     [SerializeField] float textPulseAnimSpeed;
@@ -25,29 +26,66 @@ public class death_scoreboard : MonoBehaviour
 
     private void Awake()
     {
-        scoreDataList = new List<score_data>();
-        scoreDataList.Add(new score_data(42));
-        scoreDataList.Add(new score_data(333));
+        Cursor.visible = false;
 
+        runScoreTitleTextEl.text = "FINAL SCORE: " + sessionData.score.ToString();
+
+        scoreDataList = scoreFileHandler.GetData();
+        if(scoreDataList == null)
+        {
+            scoreDataList = new List<score_data>();
+            newHighscoreTextEl.gameObject.SetActive(true);
+        }
+        else
+        {
+            SortList();
+            if(sessionData.score > scoreDataList[0].score)
+            {
+                newHighscoreTextEl.gameObject.SetActive(true);
+            }
+        }
+
+        scoreDataList.Add(new score_data(sessionData.score));
+        SortList();
         scoreFileHandler.SaveData(scoreDataList);
 
-        List<score_data> newScoreData = scoreFileHandler.GetData();
-        print(newScoreData.Count);
-
-        print(newScoreData[1].score);
-
-
-
-
-
-
+        SetTextElements();
 
         dataResetter.ResetToDefaults();
+    }
+
+    private void SetTextElements()
+    {
+        for(int i = 0; i < 5; i++)
+        {
+            if(scoreDataList[i] != null)
+            {
+                highscoreTextElValuesArr[i].text = scoreDataList[i].score.ToString();
+                highscoreTextElDatesArr[i].text = scoreDataList[i].date;
+            }
+            else
+            {
+                highscoreTextElValuesArr[i].text = "N/A";
+                highscoreTextElDatesArr[i].text = "N/A";
+            }
+        }
+    }
+
+    private void SortList()
+    {
+        score_data[] dataAsArr = scoreDataList.ToArray();
+        IEnumerable<score_data> dataAsSortedArr = dataAsArr.OrderByDescending(entry => entry.score);
+        scoreDataList = dataAsSortedArr.ToList();
     }
 
     private void Update()
     {
         HandleHighscoreTextScale();
+
+        if(Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
     private void HandleHighscoreTextScale()
@@ -62,7 +100,6 @@ public class death_scoreboard : MonoBehaviour
 
         if (currentTextPulseAnimFactor == 1) currentTextPulseAnimFactor = 0;
     }
-
 }
 
 

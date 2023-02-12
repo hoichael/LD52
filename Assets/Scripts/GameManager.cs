@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] g_audiovolume audioVolumeManager;
 
     bool DEV_DONTSPAWN;
+    bool harvestTimeHappened;
 
     private void Start()
     {
@@ -77,7 +78,7 @@ public class GameManager : MonoBehaviour
         }
 
         // DEV STUFF
-        if(Input.GetKeyDown(KeyCode.H))
+        if(Input.GetKeyDown(KeyCode.H) && !harvestTimeHappened)
         {
             StopAllCoroutines();
             HarvestTime();
@@ -106,6 +107,8 @@ public class GameManager : MonoBehaviour
 
     public void HarvestTime()
     {
+        harvestTimeHappened = true;
+
         print("HARVEST TIME");
         monitorManager.HandleHarvestTime();
         uiManager.HandleHarvestTime();

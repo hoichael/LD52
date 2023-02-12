@@ -12,13 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbb349759b706384aba6de2bec5fe79e, type: 3}
   m_Name: SessionData
   m_EditorClassIdentifier: 
-  score: 5000
-  cash: 9997649
-  playerHP: 25
-  currentPlMaxHp: 25
-  currentWaveTotal: 5
-  currentWaveRegular: 4
+  score: 0
+  cash: 0
+  playerHP: 0
+  currentPlMaxHp: 0
+  currentWaveTotal: 1
+  currentWaveRegular: 0
   currentWaveLooping: -1
   upgradeLevelHealth: 0
   upgradeLevelMove: 0
   upgradeLevelJump: 0
+  mouseSensLevel: 4
+  audioVolumeMusic: 4
+  audioVolumeSFX: 4
