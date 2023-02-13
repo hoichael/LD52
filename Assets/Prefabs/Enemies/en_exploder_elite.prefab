@@ -1328,7 +1328,7 @@ MonoBehaviour:
   info: {fileID: 6620312706671479817}
   velClampGround: 19
   velClampAir: 35
-  moveSpeedGround: 100
+  moveSpeedGround: 500
   moveSpeedAir: 5
   moveForward: 0
   gravForceMax: 50

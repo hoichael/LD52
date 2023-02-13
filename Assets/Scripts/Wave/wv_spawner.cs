@@ -37,13 +37,13 @@ public class wv_spawner : MonoBehaviour
             Transform[] spawnPointsArr = currentWave.subwavesArr[currentSubwaveIDX].spawnPointsContainer.Cast<Transform>().ToArray();
 
             int enemyAmount;
-            if(g_refs.Instance.sessionData.currentWaveLooping == 0)
+            if(g_refs.Instance.sessionData.loopingWaveCounter == 0)
             {
                 enemyAmount = enemyInfo.amount;
             }
             else
             {
-                enemyAmount = Mathf.RoundToInt(enemyInfo.amount * (1 + (g_refs.Instance.sessionData.currentWaveLooping * 0.1f)));
+                enemyAmount = Mathf.RoundToInt(enemyInfo.amount * (1 + (g_refs.Instance.sessionData.loopingWaveCounter * 0.1f)));
             }
 
             for (int i = 0; i < enemyAmount; i++)

@@ -44267,7 +44267,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 371ceedfc0b5be04cb56786589e816c0, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.917
-  m_Pitch: -0.3
+  m_Pitch: -0.15
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -59073,7 +59073,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   dmgInfo: {fileID: -8961653077944669872}
-  knockbackForce: 20
+  knockbackForce: 12.5
 --- !u!1 &7233984569883078034
 GameObject:
   m_ObjectHideFlags: 0

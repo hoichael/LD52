@@ -58,9 +58,9 @@ public class death_scoreboard : MonoBehaviour
 
     private void SetTextElements()
     {
-        for(int i = 0; i < 5; i++)
+        for (int i = 0; i < 5; i++)
         {
-            if(scoreDataList[i] != null)
+            if(i < scoreDataList.Count)
             {
                 highscoreTextElValuesArr[i].text = scoreDataList[i].score.ToString();
                 highscoreTextElDatesArr[i].text = scoreDataList[i].date;

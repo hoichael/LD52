@@ -153,8 +153,9 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator HandleDeathTimer()
     {
-        yield return new WaitForSeconds(0.35f);
+        yield return new WaitForSeconds(0.2f);
         audioVolumeManager.OnSceneExit();
+        yield return new WaitForSeconds(0.65f);
         uiShutterManager.OnDeath();
         yield return new WaitForSeconds(4.3f);
         //pdReset.ResetToDefaults();

@@ -1326,12 +1326,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   info: {fileID: 6620312706671479817}
-  velClampGround: 14
+  velClampGround: 13
   velClampAir: 35
-  moveSpeedGround: 100
+  moveSpeedGround: 500
   moveSpeedAir: 5
   moveForward: 0
-  gravForceMax: 50
+  gravForceMax: 45
   gravGrowSpeed: 1.1
 --- !u!1 &6488400504186309287
 GameObject:

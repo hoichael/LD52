@@ -48,6 +48,8 @@ public class pl_wep_manager : MonoBehaviour
 
     public void SwitchWeapon(wepType type)
     {
+        if (g_refs.Instance.sessionData.playerHP <= 0) return;
+
         defaultCrosshair.SetActive(false);
 
         pl_wep_base newWeapon = g_refs.Instance.sessionData.wepInfoDict[type].wepScript;

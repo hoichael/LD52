@@ -61,6 +61,7 @@ public class wv_manager : MonoBehaviour
         else
         {
             g_refs.Instance.sessionData.currentWaveLooping++;
+            g_refs.Instance.sessionData.loopingWaveCounter++;
             if (g_refs.Instance.sessionData.currentWaveLooping == loopingWavesArr.Length)
             {
                 g_refs.Instance.sessionData.currentWaveLooping = 0;

@@ -10,16 +10,16 @@ public class pd_session_RESET : MonoBehaviour
     private void OnDisable()
     {
         if (!reset) return;
-        ResetToDefaults(); // DEV STUFF, ONLY MATTERS IN EDITOR, COMMENT OUT FOR BUILDS
+        ResetToDefaults();
     }
 
     private void Awake()
     {
         if (!reset) return;
-        ResetToDefaults(); // DEV STUFF, ONLY MATTERS IN EDITOR, COMMENT OUT FOR BUILDS
+        ResetToDefaults();
     }
 
-    public void ResetToDefaults() // DEV STUFF, ONLY MATTERS IN EDITOR, COMMENT OUT FOR BUILDS
+    public void ResetToDefaults()
     {
         sessionData.score = 0;
         sessionData.cash = 0;
@@ -29,6 +29,7 @@ public class pd_session_RESET : MonoBehaviour
         sessionData.currentWaveTotal = 1;
         sessionData.currentWaveRegular = 0;
         sessionData.currentWaveLooping = -1;
+        sessionData.loopingWaveCounter = 0;
 
         sessionData.upgradeLevelHealth = 0;
         sessionData.upgradeLevelMove = 0;

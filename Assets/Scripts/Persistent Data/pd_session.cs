@@ -13,6 +13,7 @@ public class pd_session : ScriptableObject
     public int currentWaveTotal = 1;
     public int currentWaveRegular = 0;
     public int currentWaveLooping = -1;
+    public int loopingWaveCounter;
 
     public int upgradeLevelHealth;
     public int upgradeLevelMove;
