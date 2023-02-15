@@ -6,11 +6,23 @@ public class pl_jump : MonoBehaviour
 {
     [SerializeField] pl_refs refs;
 
+    int jumpCount;
+
+    void Start() {
+        jumpCount = 0;
+    }
+
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space)/* TODO && refs.state.grounded*/)
+        if(Input.GetKeyDown(KeyCode.Space) && jumpCount < 2)
         {
             ApplyJump();
+            jumpCount += 1;
+        }
+
+        if (refs.state.grounded)
+        {
+            jumpCount = 0;
         }
     }
 
