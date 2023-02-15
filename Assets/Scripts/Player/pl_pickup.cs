@@ -18,6 +18,9 @@ public class pl_pickup : MonoBehaviour
     private void Start()
     {
         plTrans = g_refs.Instance.plTrans;
+
+        // TODO DEV
+        pickupAmounttMoney = 1000;
     }
 
     // DEV STUFF
