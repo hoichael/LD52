@@ -35,15 +35,35 @@ public class pl_wep_manager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.mouseScrollDelta.y != 0)
+        int nextWepId = null;
+
+        if(Input.GetKeyDown(KeyCode.Alpha1))
         {
-            TryWeaponSwitch((int)Mathf.Sign(Input.mouseScrollDelta.y));
+            nextWepId = 0;
+        } else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            nextWepId = 1;
+        } else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            nextWepId = 2;
+        } else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            nextWepId = 3;
+        } else if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            nextWepId = 4;
+        } else if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            nextWepId = 5;
+        } else if(Input.mouseScrollDelta.y != 0)
+        {
+            nextWepId = (int)Mathf.Sign(Input.mouseScrollDelta.y);
+        } else if(Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.CapsLock))
+        {
+            nextWepId = 1;
         }
 
-        if(Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.CapsLock))
-        {
-            TryWeaponSwitch(1);
-        }
+        TryWeaponSwitch(nextWepId);
     }
 
     public void SwitchWeapon(wepType type)

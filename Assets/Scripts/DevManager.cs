@@ -10,16 +10,12 @@ public class DevManager : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.Backspace))
         {
             Reload();
         }
 
-        if (Input.GetKeyDown(KeyCode.Backspace))
-        {
-            Reload();
-        }
-
+        /*
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
             baseCam.targetTexture = renTex128;
@@ -55,6 +51,7 @@ public class DevManager : MonoBehaviour
             baseCam.targetTexture = renText768;
             rtQuadRenderer.material = m768;
         }
+        */
     }
 
     public void Reload()
