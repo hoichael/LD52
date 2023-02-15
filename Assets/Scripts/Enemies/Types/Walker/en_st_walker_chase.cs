@@ -6,6 +6,7 @@ public class en_st_walker_chase : en_state_base
     [SerializeField] float attackDistance;
     [SerializeField] float maxVelMagnitude;
     [SerializeField] en_forces forcesHandler;
+    [SerializeField] AudioSource walkAudioSrc;
     Transform playerTrans;
 
     private void Start()
@@ -28,6 +29,22 @@ public class en_st_walker_chase : en_state_base
         //info.rb.AddForce(transform.forward * (info.grounded ? moveSpeedGround : moveSpeedAir));
         //print(info.rb.velocity.magnitude);
         //info.rb.velocity = Vector3.ClampMagnitude(info.rb.velocity, maxVelMagnitude);
+        HandleRunAudio();
+    }
+
+    private void HandleRunAudio()
+    {
+        if (!info.grounded || this.enabled == false /* unity lifecycling be trippin */)
+        {
+            walkAudioSrc.Stop();
+        }
+        else
+        {
+            if (!walkAudioSrc.isPlaying)
+            {
+                walkAudioSrc.Play();
+            }
+        }
     }
 
     private void CheckDistance()
@@ -53,5 +70,6 @@ public class en_st_walker_chase : en_state_base
     {
         base.OnDisable();
         forcesHandler.moveForward = false;
+        walkAudioSrc.Stop();
     }
 }
