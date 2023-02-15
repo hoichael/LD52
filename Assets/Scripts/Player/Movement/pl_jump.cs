@@ -8,10 +8,10 @@ public class pl_jump : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && refs.state.grounded)
+        if(Input.GetKeyDown(KeyCode.Space)/* TODO && refs.state.grounded*/)
         {
             ApplyJump();
-        }    
+        }
     }
 
     private void ApplyJump()
