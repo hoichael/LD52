@@ -35,7 +35,7 @@ public class pl_wep_manager : MonoBehaviour
 
     private void Update()
     {
-        int nextWepId = null;
+        int nextWepId = -1;
 
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -63,7 +63,10 @@ public class pl_wep_manager : MonoBehaviour
             nextWepId = 1;
         }
 
-        TryWeaponSwitch(nextWepId);
+        if (nextWepId != -1)
+        {
+            TryWeaponSwitch(nextWepId);
+        }
     }
 
     public void SwitchWeapon(wepType type)
