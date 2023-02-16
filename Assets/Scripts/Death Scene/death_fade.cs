@@ -18,7 +18,7 @@ public class death_fade : MonoBehaviour
 
     private IEnumerator HandleFadeDelay()
     {
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(1.1f);
         currentFadeFactor = 1;
         currentFadeTarget = 0;
     }
@@ -33,7 +33,7 @@ public class death_fade : MonoBehaviour
     {
         if (currentFadeFactor == currentFadeTarget) return;
 
-        currentFadeFactor = Mathf.MoveTowards(currentFadeFactor, currentFadeTarget, (currentFadeTarget == 1 ? sprFadeSpeed * 8.8f : sprFadeSpeed) * Time.deltaTime);
+        currentFadeFactor = Mathf.MoveTowards(currentFadeFactor, currentFadeTarget, (currentFadeTarget == 1 ? sprFadeSpeed * 7.8f : sprFadeSpeed) * Time.deltaTime);
 
         sprRenderer.color = new Color(0, 0, 0, overlayFadeAnimCurve.Evaluate(currentFadeFactor));
     }

@@ -30,7 +30,7 @@ public class death_scoreboard : MonoBehaviour
     {
         Cursor.visible = false;
 
-        runScoreTitleTextEl.text = "FINAL SCORE: " + sessionData.score.ToString();
+        runScoreTitleTextEl.text = sessionData.score.ToString();
 
         scoreDataList = scoreFileHandler.GetData();
         if(scoreDataList == null)
@@ -82,13 +82,15 @@ public class death_scoreboard : MonoBehaviour
 
     private void Update()
     {
-        HandleHighscoreTextScale();
+        //HandleHighscoreTextScale();
 
         if(Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Escape))
         {
             overlayFader.OnSceneExit();
             StartCoroutine(HandleDelayedSceneSwitch());
         }
+
+        RenderSettings.skybox.SetFloat("_Rotation", Time.time * 0.45f);
     }
 
     private IEnumerator HandleDelayedSceneSwitch()
