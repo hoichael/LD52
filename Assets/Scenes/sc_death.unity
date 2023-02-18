@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0029013483, g: 0.009470284, b: 0.00014833585, a: 1}
+  m_IndirectSpecularColor: {r: 0.00291102, g: 0.009484587, b: 0.0001484523, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -15956,7 +15956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprRenderer: {fileID: 998943684}
-  sprFadeSpeed: 0.042
+  sprFadeSpeed: 0.048
   overlayFadeAnimCurve:
     serializedVersion: 2
     m_Curve:

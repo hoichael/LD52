@@ -53,23 +53,23 @@ public class te_manager : MonoBehaviour
 
         activeSlIdx += dirMult;
         selectables[activeSlIdx].gameObject.SetActive(true);
-        selectables[activeSlIdx].transform.localScale = slIconScaleActive;
-        selectables[activeSlIdx].transform.localPosition = new Vector3(xPosMid, selectables[activeSlIdx].transform.localPosition.y, selectables[activeSlIdx].transform.localPosition.z);
+        //selectables[activeSlIdx].transform.localScale = slIconScaleActive;
+        //selectables[activeSlIdx].transform.localPosition = new Vector3(xPosMid, selectables[activeSlIdx].transform.localPosition.y, selectables[activeSlIdx].transform.localPosition.z);
         selectables[activeSlIdx].Select();
 
-        if (activeSlIdx != 0)
-        {
-            selectables[activeSlIdx - 1].gameObject.SetActive(true);
-            selectables[activeSlIdx - 1].transform.localScale = slIconScaleDef;
-            selectables[activeSlIdx - 1].transform.localPosition = new Vector3(xPosLeft, selectables[activeSlIdx].transform.localPosition.y, selectables[activeSlIdx].transform.localPosition.z);
-        }
+        //if (activeSlIdx != 0)
+        //{
+        //    selectables[activeSlIdx - 1].gameObject.SetActive(true);
+        //    selectables[activeSlIdx - 1].transform.localScale = slIconScaleDef;
+        //    selectables[activeSlIdx - 1].transform.localPosition = new Vector3(xPosLeft, selectables[activeSlIdx].transform.localPosition.y, selectables[activeSlIdx].transform.localPosition.z);
+        //}
 
-        if(activeSlIdx != selectables.Length - 1)
-        {
-            selectables[activeSlIdx + 1].gameObject.SetActive(true);
-            selectables[activeSlIdx + 1].transform.localScale = slIconScaleDef;
-            selectables[activeSlIdx + 1].transform.localPosition = new Vector3(xPosRight, selectables[activeSlIdx].transform.localPosition.y, selectables[activeSlIdx].transform.localPosition.z);
-        }
+        //if(activeSlIdx != selectables.Length - 1)
+        //{
+        //    selectables[activeSlIdx + 1].gameObject.SetActive(true);
+        //    selectables[activeSlIdx + 1].transform.localScale = slIconScaleDef;
+        //    selectables[activeSlIdx + 1].transform.localPosition = new Vector3(xPosRight, selectables[activeSlIdx].transform.localPosition.y, selectables[activeSlIdx].transform.localPosition.z);
+        //}
     }
 
 

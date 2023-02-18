@@ -95,7 +95,7 @@ public class death_scoreboard : MonoBehaviour
 
     private IEnumerator HandleDelayedSceneSwitch()
     {
-        yield return new WaitForSeconds(2.45f);
+        yield return new WaitForSeconds(2.6f);
         dataResetter.ResetToDefaults();
         SceneManager.LoadScene(0);
     }
