@@ -37,8 +37,8 @@ public class pd_session_RESET : MonoBehaviour
 
         sessionData.wepInfoDict = null;
 
-        sessionData.mouseSensLevel = 4;
-        sessionData.audioVolumeMusic = 4;
-        sessionData.audioVolumeSFX = 4;
+        //sessionData.mouseSensLevel = 4;
+        //sessionData.audioVolumeMusic = 4;
+        //sessionData.audioVolumeSFX = 4;
     }
 }

@@ -17,7 +17,7 @@ public class pl_health_manager : MonoBehaviour
 
     private void Start()
     {
-        if(g_refs.Instance.sessionData.currentWaveLooping == -1)
+        if(g_refs.Instance.sessionData.currentWaveRegular == 0)
         {
             g_refs.Instance.sessionData.playerHP = refs.settings.maxHP;
         }
