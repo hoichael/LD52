@@ -27,7 +27,7 @@ public class wv_wave : MonoBehaviour
                 }
                 else
                 {
-                    enemyAmount = Mathf.RoundToInt(enemyInfo.amount * (1 + (g_refs.Instance.sessionData.loopingWaveCounter * 0.1f)));
+                    enemyAmount = Mathf.FloorToInt(enemyInfo.amount * (1 + (g_refs.Instance.sessionData.loopingWaveCounter * 0.1f)));
                 }
 
                 amount += enemyAmount;

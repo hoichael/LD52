@@ -43,7 +43,7 @@ public class wv_spawner : MonoBehaviour
             }
             else
             {
-                enemyAmount = Mathf.RoundToInt(enemyInfo.amount * (1 + (g_refs.Instance.sessionData.loopingWaveCounter * 0.1f)));
+                enemyAmount = Mathf.FloorToInt(enemyInfo.amount * (1 + (g_refs.Instance.sessionData.loopingWaveCounter * 0.1f)));
             }
 
             for (int i = 0; i < enemyAmount; i++)
