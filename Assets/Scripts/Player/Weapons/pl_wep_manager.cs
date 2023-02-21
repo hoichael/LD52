@@ -35,14 +35,22 @@ public class pl_wep_manager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.mouseScrollDelta.y != 0)
+        for (int i = 1; i < g_refs.Instance.sessionData.wepInfoDict.Count + 1; i++)
         {
-            TryWeaponSwitch((int)Mathf.Sign(Input.mouseScrollDelta.y));
+            if (Input.GetKeyDown(i.ToString()))
+            {
+                TryWeaponSwitch(i - 1, wepSwitchMode.JumpTo);
+            }
+        }
+
+        if (Input.mouseScrollDelta.y != 0)
+        {
+            TryWeaponSwitch((int)Mathf.Sign(Input.mouseScrollDelta.y), wepSwitchMode.CycleBy);
         }
 
         if(Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.CapsLock))
         {
-            TryWeaponSwitch(1);
+            TryWeaponSwitch(1, wepSwitchMode.CycleBy);
         }
     }
 
@@ -94,7 +102,7 @@ public class pl_wep_manager : MonoBehaviour
         SetIKPosToDefault();
     }
 
-    private void TryWeaponSwitch(int dirMult) // dir mult 1 or -1
+    private void TryWeaponSwitch(int indexOrDir, wepSwitchMode switchMode)
     {
         if (activeWeaponScript == null) return;
 
@@ -111,23 +119,33 @@ public class pl_wep_manager : MonoBehaviour
             }
         }
         
-        for(int i = 0; i < wepInfoArr.Length; i++)
+        if(switchMode == wepSwitchMode.CycleBy)
         {
-            currentCheckIDX += dirMult;
+            for (int i = 0; i < wepInfoArr.Length; i++)
+            {
+                currentCheckIDX += indexOrDir;
 
-            if(currentCheckIDX == wepInfoArr.Length)
-            {
-                currentCheckIDX = 0;
-            }
-            else if(currentCheckIDX == -1)
-            {
-                currentCheckIDX = wepInfoArr.Length - 1;
-            }
+                if (currentCheckIDX == wepInfoArr.Length)
+                {
+                    currentCheckIDX = 0;
+                }
+                else if (currentCheckIDX == -1)
+                {
+                    currentCheckIDX = wepInfoArr.Length - 1;
+                }
 
-            if(wepInfoArr[currentCheckIDX].owned)
+                if (wepInfoArr[currentCheckIDX].owned)
+                {
+                    SwitchWeapon(wepInfoArr[currentCheckIDX].type);
+                    return;
+                }
+            }
+        }
+        else
+        {
+            if (wepInfoArr[indexOrDir].owned)
             {
-                SwitchWeapon(wepInfoArr[currentCheckIDX].type);
-                return;
+                SwitchWeapon(wepInfoArr[indexOrDir].type);
             }
         }
     }
@@ -227,4 +245,10 @@ public enum wepType
     launcher,
     axe,
     chicken
+}
+
+public enum wepSwitchMode
+{
+    CycleBy,
+    JumpTo
 }
