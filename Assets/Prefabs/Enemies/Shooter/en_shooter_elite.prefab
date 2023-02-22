@@ -589,7 +589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   info: {fileID: 5909234707402061221}
-  hpMax: 46
+  hpMax: 28
   hpCurrent: 0
   hpPickupPrefab: {fileID: 7272605533279926371, guid: 562429ecab5284d4a99f60dc9b7a4bd0,
     type: 3}

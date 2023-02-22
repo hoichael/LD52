@@ -6,18 +6,20 @@ public class nv_int_whiteboard : nv_int_base
 {
     [SerializeField] nv_whiteboard whiteboardManager;
     [SerializeField] SpriteRenderer sprRenderer;
-    [SerializeField] Sprite sprDefault, sprActive;
+    //[SerializeField] Sprite sprDefault, sprActive;
 
     public int_whiteboard_type type;
 
     private void OnEnable()
     {
-        sprRenderer.sprite = sprActive;
+        //sprRenderer.sprite = sprActive;
+        sprRenderer.gameObject.SetActive(true);
     }
 
     private void OnDisable()
     {
-        sprRenderer.sprite = sprDefault;
+        //sprRenderer.sprite = sprDefault;
+        sprRenderer.gameObject.SetActive(false);
     }
 
     public override void HandleInteract()

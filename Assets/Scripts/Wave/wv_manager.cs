@@ -18,6 +18,8 @@ public class wv_manager : MonoBehaviour
     //[SerializeField] music_manager musicManager;
     [SerializeField] g_audiovolume audioVolumeManager;
 
+    bool currentlyExitingWave;
+
     // these values now reside in pd_sesion ScriptableObject instance
     //int currentWaveIDXRegular = 0;
     //int currentWaveIDXLooping = -1;
@@ -73,8 +75,9 @@ public class wv_manager : MonoBehaviour
     {
         remainingEnemiesCounter--;
         enemiesCounterText.text = "REMAINING ENEMIES: " + remainingEnemiesCounter;
-        if (remainingEnemiesCounter <= 0 && g_refs.Instance.sessionData.playerHP > 0)
+        if (remainingEnemiesCounter <= 0 && g_refs.Instance.sessionData.playerHP > 0 && !currentlyExitingWave)
         {
+            currentlyExitingWave = true;
             StartCoroutine(ExitWave());
         }
     }
